@@ -1,0 +1,79 @@
+Changes in February 2009 Fortran release
+
+1) The leap second of 2008 December 31 was added to the iau_DAT
+   routine, and the "release year" changed to 2009.
+
+2) Cosmetic changes were made to:
+
+   bi00.for
+   bp00.for
+   bp06.for
+   dtdb.for
+   eect00.for
+   eors.for
+   epb.for
+   epb2jd.for
+   epj.for
+   epj2jd.for
+   epv00.for
+   eqeq94.for
+   era00.for
+   fk5hz.for
+   gmst00.for
+   gmst06.for
+   gmst82.for
+   gst06a.for
+   hfk5z.for
+   nut00a.for
+   nut00b.for
+   nut06a.for
+   nut80.for
+   obl06.for
+   obl80.for
+   p06e.for
+   pfw06.for
+   plan94.for
+   pmat76.for
+   pn00a.for
+   pn00b.for
+   pn06.for
+   pnm06a.for
+   pr00.for
+   prec76.for
+   pv2s.for
+   pvup.for
+   rm2v.for
+   rv2m.for
+   s00.for
+   s06.for
+   sp00.for
+   starpm.for
+   xy06.for
+
+3) Revised license text.
+
+4) The file board.lis was updated to reflect membership changes.
+
+5) Revised intro.lis, sofa_vml.lis and sofa_lib.lis, covering the
+   new C version.
+
+6) Test program t_sofa_f.for added.
+
+
+Revisions (released 2009 March 18)
+
+1) A bug affecting the routines iau_FK52H and iau_H2FK5 has been corrected. 
+   This caused erroneous proper motions (and also radial velocity) to be 
+   returned.
+
+2) The testbed t_sofa_f.for have been updated to reflect the changes to 
+   iau_FK52H and iau_H2FK5.
+
+
+Revisions (released 2009 April 02)
+
+1) An error in the description of the coordinates of the Celestial Intermediate
+   Pole with respect to the International Terrestrial Reference System in the 
+   routines iau_C2T00A, iau_C2T00B, iau_C2T06A, iau_C2TPE, iau_C2TXY and 
+   iau_POM00 has been corrected. These revisions have no effect on the results 
+   produced by these routines. 
