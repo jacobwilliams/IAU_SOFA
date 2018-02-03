@@ -18,18 +18,18 @@
 *     R        d         modulus
 *     U        d(3)      unit vector
 *
+*  Note:
+*     If P is null, the result is null.  Otherwise the result is
+*     a unit vector.
+*
 *  Called:
 *     iau_PM       modulus of p-vector
 *     iau_ZP       null a p-vector
 *     iau_SXP      scalar times p-vector
 *
-*  Note:
-*     If P is null, the result is null.  Otherwise the result is
-*     a unit vector.
+*  This revision:  2003 January 14
 *
-*  This revision:  2000 November 25
-*
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -60,7 +60,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

@@ -12,15 +12,23 @@
 *     :                                          :
 *     :  A new version of this routine must be   :
 *     :  produced whenever a new leap second is  :
-*     :  announced.  There are two items to      :
+*     :  announced.  There are three items to    :
 *     :  change on each such occasion:           :
 *     :                                          :
 *     :  1) The parameter NDAT must be           :
-*     :     incremented by 1.                    :
+*     :     increased by 1.                      :
 *     :                                          :
 *     :  2) A new line must be added to the set  :
 *     :     of DATA statements that initialize   :
 *     :     the arrays IDATE and DATS.           :
+*     :                                          :
+*     :  3) The parameter IYV must be set to     :
+*     :     the current year.                    :
+*     :                                          :
+*     :  Change (3) must also be carried out     :
+*     :  whenever the routine is re-issued,      :
+*     :  even if no leap seconds have been       :
+*     :  added.                                  :
 *     :                                          :
 *     :  Latest leap second:  1999 January 1     :
 *     :                                          :
@@ -40,27 +48,29 @@
 *  Returned:
 *     DELTAT   d     TAI minus UTC, seconds
 *     J        i     status (Note 5):
-*                       1 = dubious year (Note 1: DAT computed)
+*                       1 = dubious year (Note 1)
 *                       0 = OK
-*                      -1 = bad year (DAT not computed)
-*                      -2 = bad month (DAT not computed)
-*                      -3 = bad day (Note 3: DAT not computed)
-*                      -4 = bad fraction (Note 4: DAT computed)
+*                      -1 = bad year
+*                      -2 = bad month
+*                      -3 = bad day (Note 3)
+*                      -4 = bad fraction (Note 4)
 *
 *  Notes:
 *
 *  1) UTC began at 1960 January 1.0 (JD 2436934.5) and it is improper
-*     to call the routine with an earlier epoch.  However, if this
-*     is attempted, the TAI-UTC expression for the year 1960 is used.
+*     to call the routine with an earlier epoch.  If this is attempted,
+*     zero is returned together with a warning status.
 *
 *     Because leap seconds cannot, in principle, be predicted in
 *     advance, a reliable check for dates beyond the valid range is
-*     impossible.  To guard against gross errors, a year more than
-*     three after that of the final leap second is considered dubious.
+*     impossible.  To guard against gross errors, a year five or more
+*     after the release year of the present routine (see parameter IYV)
+*     is considered dubious.  In this case a warning status is returned
+*     but the result is computed in the normal way.
 *
-*     For both too-early and too-late years, a warning status of J=1
-*     is returned.  This is distinct from the error status J=-1, which
-*     signifies a year so early that JD could not be computed.
+*     For both too-early and too-late years, the warning status is J=+1.
+*     This is distinct from the error status J=-1, which signifies a
+*     year so early that JD could not be computed.
 *
 *  2) If the specified date is for a day which ends with a leap second,
 *     the UTC-TAI value returned is for the period leading up to the
@@ -76,15 +86,17 @@
 *  4) The fraction of day is used only for dates before the introduction
 *     of leap seconds, the first of which occurred at the end of 1971.
 *     It is tested for validity (zero to less than 1 is the valid range)
-*     even if not used;  if invalid, zero is used and status J=4 is
+*     even if not used;  if invalid, zero is used and status J=-4 is
 *     returned.  For many applications, setting FD to zero is
 *     acceptable;  the resulting error is always less than 3 ms (and
-*     only pre-1972).
+*     occurs only pre-1972).
 *
 *  5) The status value returned in the case where there are multiple
 *     errors refers to the first error detected.  For example, if the
 *     month and day are 13 and 32 respectively, JSTAT=-2 (bad month)
 *     will be returned.
+*
+*  6) In cases where a valid result is not available, zero is returned.
 *
 *  References:
 *
@@ -97,9 +109,9 @@
 *  Called:
 *     iau_CAL2JD  Gregorian calendar to Julian Day Number
 *
-*  This revision:  2001 February 27
+*  This revision:  2003 January 9
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -108,6 +120,10 @@
       INTEGER IY, IM, ID
       DOUBLE PRECISION FD, DELTAT
       INTEGER J
+
+*  Release year for this version of iau_DAT.
+      INTEGER IYV
+      PARAMETER ( IYV = 2003 )
 
 *  Number of Delta(AT) changes (increase by 1 for each new leap second).
       INTEGER NDAT
@@ -128,8 +144,8 @@
 
 *  Miscellaneous local variables.
       LOGICAL MORE
-      INTEGER I, M
-      DOUBLE PRECISION W, DJM
+      INTEGER JS, I, M, IS
+      DOUBLE PRECISION DAT, DJM0, DJM
 
 *  Dates and Delta(AT)s.
       DATA (IDATE(I, 1),I=1,2),DATS(1)  / 1960,  1,  1.4178180D0 /
@@ -188,22 +204,30 @@
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-*  If invalid fraction, give up.
-      IF ( FD.LT.0D0 .OR. FD.GE.1D0 ) GO TO 9999
+*  Initialize the result to zero and the status to OK.
+      DAT = 0D0
+      JS = 0
+
+*  If invalid fraction of a day, set error status and give up.
+      IF ( FD.LT.0D0 .OR. FD.GE.1D0 ) THEN
+         JS = -4
+         GO TO 9000
+      END IF
 
 *  Convert the date into an MJD.
-      CALL iau_CAL2JD ( IY, IM, ID, W, DJM, J )
+      CALL iau_CAL2JD ( IY, IM, ID, DJM0, DJM, JS )
 
 *  If invalid year, month, or day, give up.
-      IF ( J .EQ. -1 ) J = 1
-      IF ( J .NE. 0 ) GO TO 9999
+      IF ( JS .LT. 0 ) GO TO 9000
 
-*  Check for dubious year and set status accordingly.
-      IF ( IY.LT.IDATE(1,1) .OR. IY-IDATE(1,NDAT).GT.3 ) THEN
-         J = 1
-      ELSE
-         J = 0
+*  If pre-UTC year, set warning status and give up.
+      IF ( IY .LT. IDATE(1,1) ) THEN
+         JS = 1
+         GO TO 9000
       END IF
+
+*  If suspiciously late year, set warning status but proceed.
+      IF ( IY .GT. IYV+5 ) JS = 1
 
 *  Combine year and month.
       M = 12*IY+IM
@@ -211,34 +235,31 @@
 *  Prepare to search the tables.
       MORE = .TRUE.
 
-*  Look at each table entry, starting with the most recent.
+*  Find the most recent table entry.
       DO 1 I=NDAT,1,-1
-
-*     Proceed only if necessary.
          IF ( MORE ) THEN
-
-*        Copy the Delta(AT).
-            W = DATS(I)
-
-*        If pre-1972, adjust for drift.
-            IF ( I .LE. NERA1 )
-     :         W = W + ( DJM + FD - DRIFT(1,I) ) * DRIFT(2,I)
-
-*        Have we finished yet?
+            IS = I
             MORE = M .LT. ( 12*IDATE(1,I) + IDATE(2,I) )
-
          END IF
  1    CONTINUE
 
-*  Return the Delta(AT) value.
-      DELTAT = W
+*  Get the Delta(AT).
+      DAT = DATS(IS)
+
+*  If pre-1972, adjust for drift.
+      IF ( IS .LE. NERA1 ) DAT = DAT +
+     :                          ( DJM + FD - DRIFT(1,IS) ) * DRIFT(2,IS)
+
+*  Return the Delta(AT) value and the status.
+ 9000 CONTINUE
+      DELTAT = DAT
+      J = JS
 
 *  Finished.
- 9999 CONTINUE
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

@@ -54,11 +54,11 @@
 *
 *  Reference:
 *
-*     M.Feissel & F.Mignard, Astron. Astrophys. 331, L33-L36 (1998).
+*     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
 *
-*  This revision:  2001 February 28
+*  This revision:  2001 August 1
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -66,22 +66,6 @@
 
       DOUBLE PRECISION RH, DH, DRH, DDH, PXH, RVH,
      :                 R5, D5, DR5, DD5, PX5, RV5
-
-*  Arcseconds to radians
-      DOUBLE PRECISION DAS2R
-      PARAMETER ( DAS2R = 4.848136811095359935899141D-6 )
-
-*  FK5 to Hipparcos orientation and spin (radians, radians/year)
-      DOUBLE PRECISION EPX, EPY, EPZ
-      DOUBLE PRECISION OMX, OMY, OMZ
-
-      PARAMETER ( EPX = -19.9D-3 * DAS2R,
-     :            EPY =  -9.1D-3 * DAS2R,
-     :            EPZ = +22.9D-3 * DAS2R )
-
-      PARAMETER ( OMX = -0.30D-3 * DAS2R,
-     :            OMY = +0.60D-3 * DAS2R,
-     :            OMZ = +0.70D-3 * DAS2R )
 
       DOUBLE PRECISION PVH(3,2), R5H(3,3), S5H(3), SH(3), WXP(3),
      :                 VV(3), PV5(3,2)
@@ -117,7 +101,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

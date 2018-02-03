@@ -19,7 +19,7 @@
 *
 *  Notes:
 *
-*  1  The UT1 epoch DJ1+DJ2 is a Julian Date, apportioned in any
+*  1) The UT1 epoch DJ1+DJ2 is a Julian Date, apportioned in any
 *     convenient way between the arguments DJ1 and DJ2.  For example,
 *     JD(UT1)=2450123.7 could be expressed in any of these ways,
 *     among others:
@@ -40,13 +40,13 @@
 *     0hrs UT1 on the day in question and the DJ2 argument lies in the
 *     range 0 to 1, or vice versa.
 *
-*  2  The algorithm is based on the IAU 1982 expression.  This is always
+*  2) The algorithm is based on the IAU 1982 expression.  This is always
 *     described as giving the GMST at 0 hours UT1.  In fact, it gives the
 *     difference between the GMST and the UT, the steady 4-minutes-per-day
 *     drawing-ahead of ST with respect to UT.  When whole days are ignored,
 *     the expression happens to equal the GMST at 0 hours UT1 each day.
 *
-*  3  In this routine, the entire UT1 (the sum of the two arguments DJ1
+*  3) In this routine, the entire UT1 (the sum of the two arguments DJ1
 *     and DJ2) is used directly as the argument for the standard formula,
 *     the constant term of which is adjusted by 12 hours to take account
 *     of the noon phasing of Julian Date.  The UT1 is then added, but
@@ -57,14 +57,14 @@
 *
 *  References:
 *
-*  1  Transactions of the International Astronomical Union,
+*     Transactions of the International Astronomical Union,
 *     XVIII B, 67 (1983).
 *
-*  2  Aoki et al., Astron. Astrophys. 105, 359-361 (1982).
+*     Aoki et al., Astron. Astrophys. 105, 359-361 (1982).
 *
-*  This revision:  2000 December 19
+*  This revision:  2003 January 14
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -119,7 +119,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

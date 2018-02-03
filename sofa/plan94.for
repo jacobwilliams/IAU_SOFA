@@ -159,9 +159,9 @@
 *              Chapront-Touze, M., Francou, G., and Laskar, J.,
 *              Astron. Astrophys. 282, 663 (1994).
 *
-*  This revision:  2001 January 12
+*  This revision:  2001 May 24
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -206,7 +206,7 @@
      :                 PI(3,8), DINC(3,8), OMEGA(3,8),
      :                 KP(9,8), CA(9,8), SA(9,8),
      :                 KQ(10,8), CL(10,8), SL(10,8),
-     :                 T, DA, DL, DE, DP, DI, DO, DMU, ARGA, ARGL, AM,
+     :                 T, DA, DL, DE, DP, DI, DOM, DMU, ARGA, ARGL, AM,
      :                 AE, DAE, AE2, AT, R, V, SI2, XQ, XP, TL, XSW,
      :                 XCW, XM2, XF, CI2, XMS, XMC, XPXQ2, X, Y, Z
 
@@ -393,9 +393,9 @@
          DI = ( 3600D0 * DINC(1,NP) +
      :                 ( DINC(2,NP) +
      :                   DINC(3,NP) * T ) * T ) * DAS2R
-         DO = iau_ANPM ( ( 3600D0 * OMEGA(1,NP)
-     :                          + ( OMEGA(2,NP)
-     :                            + OMEGA(3,NP) * T ) * T ) * DAS2R )
+         DOM = iau_ANPM ( ( 3600D0 * OMEGA(1,NP)
+     :                           + ( OMEGA(2,NP)
+     :                             + OMEGA(3,NP) * T ) * T ) * DAS2R )
 
 *     Apply the trigonometric terms.
          DMU = 0.35953620D0 * T
@@ -438,8 +438,8 @@
          V = GK * SQRT( ( 1D0 + 1D0/AMAS(NP) ) / (DA*DA*DA))
 
          SI2 = SIN(DI/2D0)
-         XQ = SI2 * COS(DO)
-         XP = SI2 * SIN(DO)
+         XQ = SI2 * COS(DOM)
+         XP = SI2 * SIN(DOM)
          TL = AT + DP
          XSW = SIN(TL)
          XCW = COS(TL)
@@ -479,7 +479,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

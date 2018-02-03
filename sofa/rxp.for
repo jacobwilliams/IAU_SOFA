@@ -18,9 +18,12 @@
 *  Returned:
 *     RP       d(3)      R * P
 *
-*  This revision:  2000 November 25
+*  Called:
+*     iau_CP       copy a p-vector
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  This revision:  2001 May 24
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -28,26 +31,29 @@
 
       DOUBLE PRECISION R(3,3), P(3), RP(3)
 
-      DOUBLE PRECISION W
+      DOUBLE PRECISION W, WRP(3)
 
       INTEGER I, J
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-*  Matrix R * vector P -> vector RP.
+*  Matrix R * vector P.
       DO 2 J=1,3
          W = 0D0
          DO 1 I=1,3
             W = W + R(J,I)*P(I)
  1       CONTINUE
-         RP(J) = W
+         WRP(J) = W
  2    CONTINUE
+
+*  Return the result.
+      CALL iau_CP ( WRP, RP )
 
 *  Finished.
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

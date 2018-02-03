@@ -1,4 +1,4 @@
-sofa_vml.lis                                                  2001 March 2
+sofa_vml.lis                                            2002 December 23
 
                    --------------------------
                    SOFA Vector/Matrix Library
@@ -189,9 +189,9 @@ OPERATIONS ON ANGLES
 CALLS
 
    DOUBLE PRECISION FUNCTION
-                     iau_ANP ( A )
+                     iau_ANP    ( A )
    DOUBLE PRECISION FUNCTION
-                     iau_ANPM ( A )
+                     iau_ANPM   ( A )
    SUBROUTINE        iau_A2AF   ( NDP, ANGLE, SIGN, IDMSF )
    SUBROUTINE        iau_A2TF   ( NDP, ANGLE, SIGN, IHMSF )
    SUBROUTINE        iau_C2S    ( P, THETA, PHI )
@@ -220,8 +220,8 @@ CALLS
    SUBROUTINE        iau_PVUP   ( DT, PV, P )
    SUBROUTINE        iau_PVXPV  ( A, B, AXB )
    SUBROUTINE        iau_PXP    ( A, B, AXB )
-   SUBROUTINE        iau_RM2V   ( R, W )
-   SUBROUTINE        iau_RV2M   ( W, R )
+   SUBROUTINE        iau_RM2V   ( R, P )
+   SUBROUTINE        iau_RV2M   ( P, R )
    SUBROUTINE        iau_RX     ( PHI, R )
    SUBROUTINE        iau_RXP    ( R, P, RP )
    SUBROUTINE        iau_RXPV   ( R, PV, RPV )

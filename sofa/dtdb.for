@@ -52,7 +52,7 @@
 *  Given:
 *     EPOCH1,EPOCH2   d   epoch, TDB (Notes 1-3)
 *     UT              d   universal time (UT1, fraction of one day)
-*     ELONG           d   longitude (east ve, radians)
+*     ELONG           d   longitude (east +ve, radians)
 *     U               d   distance from Earth spin axis (km)
 *     V               d   distance north of equatorial plane (km)
 *
@@ -95,7 +95,7 @@
 *     gravitational red-shift as the observer varies in speed and
 *     experiences different gravitational potentials.
 *
-*  3) The IAU 1976 definition of TDB was that it must differ from TD
+*  3) The IAU 1976 definition of TDB was that it must differ from TT
 *     (then called TDT) only by periodic terms.  Though practical, this
 *     is an imprecise definition which ignores the existence of very
 *     long-period and secular effects in the dynamics of the solar
@@ -138,26 +138,26 @@
 *
 *  References:
 *
-*     1  Fairhead,L., & Bretagnon,P., Astron.Astrophys., 229, 240-247
-*        (1990).
+*     Fairhead,L., & Bretagnon,P., Astron.Astrophys., 229, 240-247
+*     (1990).
 *
-*     2  McCarthy,D.D., IERS Conventions (1996), IERS Technical Note 21,
-*        Observatoire de Paris (1996).
+*     McCarthy,D.D., IERS Conventions (1996), IERS Technical Note 21,
+*     Observatoire de Paris (1996).
 *
-*     3  Moyer,T.D., Cel.Mech., 23, 33 (1981).
+*     Moyer,T.D., Cel.Mech., 23, 33 (1981).
 *
-*     4  Murray,C.A., Vectorial Astrometry, Adam Hilger (1983).
+*     Murray,C.A., Vectorial Astrometry, Adam Hilger (1983).
 *
-*     5  Seidelmann,P.K. et al., Explanatory Supplement to the
-*        Astronomical Almanac, Chapter 2, University Science Books
-*        (1992).
+*     Seidelmann,P.K. et al., Explanatory Supplement to the
+*     Astronomical Almanac, Chapter 2, University Science Books
+*     (1992).
 *
-*     6  Simon J.L., Bretagnon P., Chapront J., Chapront-Touze M.,
-*        Francou G. & Laskar J., 1994, Astron.Astrophys., 282, 663-683.
+*     Simon J.L., Bretagnon P., Chapront J., Chapront-Touze M.,
+*     Francou G. & Laskar J., 1994, Astron.Astrophys., 282, 663-683.
 *
-*  This revision:  2001 March 8
+*  This revision:  2003 March 11
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -1171,7 +1171,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

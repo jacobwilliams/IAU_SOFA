@@ -18,10 +18,6 @@
 *  Returned:
 *     AXB      d(3,2)      A x B
 *
-*  Called:
-*     iau_PXP      outer product of two p-vectors
-*     iau_PPP      p-vector addition
-*
 *  Note:
 *
 *     If the position and velocity components of the two pv-vectors are
@@ -29,9 +25,14 @@
 *     vectors ( Ap x Bp, Ap x Bv + Av x Bp ).  The two vectors are the
 *     cross-product of the two p-vectors and its derivative.
 *
-*  This revision:  2000 November 25
+*  Called:
+*     iau_CPV      copy pv-vector
+*     iau_PXP      outer product of two p-vectors
+*     iau_PPP      p-vector addition
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -39,23 +40,27 @@
 
       DOUBLE PRECISION A(3,2), B(3,2), AXB(3,2)
 
-      DOUBLE PRECISION AXBD(3), ADXB(3)
+      DOUBLE PRECISION WA(3,2), WB(3,2), AXBD(3), ADXB(3)
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+*  Make copies of the inputs.
+      CALL iau_CPV ( A, WA )
+      CALL iau_CPV ( B, WB )
+
 *  A x B = position part of result.
-      CALL iau_PXP ( A(1,1), B(1,1), AXB(1,1) )
+      CALL iau_PXP ( WA(1,1), WB(1,1), AXB(1,1) )
 
 *  A x Bdot + Adot x B = velocity part of result.
-      CALL iau_PXP ( A(1,1), B(1,2), AXBD )
-      CALL iau_PXP ( A(1,2), B(1,1), ADXB )
+      CALL iau_PXP ( WA(1,1), WB(1,2), AXBD )
+      CALL iau_PXP ( WA(1,2), WB(1,1), ADXB )
       CALL iau_PPP ( AXBD, ADXB, AXB(1,2) )
 
 *  Finished.
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

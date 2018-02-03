@@ -47,12 +47,12 @@
 *  Reference:
 *
 *     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
 *     Section 12.92 (p604).
 *
-*  This revision:  2000 December 19
+*  This revision:  2001 September 16
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -117,7 +117,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

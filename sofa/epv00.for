@@ -79,14 +79,14 @@
 *           Heliocentric:
 *              position error    3.7   11.2   km
 *              velocity error    1.4    5.0   mm/s
-*    
+*
 *           Barycentric:
 *              position error    4.6   13.4   km
 *              velocity error    1.4    4.9   mm/s
-* 
+*
 *  This revision:  2001 January 26
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -2518,7 +2518,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

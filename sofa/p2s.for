@@ -19,19 +19,19 @@
 *     PHI      d         latitude angle (radians)
 *     R        d         radial distance
 *
-*  Called:
-*     iau_C2S      direction cosines to spherical
-*     iau_PM       modulus of p-vector
-*
 *  Notes:
 *
 *  1) If P is null, zero THETA, PHI and R are returned.
 *
 *  2) At either pole, zero THETA is returned.
 *
-*  This revision:  2000 November 25
+*  Called:
+*     iau_C2S      direction cosines to spherical
+*     iau_PM       modulus of p-vector
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -48,7 +48,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

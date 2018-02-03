@@ -32,9 +32,9 @@
 *  3) The reference frame rotates clockwise as seen looking along
 *     the rotation vector from the origin.
 *
-*  This revision:  2000 November 25
+*  This revision:  2003 January 20
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -66,18 +66,18 @@
       R(1,1) = X*X*F + C
       R(1,2) = X*Y*F + Z*S
       R(1,3) = X*Z*F - Y*S
-      R(2,1) = X*Y*F - Z*S
+      R(2,1) = Y*X*F - Z*S
       R(2,2) = Y*Y*F + C
       R(2,3) = Y*Z*F + X*S
-      R(3,1) = X*Z*F + Y*S
-      R(3,2) = Y*Z*F - X*S
+      R(3,1) = Z*X*F + Y*S
+      R(3,2) = Z*Y*F - X*S
       R(3,3) = Z*Z*F + C
 
 *  Finished.
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

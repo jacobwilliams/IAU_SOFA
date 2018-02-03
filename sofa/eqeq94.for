@@ -48,14 +48,14 @@
 *
 *  References:
 *
-*       IAU Resolution C7, Recommendation 3 (1994)
+*     IAU Resolution C7, Recommendation 3 (1994)
 *
-*       Capitaine, N. & Gontier, A.-M., Astron. Astrophys., 275,
-*       645-650 (1993)
+*     Capitaine, N. & Gontier, A.-M., Astron. Astrophys., 275,
+*     645-650 (1993)
 *
-*  This revision:  2001 January 4
+*  This revision:  2003 January 14
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -105,7 +105,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

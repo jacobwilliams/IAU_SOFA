@@ -26,16 +26,6 @@
 *                          -1 = superluminal speed (Note 5)
 *                          -2 = null position vector
 *
-*  Called:
-*     iau_PN       normalize p-vector returning modulus
-*     iau_PDP      scalar product
-*     iau_SXP      multiply p-vector by scalar
-*     iau_PMP      p-vector minus p-vector
-*     iau_PM       modulus of p-vector
-*     iau_PPP      p-vector plus p-vector
-*     iau_PV2S     pv-vector to spherical coordinates
-*     iau_ANP      normalize radians to range 0 to 2pi
-*
 *  Notes:
 *
 *  1) The specified pv-vector is the coordinate direction (and its rate
@@ -89,13 +79,23 @@
 *
 *  6) The inverse transformation is performed by the routine iau_STARPV.
 *
+*  Called:
+*     iau_PN       normalize p-vector returning modulus
+*     iau_PDP      scalar product
+*     iau_SXP      multiply p-vector by scalar
+*     iau_PMP      p-vector minus p-vector
+*     iau_PM       modulus of p-vector
+*     iau_PPP      p-vector plus p-vector
+*     iau_PV2S     pv-vector to spherical coordinates
+*     iau_ANP      normalize radians to range 0 to 2pi
+*
 *  Reference:
 *
 *     Stumpff, P., Astron.Astrophys. 144, 232-240 (1985).
 *
-*  This revision:  2001 March 10
+*  This revision:  2003 January 14
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -196,7 +196,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

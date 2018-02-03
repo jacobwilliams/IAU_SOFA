@@ -24,11 +24,13 @@
 *     DJ2.  The maximum resolution is achieved if DJ1 is 2451545D0
 *     (J2000).
 *
-*  Reference:  Lieske,J.H., 1979. Astron.Astrophys.,73,282.
+*  Reference:
 *
-*  This revision:  2000 November 25
+*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -56,7 +58,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

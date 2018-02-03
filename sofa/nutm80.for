@@ -12,10 +12,10 @@
 *  Status:  support routine.
 *
 *  Given:
-*     EPOCH1,EPOCH2   d         TDB epoch (Note 1)
+*     EPOCH1,EPOCH2    d       TDB epoch (Note 1)
 *
 *  Returned:
-*     RMATN           d(3,3)    nutation matrix
+*     RMATN          d(3,3)    nutation matrix
 *
 *  Notes:
 *
@@ -46,19 +46,11 @@
 *  Called:
 *     iau_NUT80   nutation, IAU 1980
 *     iau_OBL80   mean obliquity, IAU 1980
-*     iau_IR      initialize r-matrix to identity
-*     iau_RX      rotate around X-axis
-*     iau_RZ      rotate around Z-axis
+*     iau_NUMAT   form nutation matrix
 *
-*  Reference:
+*  This revision:  2002 December 24
 *
-*     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
-*     Section 3.222-3 (p114).
-*
-*  This revision:  2001 January 12
-*
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -66,26 +58,23 @@
 
       DOUBLE PRECISION EPOCH1, EPOCH2, RMATN(3,3)
 
-      DOUBLE PRECISION DPSI, DEPS, EPS0
+      DOUBLE PRECISION DPSI, DEPS, EPSA
       DOUBLE PRECISION iau_OBL80
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 *  Nutation components and mean obliquity.
       CALL iau_NUT80 ( EPOCH1, EPOCH2, DPSI, DEPS )
-      EPS0 = iau_OBL80 ( EPOCH1, EPOCH2 )
+      EPSA = iau_OBL80 ( EPOCH1, EPOCH2 )
 
 *  Build the rotation matrix.
-      CALL iau_IR ( RMATN )
-      CALL iau_RX ( EPS0, RMATN )
-      CALL iau_RZ ( -DPSI, RMATN )
-      CALL iau_RX ( -(EPS0+DEPS), RMATN )
+      CALL iau_NUMAT ( EPSA, DPSI, DEPS, RMATN )
 
 *  Finished.
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

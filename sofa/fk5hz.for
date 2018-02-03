@@ -75,21 +75,17 @@
 *
 *  Reference:
 *
-*     M.Feissel & F.Mignard, Astron. Astrophys. 331, L33-L36 (1998).
+*     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
 *
-*  This revision:  2001 January 4
+*  This revision:  2001 August 1
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
       IMPLICIT NONE
 
       DOUBLE PRECISION R5, D5, EPOCH1, EPOCH2, RH, DH
-
-*  Arcseconds to radians
-      DOUBLE PRECISION DAS2R
-      PARAMETER ( DAS2R = 4.848136811095359935899141D-6 )
 
 *  Reference epoch (J2000), JD
       DOUBLE PRECISION DJ0
@@ -135,7 +131,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

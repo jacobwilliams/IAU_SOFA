@@ -28,16 +28,6 @@
 *                           4 = solution didn't converge (Note 8)
 *                        else = binary logical OR of the above
 *
-*  Called:
-*     iau_S2PV     spherical coordinates to pv-vector
-*     iau_PM       modulus of p-vector
-*     iau_ZP       zero a p-vector
-*     iau_PN       normalize p-vector returning modulus
-*     iau_PDP      dot product of two p-vectors
-*     iau_SXP      multiply p-vector by scalar
-*     iau_PMP      p-vector minus p-vector
-*     iau_PPP      p-vector plus p-vector
-*
 *  Notes:
 *
 *  1) The star data accepted by this routine are "observables" for an
@@ -106,13 +96,23 @@
 *
 *  9) The inverse transformation is performed by the routine iau_PVSTAR.
 *
+*  Called:
+*     iau_S2PV     spherical coordinates to pv-vector
+*     iau_PM       modulus of p-vector
+*     iau_ZP       zero a p-vector
+*     iau_PN       normalize p-vector returning modulus
+*     iau_PDP      dot product of two p-vectors
+*     iau_SXP      multiply p-vector by scalar
+*     iau_PMP      p-vector minus p-vector
+*     iau_PPP      p-vector plus p-vector
+*
 *  Reference:
 *
 *     Stumpff, P., Astron.Astrophys. 144, 232-240 (1985).
 *
-*  This revision:  2001 March 10
+*  This revision:  2003 January 14
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -244,7 +244,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

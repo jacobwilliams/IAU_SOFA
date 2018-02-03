@@ -17,7 +17,7 @@
 
 
                                  T H E
-                          
+
 
               SSSSS           OOOOOO       FFFFFFFFFFFFF      AAAAAAA
            SSSSSSSSSS     OOOOOOOOOOOO     FFFFFFFFFFFF      AAAAAAAA
@@ -43,12 +43,12 @@
 
 
                    International Astronomical Union
-             
+
                    Division 1: Fundamental Astronomy
-                   
+
              ICRS Working Group Task 5:  Computation Tools
 
-               
+
             Standards Of Fundamental Astronomy Review Board
 
 
@@ -56,9 +56,35 @@
 
 
 
-                            2001 March 13
+                             2003 March 17
 
-intro.lis                                                      2001 March 13
+contents.lis                                              2002 November 18
+
+
+                             --------
+                             CONTENTS
+                             --------
+
+
+
+
+
+                 1)   Introduction
+
+                 2)   The SOFA Astronomy Library
+
+                 3)   The SOFA Vector/Matrix Library
+
+                 4)   The individual routines
+
+
+                 A1   The SOFA copyright notice
+
+                 A2   FORTRAN constants
+
+                 A3   SOFA Review Board membership
+
+intro.lis                                                  2003 January 14
 
 
                   -------------------------------
@@ -69,7 +95,7 @@ intro.lis                                                      2001 March 13
     SOFA stands for "Standards Of Fundamental Astronomy".  The SOFA
     software libraries are a collection of subprograms, in source-
     code form, which implement official IAU algorithms for fundamental-
-    astronomy computations.   The subprograms at present comprise 27
+    astronomy computations.   The subprograms at present comprise 69
     "astronomy" routines supported by 52 "vector/matrix" routines, all
     written in Fortran.  In the future the number of astronomy routines
     will increase, and implementations in other languages will be
@@ -82,7 +108,7 @@ The IAU set up the SOFA initiative at the 1994 General Assembly, to
 promulgate an authoritative set of fundamental-astronomy constants and
 algorithms.  At the subsequent General Assembly, in 1997, the appointment
 of a SOFA Review Board and the selection of a site for the SOFA Center
-(the outlet for SOFA products) were announced. 
+(the outlet for SOFA products) were announced.
 
 The SOFA initiative was originally proposed by the IAU Working Group on
 Astronomical Standards (WGAS), under the chairmanship of Toshio Fukushima.
@@ -103,11 +129,11 @@ A feature of the original SOFA software proposals was that the products
 would be self-contained and not depend on other software.  This includes
 basic documentation, which, like the present file, will be plain ASCII
 text.  It should also be noted that there is no assumption that the
-software will be used on a particular computer and Operating System. 
+software will be used on a particular computer and Operating System.
 Although OS-related facilities may be present (Unix make files for
 instance, use by the SOFA Center of automatic code management systems,
 HTML versions of some documentation), the routines themselves will be
-visible as individual text files and will run on a variety of platforms. 
+visible as individual text files and will run on a variety of platforms.
 
 
 ALGORITHMS
@@ -127,7 +153,7 @@ also be noted that consistency with the conventions published by the
 International Earth Rotation Service was a stipulation in the original
 SOFA proposals, further constraining the software designs. This state of
 affairs will continue to exist for some time, as there is a large backlog
-of agreed extensions to work on. However, in the future the Board may
+of agreed extensions to work on.  However, in the future the Board may
 decide to call for proposals, and is in the meantime willing to look into
 any suggestions that are received by the SOFA Center.
 
@@ -135,19 +161,19 @@ any suggestions that are received by the SOFA Center.
 SCOPE
 
 The routines currently available are listed in the next two chapters of
-this document. 
+this document.
 
-The "astronomy" library comprises 27 routines.  Coverage is limited in
+The "astronomy" library comprises 69 routines.  Coverage is limited in
 this early release, but the areas addressed include calendars, timescales,
 ephemerides, precession/nutation, star space-motion, and star catalog
-conversions. 
+conversions.
 
 The "vector-matrix" library, comprising 52 routines, contains a collection
 of simple tools for manipulating the vectors, matrices and angles used by
 the astronomy routines.  Although this library can be used in its own
-right, it is limited in scope to what the other SOFA routines require. 
+right, it is limited in scope to what the other SOFA routines require.
 Some users may be better served by the many specialist libraries available
-elsewhere. 
+elsewhere.
 
 There is no explicit commitment by SOFA to support historical models,
 though as time goes on a legacy of superseded models will naturally
@@ -156,15 +182,15 @@ coordinates, or pre-1976 precession models, though these capabilities
 will be added if there is a demand.
 
 Though the SOFA software libraries are rather limited in scope, and are
-likely to remain so for a considerable time, they do offer distinct 
-advantages to prospective users.  In particular, the routines are: 
+likely to remain so for a considerable time, they do offer distinct
+advantages to prospective users.  In particular, the routines are:
 
   * authoritative:  they are IAU-backed and have been constructed with
     great care;
 
   * practical:  they are straightforward to use in spite of being
     precise and rigorous (to some stated degree);
-    
+
   * accessible and supported: they are downloadable from an easy-to-
     find place, they are in an integrated and consistent form, they
     come with adequate internal documentation, and help for users is
@@ -175,9 +201,9 @@ VERSIONS
 
 Once it has been published, an issue will not be revised or updated and
 will remain accessible indefinitely.  Subsequent issues may, however,
-include corrected versions under the original filename and routine name. 
+include corrected versions under the original filename and routine name.
 However, where a different model is introduced, it will have a different
-name. 
+name.
 
 The issues will be referred to by the date when they were announced.  The
 frequency of re-issue will be decided by the Board, taking into account
@@ -188,15 +214,15 @@ DOCUMENTATION
 
 At present there is little or no free-standing documentation about
 individual routines.  However, each routine has preamble comments which
-specify in detail what the routine does and how it is used. 
+specify in detail what the routine does and how it is used.
 
 
 PROGRAMMING STANDARDS
 
 The first release is in Fortran 77 only.  Work on C equivalents is about
-to start, and related software in other languages is being considered. 
+to start, and related software in other languages is being considered.
 
-The Fortran code conforms to ANSI X3.9-1978 in all but two minor respects: 
+The Fortran code conforms to ANSI X3.9-1978 in all but two minor respects:
 each has an IMPLICIT NONE declaration, and its name has a prefix of "iau_"
 and may be longer than 6 characters.  A global edit to erase both of these
 will produce ANSI-compliant code with no change in its function.
@@ -218,7 +244,7 @@ Copyright for all of the SOFA software and documentation is owned by the
 IAU SOFA Review Board.  The Software is made available free of charge for
 use by private individuals for non-profit research and by non-profit
 educational, academic and research institutions.  Potential commercial
-users of the Software should contact the Board. 
+users of the Software should contact the Board.
 
 Further details are included in the block of comments which concludes
 every routine.  This block of comments is also given as an appendix to
@@ -243,13 +269,13 @@ ACKNOWLEDGEMENTS
 The Board is indebted to a number of contributors, who are acknowledged in
 the preamble comments of the routines concerned.
 
-The Board's effort is provided by the members' individual institutes. 
+The Board's effort is provided by the members' individual institutes.
 Resources for operating the SOFA Center and for chairing the SOFA Review
 Board are provided by the UK's Particle Physics and Astronomy Research
 Council through its various astronomy programs at the Rutherford Appleton
 Laboratory.
 
-sofa_lib.lis                                                  2001 March 2
+sofa_lib.lis                                                 2003 March 17
 
                      ----------------------
                      SOFA Astronomy Library
@@ -258,7 +284,7 @@ sofa_lib.lis                                                  2001 March 2
 
 PREFACE
 
-The routines described here are the first release of the SOFA astronomy
+The routines described here are the second release of the SOFA astronomy
 library.  Their general appearance and coding style conforms to
 conventions agreed by the SOFA Review Board, and their functions, names
 and algorithms have been ratified by the Board.  Procedures for
@@ -293,9 +319,9 @@ of the machines on which they run, and not to rely on compiler
 optimizions.  Within these constraints, the intention is that the code
 corresponds to the published formulation (if any).
 
-Epochs are always Julian Dates (except in calendar conversion routines)
-and are expressed as two double precision numbers which sum to the
-required value.
+Epochs (or simply "dates") are always Julian Dates (except in calendar
+conversion routines) and are expressed as two double precision numbers
+which sum to the required value.
 
 A distinction is made between routines that implement IAU-approved
 models and those that use those models to create other results.  The
@@ -307,7 +333,7 @@ timescales.  These topics are covered in "Explanatory Supplement to the
 Astronomical Almanac", P. Kenneth Seidelmann (ed.), University Science
 Books, 1992.  Recent developments are documented in the journals, and
 references to the relevant papers are given in the SOFA code as
-required.
+required.  The IERS Conventions are also an important reference.
 
 
 ROUTINES
@@ -315,55 +341,120 @@ ROUTINES
   Calendars
 
      CAL2JD    Gregorian Calendar to Julian Date
+     EPB       Julian Date to Besselian Epoch
+     EPB2JD    Besselian Epoch to Julian Date
+     EPJ       Julian Date to Julian Epoch
+     EPJ2JD    Julian Epoch to Julian Date
      JD2CAL    Julian Date to Gregorian year, month, day, fraction
      JDCALF    Julian Date to Gregorian date for formatted output
-     EPB       Julian Date to Besselian Epoch
-     EPJ       Julian Date to Julian Epoch
-     EPB2JD    Besselian Epoch to Julian Date
-     EPJ2JD    Julian Epoch to Julian Date
 
-  Timescales
+  Time scales including Earth rotation
 
      DAT       Delta(AT) (=TAI-UTC) for a given UTC date
      DTDB      TDB-TT
-     GMST82    Greenwich Mean Sidereal Time for a given UT1
+     EE00      equation of the equinoxes, IAU 2000, given nutation
+     EE00A     equation of the equinoxes, IAU 2000A
+     EE00B     equation of the equinoxes, IAU 2000B
+     EECT00    equation of the equinoxes complementary terms, IAU 2000
      EQEQ94    equation of the equinoxes, IAU 1994
+     ERA00     Earth Rotation Angle, IAU 2000
+     GMST00    Greenwich Mean Sidereal Time, IAU-2000-compatible
+     GMST82    Greenwich Mean Sidereal Time, IAU 1982
+     GST00A    Greenwich Apparent Sidereal Time, IAU 2000A
+     GST00B    Greenwich Apparent Sidereal Time, IAU 2000B
+     GST94     Greenwich Apparent Sidereal Time, IAU 1994
 
   Ephemerides (limited precision)
 
      EPV00     Earth position and velocity
      PLAN94    major-planet position and velocity
 
-  Precession/Nutation
+  Precession, Nutation, Polar Motion
 
+     BI00      frame bias, ICRS to mean J2000, IAU 2000
+     BP00      frame bias and precession matrices, IAU 2000
+     BPN2XY    bias-precession-nutation matrix given CIP
+     C2I00A    celestial-to-intermediate matrix, IAU 2000A
+     C2I00B    celestial-to-intermediate matrix, IAU 2000B
+     C2IBPN    celestial-to-intermediate matrix given b-p-n
+     C2IXY     celestial-to-intermediate matrix given CIP
+     C2IXYS    celestial-to-intermediate matrix given CIP and s
+     C2T00A    celestial-to-terrestrial matrix, IAU 2000A
+     C2T00B    celestial-to-terrestrial matrix, IAU 2000B
+     C2TCEO    celestial-to-terrestrial matrix, CEO-based
+     C2TEQX    celestial-to-terrestrial matrix, classical
+     C2TPE     celestial-to-terrestrial matrix given nutation
+     C2TXY     celestial-to-terrestrial matrix given CIP
+     NUM00A    nutation matrix, IAU 2000A
+     NUM00B    nutation matrix, IAU 2000B
+     NUMAT     nutation matrix, generic
+     NUT00A    nutation, IAU 2000A
+     NUT00B    nutation, IAU 2000B
      NUT80     nutation, IAU 1980
      OBL80     mean obliquity, IAU 1980
      NUTM80    nutation matrix, IAU 1980
+     PMAT00    precession matrix (including frame bias), IAU 2000
      PMAT76    precession matrix, IAU 1976
-     PREC76    precession, IAU 1976
+     PN00      b,p,n matrices, IAU 2000, given nutation
+     PN00A     b,p,n matrices, IAU 2000A
+     PN00B     b,p,n matrices, IAU 2000B
+     PNM00A    celestial-to-true (b-p-n) matrix, IAU 2000A
+     PNM00B    celestial-to-true (b-p-n) matrix, IAU 2000B
+     POM00     polar-motion matrix, IAU 2000
+     PR00      adjustments to IAU 1976 precession, IAU 2000
      PNM80     precession/nutation matrix, IAU 1976/1980
+     PREC76    precession, IAU 1976
+     S00       the quantity s, IAU 2000, given CIP
+     S00A      the quantity s, IAU 2000A
+     S00B      the quantity s, IAU 2000B
+     SP00      the quantity s', IERS 2000
+     XYS00A    CIP and s, IAU 2000A
+     XYS00B    CIP and s, IAU 2000B
 
   Star space motion
 
-     STARPV    star catalog coordinates to position+velocity vector
      PVSTAR    star position+velocity vector to catalog coordinates
+     STARPV    star catalog coordinates to position+velocity vector
 
   Star catalog conversions
 
-     STARPM    proper motion between two epochs
-     FK5HIP    FK5 orientation and spin with respect to Hipparcos
      FK52H     transform FK5 star data into the Hipparcos frame
-     H2FK5     transform Hipparcos star data into the FK5 frame
+     FK5HIP    FK5 orientation and spin with respect to Hipparcos
      FK5HZ     FK5 to Hipparcos assuming zero Hipparcos proper motion
+     H2FK5     transform Hipparcos star data into the FK5 frame
      HFK5Z     Hipparcos to FK5 assuming zero Hipparcos proper motion
+     STARPM    proper motion between two epochs
 
 
 CALLS
 
+   SUBROUTINE        iau_BI00   ( DPSIBI, DEPSBI, DRA )
+   SUBROUTINE        iau_BP00   ( DATE1, DATE2, RB, RP, RBP )
+   SUBROUTINE        iau_BPN2XY ( RBPN, X, Y )
+   SUBROUTINE        iau_C2I00A ( DATE1, DATE2, RC2I )
+   SUBROUTINE        iau_C2I00B ( DATE1, DATE2, RC2I )
+   SUBROUTINE        iau_C2IBPN ( DATE1, DATE2, RBPN, RC2I )
+   SUBROUTINE        iau_C2IXY  ( DATE1, DATE2, X, Y, RC2I )
+   SUBROUTINE        iau_C2IXYS ( X, Y, S, RC2I )
+   SUBROUTINE        iau_C2T00A ( TTA, TTB, UTA, UTB, XP, YP, RC2T )
+   SUBROUTINE        iau_C2T00B ( TTA, TTB, UTA, UTB, XP, YP, RC2T )
+   SUBROUTINE        iau_C2TCEO ( RC2I, ERA, RPOM, RC2T )
+   SUBROUTINE        iau_C2TEQX ( RBPN, GST, RPOM, RC2T )
+   SUBROUTINE        iau_C2TPE  ( TTA, TTB, UTA, UTB, DPSI, DEPS,
+                                  XP, YP, RC2T )
+   SUBROUTINE        iau_C2TXY  ( TTA, TTB, UTA, UTB, X, Y, XP, YP, RC2T )
    SUBROUTINE        iau_CAL2JD ( IY, IM, ID, DJM0, DJM, J )
    SUBROUTINE        iau_DAT    ( IY, IM, ID, FD, DELTAT, J )
    DOUBLE PRECISION FUNCTION
                      iau_DTDB   ( EPOCH1, EPOCH2, UT, ELONG, U, V )
+   DOUBLE PRECISION FUNCTION
+                     iau_EE00   ( DATE1, DATE2, EPSA, DPSI )
+   DOUBLE PRECISION FUNCTION
+                     iau_EE00A  ( DATE1, DATE2 )
+   DOUBLE PRECISION FUNCTION
+                     iau_EE00B  ( DATE1, DATE2 )
+   DOUBLE PRECISION FUNCTION
+                     iau_EECT00 ( DATE1, DATE2 )
    DOUBLE PRECISION FUNCTION
                      iau_EPB    ( DJ1, DJ2 )
    SUBROUTINE        iau_EPB2JD ( EPB, DJM0, DJM )
@@ -373,32 +464,68 @@ CALLS
    SUBROUTINE        iau_EPV00  ( DJ1, DJ2, PVH, PVB, J )
    DOUBLE PRECISION FUNCTION
                      iau_EQEQ94 ( EPOCH1, EPOCH2 )
+   DOUBLE PRECISION FUNCTION
+                     iau_ERA00  ( DJ1, DJ2 )
    SUBROUTINE        iau_FK52H  ( R5, D5, DR5, DD5, PX5, RV5,
                                   RH, DH, DRH, DDH, PXH, RVH )
    SUBROUTINE        iau_FK5HIP ( R5H, S5H )
    SUBROUTINE        iau_FK5HZ  ( R5, D5, EPOCH1, EPOCH2, RH, DH)
    DOUBLE PRECISION FUNCTION
-                     iau_GMST82 ( DJ1, DJ2 )
+                     iau_GMST00 ( UTA, UTB, TTA, TTB )
+   DOUBLE PRECISION FUNCTION
+                     iau_GMST82 ( UTA, UTB )
+   DOUBLE PRECISION FUNCTION
+                     iau_GST00A ( UTA, UTB, TTA, TTB )
+   DOUBLE PRECISION FUNCTION
+                     iau_GST00B ( UTA, UTB )
+   DOUBLE PRECISION FUNCTION
+                     iau_GST94 ( UTA, UTB )
    SUBROUTINE        iau_H2FK5  ( RH, DH, DRH, DDH, PXH, RVH,
                                   R5, D5, DR5, DD5, PX5, RV5 )
    SUBROUTINE        iau_HFK5Z  ( RH, DH, EPOCH1, EPOCH2, R5, D5, DR5, DD5 )
    SUBROUTINE        iau_JD2CAL ( DJ1, DJ2, IY, IM, ID, FD, J )
    SUBROUTINE        iau_JDCALF ( NDP, DJ1, DJ2, IYMDF, J )
-   SUBROUTINE        iau_PMAT76 ( DJ1, DJ2, RMATP )
+   SUBROUTINE        iau_NUM00A ( DATE1, DATE2, RMATN )
+   SUBROUTINE        iau_NUM00B ( DATE1, DATE2, RMATN )
+   SUBROUTINE        iau_NUMAT  ( EPSA, DPSI, DEPS, RMATN )
+   SUBROUTINE        iau_NUT00A ( DATE1, DATE2, DPSI, DEPS )
+   SUBROUTINE        iau_NUT00B ( DATE1, DATE2, DPSI, DEPS )
    SUBROUTINE        iau_NUT80  ( EPOCH1, EPOCH2, DPSI, DEPS )
    SUBROUTINE        iau_NUTM80 ( EPOCH1, EPOCH2, RMATN )
    DOUBLE PRECISION FUNCTION
                      iau_OBL80  ( EPOCH1, EPOCH2 )
    SUBROUTINE        iau_PLAN94 ( EPOCH1, EPOCH2, NP, PV, J )
+   SUBROUTINE        iau_PMAT00 ( DATE1, DATE2, RBP )
+   SUBROUTINE        iau_PMAT76 ( DJ1, DJ2, RMATP )
+   SUBROUTINE        iau_PN00   ( DATE1, DATE2, DPSI, DEPS,
+                                  EPSA, RB, RP, RBP, RN, RBPN )
+   SUBROUTINE        iau_PN00A  ( DATE1, DATE2, DPSI, DEPS, EPSA,
+                                  RB, RP, RBP, RN, RBPN )
+   SUBROUTINE        iau_PN00B  ( DATE1, DATE2, DPSI, DEPS, EPSA,
+                                  RB, RP, RBP, RN, RBPN )
+   SUBROUTINE        iau_PNM00A ( DATE1, DATE2, RBPN )
+   SUBROUTINE        iau_PNM00B ( DATE1, DATE2, RBPN )
    SUBROUTINE        iau_PNM80  ( EPOCH1, EPOCH2, RMATPN )
+   SUBROUTINE        iau_POM00  ( XP, YP, SP, RPOM )
+   SUBROUTINE        iau_PR00   ( DATE1, DATE2, DPSIPR, DEPSPR )
    SUBROUTINE        iau_PREC76 ( EP01, EP02, EP11, EP12, ZETA, Z, THETA )
    SUBROUTINE        iau_PVSTAR ( PV, RA, DEC, PMR, PMD, PX, RV, J )
+   DOUBLE PRECISION FUNCTION
+                     iau_S00    ( DATE1, DATE2, X, Y )
+   DOUBLE PRECISION FUNCTION
+                     iau_S00A   ( DATE1, DATE2 )
+   DOUBLE PRECISION FUNCTION
+                     iau_S00B   ( DATE1, DATE2 )
+   DOUBLE PRECISION FUNCTION
+                     iau_SP00   ( DATE1, DATE2 )
    SUBROUTINE        iau_STARPM ( RA1, DEC1, PMR1, PMD1, PX1, RV1,
                                   EP1A, EP1B, EP2A, EP2B,
                                   RA2, DEC2, PMR2, PMD2, PX2, RV2, J )
    SUBROUTINE        iau_STARPV ( RA, DEC, PMR, PMD, PX, RV, PV, J )
+   SUBROUTINE        iau_XYS00A ( DATE1, DATE2, X, Y, S )
+   SUBROUTINE        iau_XYS00B ( DATE1, DATE2, X, Y, S )
 
-sofa_vml.lis                                                  2001 March 2
+sofa_vml.lis                                            2002 December 23
 
                    --------------------------
                    SOFA Vector/Matrix Library
@@ -589,9 +716,9 @@ OPERATIONS ON ANGLES
 CALLS
 
    DOUBLE PRECISION FUNCTION
-                     iau_ANP ( A )
+                     iau_ANP    ( A )
    DOUBLE PRECISION FUNCTION
-                     iau_ANPM ( A )
+                     iau_ANPM   ( A )
    SUBROUTINE        iau_A2AF   ( NDP, ANGLE, SIGN, IDMSF )
    SUBROUTINE        iau_A2TF   ( NDP, ANGLE, SIGN, IHMSF )
    SUBROUTINE        iau_C2S    ( P, THETA, PHI )
@@ -620,8 +747,8 @@ CALLS
    SUBROUTINE        iau_PVUP   ( DT, PV, P )
    SUBROUTINE        iau_PVXPV  ( A, B, AXB )
    SUBROUTINE        iau_PXP    ( A, B, AXB )
-   SUBROUTINE        iau_RM2V   ( R, W )
-   SUBROUTINE        iau_RV2M   ( W, R )
+   SUBROUTINE        iau_RM2V   ( R, P )
+   SUBROUTINE        iau_RV2M   ( P, R )
    SUBROUTINE        iau_RX     ( PHI, R )
    SUBROUTINE        iau_RXP    ( R, P, RP )
    SUBROUTINE        iau_RXPV   ( R, PV, RPV )
@@ -806,6 +933,500 @@ CALLS
 *-
 
 
+      SUBROUTINE iau_BI00 ( DPSIBI, DEPSBI, DRA )
+*+
+*  - - - - - - - - -
+*   i a u _ B I 0 0
+*  - - - - - - - - -
+*
+*  Frame bias components of IAU 2000 precession-nutation models (part of
+*  MHB_2000 with additions).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Returned:
+*     DPSIBI,DEPSBI  d   longitude and obliquity corrections
+*     DRA            d   the ICRS RA of the J2000 mean equinox
+*
+*  Notes
+*
+*  1) The frame bias corrections in longitude and obliquity (radians)
+*     are required in order to correct for the offset between the GCRS
+*     pole and the mean J2000 pole.  They define, with respect to the
+*     GCRS frame, a J2000 mean pole that is consistent with the rest of
+*     the IAU 2000A precession-nutation model.
+*
+*  2) In addition to the displacement of the pole, the complete
+*     description of the frame bias requires also an offset in right
+*     ascension.  This is not part of the IAU 2000A model, and is from
+*     Chapront et al. (2002).  It is returned in radians.
+*
+*  3) This is a supplemented implementation of one aspect of the IAU
+*     2000A nutation model, formally adopted by the IAU General Assembly
+*     in 2000, namely MHB2000 (Mathews et al. 2002).
+*
+*  References
+*
+*     Chapront, J., Chapront-Touze, M. & Francou, G., Astron.Astrophys.,
+*     387, 700, 2002.
+*
+*     Mathews, P.M., Herring, T.A., Buffet, B.A., "Modeling of nutation
+*     and precession   New nutation series for nonrigid Earth and
+*     insights into the Earth's interior", J.Geophys.Res., 107, B4,
+*     2002.  The MHB_2000 code itself was obtained on 9th September 2002
+*     from ftp //maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
+*
+*-
+
+
+      SUBROUTINE iau_BP00 ( DATE1, DATE2, RB, RP, RBP )
+*+
+*  - - - - - - - - -
+*   i a u _ B P 0 0
+*  - - - - - - - - -
+*
+*  Frame bias and precession, IAU 2000.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RB           d(3,3)    frame bias matrix (Note 2)
+*     RP           d(3,3)    precession matrix (Note 3)
+*     RBP          d(3,3)    bias-precession matrix (Note 4)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix RB transforms vectors from GCRS to mean J2000 by
+*     applying frame bias.
+*
+*  3) The matrix RP transforms vectors from mean J2000 to mean of date
+*     by applying precession.
+*
+*  4) The matrix RBP transforms vectors from GCRS to mean of date by
+*     applying frame bias then precession.  It is the product RP x RB.
+*
+*  Called:
+*     iau_BI00     IAU 2000 frame bias components
+*     iau_PR00     IAU 2000 precession adjustments
+*     iau_IR       initialize r-matrix to identity
+*     iau_RX       rotate around X-axis
+*     iau_RY       rotate around Y-axis
+*     iau_RZ       rotate around Z-axis
+*     iau_RXR      r-matrix product
+*
+*  Reference:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*-
+
+
+      SUBROUTINE iau_BPN2XY ( RBPN, X, Y )
+*+
+*  - - - - - - - - - - -
+*   i a u _ B P N 2 X Y
+*  - - - - - - - - - - -
+*
+*  Extract from the bias-precession-nutation matrix the X,Y coordinates
+*  of the Celestial Intermediate Pole.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     RBPN      d(3,3)    celestial-to-true matrix (Note 1)
+*
+*  Returned:
+*     X,Y         d       Celestial Intermediate Pole (Note 2)
+*
+*  Notes:
+*
+*  1) The matrix RBPN transforms vectors from GCRS to true of date
+*     (CIP/equinox), and so the Celestial Intermediate Pole unit vector
+*     is the bottom row of the matrix.
+*
+*  2) X,Y are components of the Celestial Intermediate Pole unit vector
+*     in the Geocentric Celestial Reference System.
+*
+*  Reference:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*-
+
+
+      SUBROUTINE iau_C2I00A ( DATE1, DATE2, RC2I )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 I 0 0 A
+*  - - - - - - - - - - -
+*
+*  Form the celestial-to-intermediate matrix for a given date using the
+*  IAU 2000A precession-nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RC2I         d(3,3)    celestial-to-intermediate matrix (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix RC2I is the first stage in the transformation from
+*     celestial to terrestrial coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Rotation Angle and RPOM is the polar motion matrix.
+*
+*  3) A faster, but slightly less accurate result (about 1 mas), can be
+*     obtained by using instead the iau_C2I00B routine.
+*
+*  Called:
+*     iau_PNM00A  classical bias-precession-nutation matrix, IAU 2000A
+*     iau_C2IBPN  celestial-to-intermediate matrix given BPN matrix
+*
+*  References:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2I00B ( DATE1, DATE2, RC2I )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 I 0 0 B
+*  - - - - - - - - - - -
+*
+*  Form the celestial-to-intermediate matrix for a given date using the
+*  IAU 2000B precession-nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RC2I         d(3,3)    celestial-to-intermediate matrix (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix RC2I is the first stage in the transformation from
+*     celestial to terrestrial coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Rotation Angle and RPOM is the polar motion matrix.
+*
+*  3) The present routine is faster, but slightly less accurate (about
+*     1 mas), than the iau_C2I00A routine.
+*
+*  Called:
+*     iau_PNM00B  classical bias-precession-nutation matrix, IAU 2000B
+*     iau_C2IBPN  celestial-to-intermediate matrix given BPN matrix
+*
+*  References:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2IBPN ( DATE1, DATE2, RBPN, RC2I )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 I B P N
+*  - - - - - - - - - - -
+*
+*  Form the celestial-to-intermediate matrix for a given date given
+*  the bias-precession-nutation matrix.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
+*     RBPN         d(3,3)    celestial-to-true matrix (Note 2)
+*
+*  Returned:
+*     RC2I         d(3,3)    celestial-to-intermediate matrix (Note 3)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix RBPN transforms vectors from GCRS to true of date
+*     (CIP/equinox).
+*
+*  3) The matrix RC2I is the first stage in the transformation from
+*     celestial to terrestrial coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Rotation Angle and RPOM is the polar motion matrix.
+*
+*  Called:
+*     iau_BPN2XY  extract CIP coordinates from b-p-n matrix
+*     iau_C2IXY   celestial-to-intermediate matrix given X,Y
+*
+*  Reference:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*-
+
+
+      SUBROUTINE iau_C2IXY ( DATE1, DATE2, X, Y, RC2I )
+*+
+*  - - - - - - - - - -
+*   i a u _ C 2 I X Y
+*  - - - - - - - - - -
+*
+*  Form the celestial to intermediate-frame-of-date matrix for a given
+*  date when the CIP X,Y coordinates are known.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d      TT as a 2-part Julian Date (Note 1)
+*     X,Y            d      Celestial Intermediate Pole (Note 2)
+*
+*  Returned:
+*     RC2I         d(3,3)   celestial-to-intermediate matrix (Note 3)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The Celestial Intermediate Pole coordinates are the x,y components
+*     of the unit vector in the Geocentric Celestial Reference System.
+*
+*  3) The matrix RC2I is the first stage in the transformation from
+*     celestial to terrestrial coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Rotation Angle and RPOM is the polar motion matrix.
+*
+*  Called:
+*     iau_C2IXYS   celestial-to-intermediate matrix from X,Y,s
+*     iau_S00      the quantity s, given X,Y
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2IXYS ( X, Y, S, RC2I )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 I X Y S
+*  - - - - - - - - - - -
+*
+*  Form the celestial to intermediate-frame-of-date matrix given the CIP
+*  X,Y and the quantity s.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     X,Y        d       Celestial Intermediate Pole (Note 1)
+*     S          d       the quantity s (Note 2)
+*
+*  Returned:
+*     RC2I     d(3,3)    celestial-to-intermediate matrix (Note 3)
+*
+*  Notes:
+*
+*  1) The Celestial Intermediate Pole coordinates are the x,y components
+*     of the unit vector in the Geocentric Celestial Reference System.
+*
+*  2) The quantity s (in radians) positions the Celestial Ephemeris
+*     Origin on the equator of the CIP.
+*
+*  3) The matrix RC2I is the first stage in the transformation from
+*     celestial to terrestrial coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Rotation Angle and RPOM is the polar motion matrix.
+*
+*  Called:
+*     iau_IR       initialize r-matrix to identity
+*     iau_RZ       rotate around Z-axis
+*     iau_RY       rotate around Y-axis
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
       SUBROUTINE iau_C2S ( P, THETA, PHI )
 *+
 *  - - - - - - - -
@@ -833,6 +1454,464 @@ CALLS
 *  2) If P is null, zero THETA, PHI and R are returned.
 *
 *  3) At either pole, zero THETA is returned.
+*
+*-
+
+
+      SUBROUTINE iau_C2T00A ( TTA, TTB, UTA, UTB, XP, YP, RC2T )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 T 0 0 A
+*  - - - - - - - - - - -
+*
+*  Form the celestial to terrestrial matrix given the date, the UT1 and
+*  the polar motion, using the IAU 2000A nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     TTA,TTB    d       TT as a 2-part Julian Date (Note 1)
+*     UTA,UTB    d       UT1 as a 2-part Julian Date (Note 1)
+*     XP,YP      d       coordinates of the pole (radians, Note 2)
+*
+*  Returned:
+*     RC2T     d(3,3)    celestial-to-terrestrial matrix (Note 3)
+*
+*  Notes:
+*
+*  1) The TT and UT1 dates TTA+TTB and UTA+UTB are Julian Dates,
+*     apportioned in any convenient way between the arguments UTA and
+*     UTB.  For example, JD(UT1)=2450123.7 could be expressed in any of
+*     these ways, among others:
+*
+*             UTA            UTB
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution is
+*     acceptable.  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  In the case of UTA,UTB, the
+*     date & time method is best matched to the Earth Rotation Angle
+*     algorithm used:  maximum accuracy (or, at least, minimum noise) is
+*     delivered when the UTA argument is for 0hrs UT1 on the day in
+*     question and the UTB argument lies in the range 0 to 1, or vice
+*     versa.
+*
+*  2) XP and YP are the "coordinates of the pole", in radians, which
+*     position the Celestial Intermediate Pole in the International
+*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     geocentric right-handed triad u,v,w, where the w-axis points at
+*     the north geographic pole, the v-axis points towards the origin
+*     of longitudes and the u axis completes the system, XP = +u and
+*     YP = -v.
+*
+*  3) The matrix RC2T transforms from celestial to terrestrial
+*     coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), RC2I is the
+*     celestial-to-intermediate matrix, ERA is the Earth Rotation Angle
+*     and RPOM is the polar motion matrix.
+*
+*  4) A faster, but slightly less accurate result (about 1 mas), can be
+*     obtained by using instead the iau_C2T00B routine.  n.b. The
+*     argument list for the latter omits SP.
+*
+*  Called:
+*     iau_C2I00A   celestial-to-intermediate matrix, IAU 2000A
+*     iau_ERA00    Earth Rotation Angle, IAU 2000
+*     iau_SP00     the quantity s'
+*     iau_POM00    polar motion matrix
+*     iau_C2TCEO   construct CEO-based celestial-to-terrestrial matrix
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2T00B ( TTA, TTB, UTA, UTB, XP, YP, RC2T )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 T 0 0 B
+*  - - - - - - - - - - -
+*
+*  Form the celestial to terrestrial matrix given the date, the UT1 and
+*  the polar motion, using the IAU 2000B nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     TTA,TTB    d       TT as a 2-part Julian Date (Note 1)
+*     UTA,UTB    d       UT1 as a 2-part Julian Date (Note 1)
+*     XP,YP      d       coordinates of the pole (radians, Note 2)
+*
+*  Returned:
+*     RC2T     d(3,3)    celestial-to-terrestrial matrix (Note 3)
+*
+*  Notes:
+*
+*  1) The TT and UT1 dates TTA+TTB and UTA+UTB are Julian Dates,
+*     apportioned in any convenient way between the arguments UTA and
+*     UTB.  For example, JD(UT1)=2450123.7 could be expressed in any of
+*     these ways, among others:
+*
+*             UTA            UTB
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution is
+*     acceptable.  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  In the case of UTA,UTB, the
+*     date & time method is best matched to the Earth Rotation Angle
+*     algorithm used:  maximum accuracy (or, at least, minimum noise) is
+*     delivered when the UTA argument is for 0hrs UT1 on the day in
+*     question and the UTB argument lies in the range 0 to 1, or vice
+*     versa.
+*
+*  2) XP and YP are the "coordinates of the pole", in radians, which
+*     position the Celestial Intermediate Pole in the International
+*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     geocentric right-handed triad u,v,w, where the w-axis points at
+*     the north geographic pole, the v-axis points towards the origin
+*     of longitudes and the u axis completes the system, XP = +u and
+*     YP = -v.
+*
+*  3) The matrix RC2T transforms from celestial to terrestrial
+*     coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), RC2I is the
+*     celestial-to-intermediate matrix, ERA is the Earth Rotation Angle
+*     and RPOM is the polar motion matrix.
+*
+*  4) The present routine is faster, but slightly less accurate (about
+*     1 mas), than the iau_C2T00A routine.
+*
+*  Called:
+*     iau_C2I00B   celestial-to-intermediate matrix, IAU 2000B
+*     iau_ERA00    Earth Rotation Angle, IAU 2000
+*     iau_POM00    polar motion matrix
+*     iau_C2TCEO   construct CEO-based celestial-to-terrestrial matrix
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2TCEO ( RC2I, ERA, RPOM, RC2T )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 T C E O
+*  - - - - - - - - - - -
+*
+*  Assemble the celestial to terrestrial matrix from CEO-based
+*  components (the celestial-to-intermediate matrix, the Earth Rotation
+*  Angle and the polar motion matrix).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     RC2I     d(3,3)    celestial-to-intermediate matrix
+*     ERA        d       Earth Rotation Angle
+*     RPOM     d(3,3)    polar-motion matrix
+*
+*  Returned:
+*     RC2T     d(3,3)    celestial-to-terrestrial matrix
+*
+*  Notes:
+*
+*  1) This routine constructs the rotation matrix that transforms
+*     vectors in the celestial system into vectors in the terrestrial
+*     system.  It does so starting from precomputed components, namely
+*     the matrix which rotates from celestial coordinates to the
+*     intermediate frame, the Earth Rotation Angle and the polar motion
+*     matrix.  One use of the present routine is when generating a
+*     series of celestial-to-terrestrial matrices where only the Earth
+*     Rotation Angle changes, avoiding the considerable overhead of
+*     recomputing the precession-nutation more often than necessary to
+*     achieve given accuracy objectives.
+*
+*  2) The relationship between the arguments is as follows:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000).
+*
+*  Called:
+*     iau_CR       copy r-matrix
+*     iau_RZ       rotate around Z-axis
+*     iau_RXR      r-matrix product
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2TEQX ( RBPN, GST, RPOM, RC2T )
+*+
+*  - - - - - - - - - - -
+*   i a u _ C 2 T E Q X
+*  - - - - - - - - - - -
+*
+*  Assemble the celestial to terrestrial matrix from equinox-based
+*  components (the celestial-to-true matrix, the Greenwich Apparent
+*  Sidereal Time and the polar motion matrix).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     RBPN     d(3,3)    celestial-to-true matrix
+*     GST        d       Greenwich (apparent) Sidereal Time
+*     RPOM     d(3,3)    polar-motion matrix
+*
+*  Returned:
+*     RC2T     d(3,3)    celestial-to-terrestrial matrix (Note 2)
+*
+*  Notes:
+*
+*  1) This routine constructs the rotation matrix that transforms
+*     vectors in the celestial system into vectors in the terrestrial
+*     system.  It does so starting from precomputed components, namely
+*     the matrix which rotates from celestial coordinates to the
+*     true equator and equinox of date, the Greenwich Apparent Sidereal
+*     Time and the polar motion matrix.  One use of the present routine
+*     is when generating a series of celestial-to-terrestrial matrices
+*     where only the Sidereal Time changes, avoiding the considerable
+*     overhead of recomputing the precession-nutation more often than
+*     necessary to achieve given accuracy objectives.
+*
+*  2) The relationship between the arguments is as follows:
+*
+*        [TRS]  =  RPOM * R_3(GST) * RBPN * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000).
+*
+*  Called:
+*     iau_CR       copy r-matrix
+*     iau_RZ       rotate around Z-axis
+*     iau_RXR      r-matrix product
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2TPE ( TTA, TTB, UTA, UTB, DPSI, DEPS, XP, YP,
+     :                       RC2T )
+*+
+*  - - - - - - - - - -
+*   i a u _ C 2 T P E
+*  - - - - - - - - - -
+*
+*  Form the celestial to terrestrial matrix given the date, the UT1, the
+*  nutation and the polar motion.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     TTA,TTB     d       TT as a 2-part Julian Date (Note 1)
+*     UTA,UTB     d       UT1 as a 2-part Julian Date (Note 1)
+*     DPSI,DEPS   d       nutation (Note 2)
+*     XP,YP       d       coordinates of the pole (radians, Note 3)
+*
+*  Returned:
+*     RC2T      d(3,3)    celestial-to-terrestrial matrix (Note 4)
+*
+*  Notes:
+*
+*  1) The TT and UT1 dates TTA+TTB and UTA+UTB are Julian Dates,
+*     apportioned in any convenient way between the arguments UTA and
+*     UTB.  For example, JD(UT1)=2450123.7 could be expressed in any of
+*     these ways, among others:
+*
+*             UTA            UTB
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution is
+*     acceptable.  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  In the case of UTA,UTB, the
+*     date & time method is best matched to the Earth Rotation Angle
+*     algorithm used:  maximum accuracy (or, at least, minimum noise) is
+*     delivered when the UTA argument is for 0hrs UT1 on the day in
+*     question and the UTB argument lies in the range 0 to 1, or vice
+*     versa.
+*
+*  2) The caller is responsible for providing the nutation components;
+*     they are in longitude and obliquity, in radians and are with
+*     respect to the equinox and ecliptic of date.  For high-accuracy
+*     applications, free core nutation should be included as well as
+*     any other relevant corrections to the position of the CIP.
+*
+*  3) XP and YP are the "coordinates of the pole", in radians, which
+*     position the Celestial Intermediate Pole in the International
+*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     geocentric right-handed triad u,v,w, where the w-axis points at
+*     the north geographic pole, the v-axis points towards the origin
+*     of longitudes and the u axis completes the system, XP = +u and
+*     YP = -v.
+*
+*  4) The matrix RC2T transforms from celestial to terrestrial
+*     coordinates:
+*
+*        [TRS]  =  RPOM * R_3(GST) * RBPN * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), RBPN is the
+*     bias-precession-nutation matrix, GST is the Greenwich (apparent)
+*     Sidereal Time and RPOM is the polar motion matrix.
+*
+*  Called:
+*     iau_PN00     bias/precession/nutation results
+*     iau_GMST00   Greenwich Mean Sidereal Time, IAU 2000
+*     iau_SP00     the quantity s'
+*     iau_EE00     equation of the equinoxes, IAU 2000
+*     iau_POM00    polar motion matrix
+*     iau_C2TEQX   form equinox-based celestial-to-terrestrial matrix
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_C2TXY ( TTA, TTB, UTA, UTB, X, Y, XP, YP, RC2T )
+*+
+*  - - - - - - - - - -
+*   i a u _ C 2 T X Y
+*  - - - - - - - - - -
+*
+*  Form the celestial to terrestrial matrix given the date, the UT1, the
+*  CIP coordinates and the polar motion.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     TTA,TTB    d       TT as a 2-part Julian Date (Note 1)
+*     UTA,UTB    d       UT1 as a 2-part Julian Date (Note 1)
+*     X,Y        d       Celestial Intermediate Pole (Note 2)
+*     XP,YP      d       coordinates of the pole (radians, Note 3)
+*
+*  Returned:
+*     RC2T     d(3,3)    celestial-to-terrestrial matrix (Note 4)
+*
+*  Notes:
+*
+*  1) The TT and UT1 dates TTA+TTB and UTA+UTB are Julian Dates,
+*     apportioned in any convenient way between the arguments UTA and
+*     UTB.  For example, JD(UT1)=2450123.7 could be expressed in any of
+*     these ways, among others:
+*
+*             UTA            UTB
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution is
+*     acceptable.  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  In the case of UTA,UTB, the
+*     date & time method is best matched to the Earth Rotation Angle
+*     algorithm used:  maximum accuracy (or, at least, minimum noise) is
+*     delivered when the UTA argument is for 0hrs UT1 on the day in
+*     question and the UTB argument lies in the range 0 to 1, or vice
+*     versa.
+*
+*  2) The Celestial Intermediate Pole coordinates are the x,y components
+*     of the unit vector in the Geocentric Celestial Reference System.
+*
+*  3) XP and YP are the "coordinates of the pole", in radians, which
+*     position the Celestial Intermediate Pole in the International
+*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     geocentric right-handed triad u,v,w, where the w-axis points at
+*     the north geographic pole, the v-axis points towards the origin
+*     of longitudes and the u axis completes the system, XP = +u and
+*     YP = -v.
+*
+*  4) The matrix RC2T transforms from celestial to terrestrial
+*     coordinates:
+*
+*        [TRS]  =  RPOM * R_3(ERA) * RC2I * [CRS]
+*
+*               =  RC2T * [CRS]
+*
+*     where [CRS] is a vector in the Geocentric Celestial Reference
+*     System and [TRS] is a vector in the International Terrestrial
+*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Rotation Angle and RPOM is the polar motion matrix.
+*
+*  Called:
+*     iau_C2IXY    celestial-to-intermediate matrix given X,Y
+*     iau_ERA00    Earth Rotation Angle, IAU 2000
+*     iau_SP00     the quantity s'
+*     iau_POM00    polar motion matrix
+*     iau_C2TCEO   construct CEO-based celestial-to-terrestrial matrix
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
 *
 *-
 
@@ -880,7 +1959,7 @@ CALLS
 *  Reference:
 *
 *     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
 *     Section 12.92 (p604).
 *
 *-
@@ -1028,15 +2107,23 @@ CALLS
 *     :                                          :
 *     :  A new version of this routine must be   :
 *     :  produced whenever a new leap second is  :
-*     :  announced.  There are two items to      :
+*     :  announced.  There are three items to    :
 *     :  change on each such occasion:           :
 *     :                                          :
 *     :  1) The parameter NDAT must be           :
-*     :     incremented by 1.                    :
+*     :     increased by 1.                      :
 *     :                                          :
 *     :  2) A new line must be added to the set  :
 *     :     of DATA statements that initialize   :
 *     :     the arrays IDATE and DATS.           :
+*     :                                          :
+*     :  3) The parameter IYV must be set to     :
+*     :     the current year.                    :
+*     :                                          :
+*     :  Change (3) must also be carried out     :
+*     :  whenever the routine is re-issued,      :
+*     :  even if no leap seconds have been       :
+*     :  added.                                  :
 *     :                                          :
 *     :  Latest leap second:  1999 January 1     :
 *     :                                          :
@@ -1056,27 +2143,29 @@ CALLS
 *  Returned:
 *     DELTAT   d     TAI minus UTC, seconds
 *     J        i     status (Note 5):
-*                       1 = dubious year (Note 1: DAT computed)
+*                       1 = dubious year (Note 1)
 *                       0 = OK
-*                      -1 = bad year (DAT not computed)
-*                      -2 = bad month (DAT not computed)
-*                      -3 = bad day (Note 3: DAT not computed)
-*                      -4 = bad fraction (Note 4: DAT computed)
+*                      -1 = bad year
+*                      -2 = bad month
+*                      -3 = bad day (Note 3)
+*                      -4 = bad fraction (Note 4)
 *
 *  Notes:
 *
 *  1) UTC began at 1960 January 1.0 (JD 2436934.5) and it is improper
-*     to call the routine with an earlier epoch.  However, if this
-*     is attempted, the TAI-UTC expression for the year 1960 is used.
+*     to call the routine with an earlier epoch.  If this is attempted,
+*     zero is returned together with a warning status.
 *
 *     Because leap seconds cannot, in principle, be predicted in
 *     advance, a reliable check for dates beyond the valid range is
-*     impossible.  To guard against gross errors, a year more than
-*     three after that of the final leap second is considered dubious.
+*     impossible.  To guard against gross errors, a year five or more
+*     after the release year of the present routine (see parameter IYV)
+*     is considered dubious.  In this case a warning status is returned
+*     but the result is computed in the normal way.
 *
-*     For both too-early and too-late years, a warning status of J=1
-*     is returned.  This is distinct from the error status J=-1, which
-*     signifies a year so early that JD could not be computed.
+*     For both too-early and too-late years, the warning status is J=+1.
+*     This is distinct from the error status J=-1, which signifies a
+*     year so early that JD could not be computed.
 *
 *  2) If the specified date is for a day which ends with a leap second,
 *     the UTC-TAI value returned is for the period leading up to the
@@ -1092,15 +2181,17 @@ CALLS
 *  4) The fraction of day is used only for dates before the introduction
 *     of leap seconds, the first of which occurred at the end of 1971.
 *     It is tested for validity (zero to less than 1 is the valid range)
-*     even if not used;  if invalid, zero is used and status J=4 is
+*     even if not used;  if invalid, zero is used and status J=-4 is
 *     returned.  For many applications, setting FD to zero is
 *     acceptable;  the resulting error is always less than 3 ms (and
-*     only pre-1972).
+*     occurs only pre-1972).
 *
 *  5) The status value returned in the case where there are multiple
 *     errors refers to the first error detected.  For example, if the
 *     month and day are 13 and 32 respectively, JSTAT=-2 (bad month)
 *     will be returned.
+*
+*  6) In cases where a valid result is not available, zero is returned.
 *
 *  References:
 *
@@ -1170,7 +2261,7 @@ CALLS
 *  Given:
 *     EPOCH1,EPOCH2   d   epoch, TDB (Notes 1-3)
 *     UT              d   universal time (UT1, fraction of one day)
-*     ELONG           d   longitude (east ve, radians)
+*     ELONG           d   longitude (east +ve, radians)
 *     U               d   distance from Earth spin axis (km)
 *     V               d   distance north of equatorial plane (km)
 *
@@ -1213,7 +2304,7 @@ CALLS
 *     gravitational red-shift as the observer varies in speed and
 *     experiences different gravitational potentials.
 *
-*  3) The IAU 1976 definition of TDB was that it must differ from TD
+*  3) The IAU 1976 definition of TDB was that it must differ from TT
 *     (then called TDT) only by periodic terms.  Though practical, this
 *     is an imprecise definition which ignores the existence of very
 *     long-period and secular effects in the dynamics of the solar
@@ -1256,22 +2347,311 @@ CALLS
 *
 *  References:
 *
-*     1  Fairhead,L., & Bretagnon,P., Astron.Astrophys., 229, 240-247
-*        (1990).
+*     Fairhead,L., & Bretagnon,P., Astron.Astrophys., 229, 240-247
+*     (1990).
 *
-*     2  McCarthy,D.D., IERS Conventions (1996), IERS Technical Note 21,
-*        Observatoire de Paris (1996).
+*     McCarthy,D.D., IERS Conventions (1996), IERS Technical Note 21,
+*     Observatoire de Paris (1996).
 *
-*     3  Moyer,T.D., Cel.Mech., 23, 33 (1981).
+*     Moyer,T.D., Cel.Mech., 23, 33 (1981).
 *
-*     4  Murray,C.A., Vectorial Astrometry, Adam Hilger (1983).
+*     Murray,C.A., Vectorial Astrometry, Adam Hilger (1983).
 *
-*     5  Seidelmann,P.K. et al., Explanatory Supplement to the
-*        Astronomical Almanac, Chapter 2, University Science Books
-*        (1992).
+*     Seidelmann,P.K. et al., Explanatory Supplement to the
+*     Astronomical Almanac, Chapter 2, University Science Books
+*     (1992).
 *
-*     6  Simon J.L., Bretagnon P., Chapront J., Chapront-Touze M.,
-*        Francou G. & Laskar J., 1994, Astron.Astrophys., 282, 663-683.
+*     Simon J.L., Bretagnon P., Chapront J., Chapront-Touze M.,
+*     Francou G. & Laskar J., 1994, Astron.Astrophys., 282, 663-683.
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_EE00 ( DATE1, DATE2, EPSA, DPSI )
+*+
+*  - - - - - - - - -
+*   i a u _ E E 0 0
+*  - - - - - - - - -
+*
+*  The equation of the equinoxes, compatible with IAU 2000 resolutions,
+*  given the nutation in longitude and the mean obliquity.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2    d      TT as a 2-part Julian Date (Note 1)
+*     EPSA           d      mean obliquity (Note 2)
+*     DPSI           d      nutation in longitude (Note 3)
+*
+*  Returned:
+*     iau_EE00       d      equation of the equinoxes (Note 4)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The obliquity, in radians, is mean of date.
+*
+*  3) The result, which is in radians, operates in the following sense:
+*
+*        Greenwich apparent ST = GMST + equation of the equinoxes
+*
+*  4) The result is compatible with the IAU 2000 resolutions.  For
+*     further details, see McCarthy (2002) and Capitaine et al. (2002).
+*
+*  Called:
+*     iau_EECT00    equation of the equinoxes complementary terms
+*
+*  References:
+*
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
+*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
+*     2000A precession-nutation model", in preparation (2002).
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_EE00A ( DATE1, DATE2 )
+*+
+*  - - - - - - - - - -
+*   i a u _ E E 0 0 A
+*  - - - - - - - - - -
+*
+*  Equation of the equinoxes, compatible with IAU 2000 resolutions.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d      TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     iau_EE00A      d      equation of the equinoxes (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The result, which is in radians, operates in the following sense:
+*
+*        Greenwich apparent ST = GMST + equation of the equinoxes
+*
+*  3) The result is compatible with the IAU 2000 resolutions.  For
+*     further details, see McCarthy (2002) and Capitaine et al. (2002).
+*
+*  Called:
+*     iau_PR00      IAU 2000 precession adjustments
+*     iau_OBL80     mean obliquity, IAU 1980
+*     iau_NUT00A    nutation, IAU 2000A
+*     iau_EE00      equation of the equinoxes, IAU 2000
+*
+*  References:
+*
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
+*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
+*     2000A precession-nutation model", in preparation (2002).
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_EE00B ( DATE1, DATE2 )
+*+
+*  - - - - - - - - - -
+*   i a u _ E E 0 0 B
+*  - - - - - - - - - -
+*
+*  Equation of the equinoxes, compatible with IAU 2000 resolutions but
+*  using the truncated nutation model IAU 2000B.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d     TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     iau_EE00B     d     equation of the equinoxes (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The result, which is in radians, operates in the following sense:
+*
+*        Greenwich apparent ST = GMST + equation of the equinoxes
+*
+*  3) The result is compatible with the IAU 2000 resolutions except that
+*     accuracy has been compromised for the sake of speed.  For further
+*     details, see McCarthy & Luzum (2001), McCarthy (2002), Capitaine
+*     et al. (2002).
+*
+*  Called:
+*     iau_PR00      IAU 2000 precession adjustments
+*     iau_OBL80     mean obliquity, IAU 1980
+*     iau_NUT00B    nutation, IAU 2000B
+*     iau_EE00      equation of the equinoxes, IAU 2000
+*
+*  References:
+*
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
+*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
+*     2000A precession-nutation model", in preparation (2002).
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*     McCarthy, D.D. & Luzum, B.J., "An Abridged Model of the Motion
+*     of the Celestial Pole", preprint, 2001.
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_EECT00 ( DATE1, DATE2 )
+*+
+*  - - - - - - - - - - -
+*   i a u _ E E C T 0 0
+*  - - - - - - - - - - -
+*
+*  Equation of the equinoxes complementary terms, consistent with
+*  IAU 2000 resolutions.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2   d    TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     iau_EECT00    d    complementary terms (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The "complementary terms" are part of the equation of the
+*     equinoxes (EE), classically the difference between apparent and
+*     mean Sidereal Time:
+*
+*        GAST = GMST + EE
+*
+*     with:
+*
+*        EE = dpsi * cos(eps)
+*
+*     where dpsi is the nutation in longitude and eps is the obliquity
+*     of date.  However, if the rotation of the Earth were constant in
+*     an inertial frame the classical formulation would lead to apparent
+*     irregularities in the UT1 timescale traceable to side-effects of
+*     precession-nutation.  In order to eliminate these effects from
+*     UT1, "complementary terms" were introduced in 1994 (IAU, 1994) and
+*     took effect from 1997 (Capitaine and Gontier, 1993):
+*
+*        GAST = GMST + CT + EE
+*
+*     By convention, the complementary terms are included as part of the
+*     equation of the equinoxes rather than as part of the mean Sidereal
+*     Time.  This slightly compromises the "geometrical" interpretation
+*     of mean sidereal time but is otherwise inconsequential.
+*
+*     The present routine computes CT in the above expression, compatible
+*     with IAU 2000 resolutions (Capitaine et al., 2002, and McCarthy,
+*     2002).
+*
+*  Called:
+*     iau_ANPM      normalize angle into range +/- pi
+*
+*  References:
+*
+*     IAU Resolution C7, Recommendation 3 (1994)
+*
+*     Capitaine, N. & Gontier, A.-M., Astron. Astrophys., 275,
+*     645-650 (1993)
+*
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
+*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
+*     2000A precession-nutation model", in preparation (2002).
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
 *
 *-
 
@@ -1302,7 +2682,9 @@ CALLS
 *     DJ2.  The maximum resolution is achieved if DJ1 is 2451545D0
 *     (J2000).
 *
-*  Reference:  Lieske,J.H., 1979. Astron.Astrophys.,73,282.
+*  Reference:
+*
+*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
 *
 *-
 
@@ -1334,7 +2716,9 @@ CALLS
 *     Julian Date is available as a single number by adding DJM0 and
 *     DJM.
 *
-*  Reference:  Lieske,J.H., 1979. Astron.Astrophys.,73,282.
+*  Reference:
+*
+*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
 *
 *-
 
@@ -1365,7 +2749,9 @@ CALLS
 *     DJ2.  The maximum resolution is achieved if DJ1 is 2451545D0
 *     (J2000).
 *
-*  Reference:  Lieske,J.H., 1979. Astron.Astrophys.,73,282.
+*  Reference:
+*
+*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
 *
 *-
 
@@ -1397,7 +2783,9 @@ CALLS
 *     Julian Date is available as a single number by adding DJM0 and
 *     DJM.
 *
-*  Reference:  Lieske,J.H., 1979. Astron.Astrophys.,73,282.
+*  Reference:
+*
+*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
 *
 *-
 
@@ -1483,11 +2871,11 @@ CALLS
 *           Heliocentric:
 *              position error    3.7   11.2   km
 *              velocity error    1.4    5.0   mm/s
-*    
+*
 *           Barycentric:
 *              position error    4.6   13.4   km
 *              velocity error    1.4    4.9   mm/s
-* 
+*
 *-
 
 
@@ -1541,10 +2929,72 @@ CALLS
 *
 *  References:
 *
-*       IAU Resolution C7, Recommendation 3 (1994)
+*     IAU Resolution C7, Recommendation 3 (1994)
 *
-*       Capitaine, N. & Gontier, A.-M., Astron. Astrophys., 275,
-*       645-650 (1993)
+*     Capitaine, N. & Gontier, A.-M., Astron. Astrophys., 275,
+*     645-650 (1993)
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_ERA00 ( DJ1, DJ2 )
+*+
+*  - - - - - - - - - -
+*   i a u _ E R A 0 0
+*  - - - - - - - - - -
+*
+*  Earth rotation angle (IAU 2000 model).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DJ1,DJ2     d      UT1 as a 2-part Julian Date (see note)
+*
+*  The result is the Earth Rotation Angle (radians), in the range 0 to
+*  2pi.
+*
+*  Notes:
+*
+*  1) The UT1 date DJ1+DJ2 is a Julian Date, apportioned in any
+*     convenient way between the arguments DJ1 and DJ2.  For example,
+*     JD(UT1)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*             DJ1            DJ2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  The date & time method is
+*     best matched to the algorithm used:  maximum accuracy (or, at
+*     least, minimum noise) is delivered when the DJ1 argument is for
+*     0hrs UT1 on the day in question and the DJ2 argument lies in the
+*     range 0 to 1, or vice versa.
+*
+*  2) The algorithm is adapted from Expression 22 of Capitaine et al
+*     2000.  The time argument has been expressed in days directly,
+*     and, to retain precision, integer contributions have been
+*     eliminated.  A similar formulation is given on p35 of the IERS
+*     Conventions (1996).
+*
+*  Called:
+*     iau_ANP        normalize angle into range 0 to 2pi
+*
+*  References:
+*
+*     Capitaine N., Guinot B. and McCarthy D.D, 2000, A&A 355,
+*     398-405.
+*
+*     McCarthy D.D., 1996, IERS Conventions (IERS Technical Note 21),
+*     Observatoire de Paris.
 *
 *-
 
@@ -1603,7 +3053,7 @@ CALLS
 *
 *  Reference:
 *
-*     M.Feissel & F.Mignard, Astron. Astrophys. 331, L33-L36 (1998).
+*     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
 *
 *-
 
@@ -1647,7 +3097,7 @@ CALLS
 *
 *  Reference:
 *
-*     M.Feissel & F.Mignard, Astron. Astrophys. 331, L33-L36 (1998).
+*     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
 *
 *-
 
@@ -1729,7 +3179,78 @@ CALLS
 *
 *  Reference:
 *
-*     M.Feissel & F.Mignard, Astron. Astrophys. 331, L33-L36 (1998).
+*     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_GMST00 ( UTA, UTB, TTA, TTB )
+*+
+*  - - - - - - - - - - -
+*   i a u _ G M S T 0 0
+*  - - - - - - - - - - -
+*
+*  Greenwich Mean Sidereal Time (model consistent with IAU 2000
+*  resolutions).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     UTA, UTB     d      UT1 as a 2-part Julian Date (Notes 1,2)
+*     TTA, TTB     d      TT as a 2-part Julian Date (Notes 1,2)
+*
+*  The result is the Greenwich Mean Sidereal Time (radians), in the
+*  range 0 to 2pi.
+*
+*  Notes:
+*
+*  1) The UT1 and TT dates UTA+UTB and TTA+TTB respectively, are both
+*     Julian Dates, apportioned in any convenient way between the
+*     argument pairs.  For example, JD=2450123.7 could be expressed in
+*     any of these ways, among others:
+*
+*            Part A         Part B
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable (in the case of UT;  the TT is not at all critical
+*     in this respect).  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  For UT, the date & time
+*     method is best matched to the algorithm that is used by the Earth
+*     Rotation Angle routine, called internally:  maximum accuracy (or,
+*     at least, minimum noise) is delivered when the UTA argument is for
+*     0hrs UT1 on the day in question and the UTB argument lies in the
+*     range 0 to 1, or vice versa.
+*
+*  2) Both UT1 and TT are required, UT1 to predict the Earth rotation
+*     and TT to predict the effects of precession.  If UT1 is used for
+*     both purposes, errors of order 100 microarcseconds result.
+*
+*  3) This GMST is compatible with the IAU 2000 resolutions and must be
+*     used only in conjunction with other IAU 2000 compatible components
+*     such as precession-nutation and equation of the equinoxes.
+*
+*  4) The algorithm is from Capitaine et al. (2002) and McCarthy (2002).
+*
+*  Called:
+*     iau_ERA00      Earth Rotation Angle, IAU 2000
+*     iau_ANP        normalize angle into range 0 to 2pi
+*
+*  References:
+*
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
+*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
+*     2000A precession-nutation model", in preparation (2002).
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
 *
 *-
 
@@ -1755,7 +3276,7 @@ CALLS
 *
 *  Notes:
 *
-*  1  The UT1 epoch DJ1+DJ2 is a Julian Date, apportioned in any
+*  1) The UT1 epoch DJ1+DJ2 is a Julian Date, apportioned in any
 *     convenient way between the arguments DJ1 and DJ2.  For example,
 *     JD(UT1)=2450123.7 could be expressed in any of these ways,
 *     among others:
@@ -1776,13 +3297,13 @@ CALLS
 *     0hrs UT1 on the day in question and the DJ2 argument lies in the
 *     range 0 to 1, or vice versa.
 *
-*  2  The algorithm is based on the IAU 1982 expression.  This is always
+*  2) The algorithm is based on the IAU 1982 expression.  This is always
 *     described as giving the GMST at 0 hours UT1.  In fact, it gives the
 *     difference between the GMST and the UT, the steady 4-minutes-per-day
 *     drawing-ahead of ST with respect to UT.  When whole days are ignored,
 *     the expression happens to equal the GMST at 0 hours UT1 each day.
 *
-*  3  In this routine, the entire UT1 (the sum of the two arguments DJ1
+*  3) In this routine, the entire UT1 (the sum of the two arguments DJ1
 *     and DJ2) is used directly as the argument for the standard formula,
 *     the constant term of which is adjusted by 12 hours to take account
 *     of the noon phasing of Julian Date.  The UT1 is then added, but
@@ -1793,10 +3314,230 @@ CALLS
 *
 *  References:
 *
-*  1  Transactions of the International Astronomical Union,
+*     Transactions of the International Astronomical Union,
 *     XVIII B, 67 (1983).
 *
-*  2  Aoki et al., Astron. Astrophys. 105, 359-361 (1982).
+*     Aoki et al., Astron. Astrophys. 105, 359-361 (1982).
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_GST00A ( UTA, UTB, TTA, TTB )
+*+
+*  - - - - - - - - - - -
+*   i a u _ G S T 0 0 A
+*  - - - - - - - - - - -
+*
+*  Greenwich Apparent Sidereal Time (consistent with IAU 2000
+*  resolutions).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     UTA, UTB     d      UT1 as a 2-part Julian Date (Notes 1,2)
+*     TTA, TTB     d      TT as a 2-part Julian Date (Notes 1,2)
+*
+*  The result is the Greenwich Apparent Sidereal Time (radians), in the
+*  range 0 to 2pi.
+*
+*  Notes:
+*
+*  1) The UT1 and TT dates UTA+UTB and TTA+TTB respectively, are both
+*     Julian Dates, apportioned in any convenient way between the
+*     argument pairs.  For example, JD=2450123.7 could be expressed in
+*     any of these ways, among others:
+*
+*            Part A         Part B
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable (in the case of UT;  the TT is not at all critical
+*     in this respect).  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  For UT, the date & time
+*     method is best matched to the algorithm that is used by the Earth
+*     Rotation Angle routine, called internally:  maximum accuracy (or,
+*     at least, minimum noise) is delivered when the UTA argument is for
+*     0hrs UT1 on the day in question and the UTB argument lies in the
+*     range 0 to 1, or vice versa.
+*
+*  2) Both UT1 and TT are required, UT1 to predict the Earth rotation
+*     and TT to predict the effects of precession-nutation.  If UT1 is
+*     used for both purposes, errors of order 100 microarcseconds result.
+*
+*  3) This GAST is compatible with the IAU 2000 resolutions and must be
+*     used only in conjunction with other IAU 2000 compatible components
+*     such as precession-nutation.
+*
+*  4) The algorithm is from Capitaine et al. (2002) and McCarthy (2002).
+*
+*  Called:
+*     iau_GMST00     Greenwich Mean Sidereal Time, IAU 2000
+*     iau_EE00A      equation of the equinoxes, IAU 2000A
+*     iau_ANP        normalize angle into range 0 to 2pi
+*
+*  References:
+*
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
+*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
+*     2000A precession-nutation model", in preparation (2002).
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_GST00B ( UTA, UTB )
+*+
+*  - - - - - - - - - - -
+*   i a u _ G S T 0 0 B
+*  - - - - - - - - - - -
+*
+*  Greenwich Apparent Sidereal Time (consistent with IAU 2000
+*  resolutions but using the truncated nutation model IAU 2000B).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     UTA, UTB     d      UT1 as a 2-part Julian Date (Notes 1,2)
+*
+*  The result is the Greenwich Apparent Sidereal Time (radians), in the
+*  range 0 to 2pi.
+*
+*  Notes:
+*
+*  1) The UT1 date UTA+UTB is a Julian Date, apportioned in any
+*     convenient way between the argument pair.  For example,
+*     JD=2450123.7 could be expressed in any of these ways, among
+*     others:
+*
+*             UTA            UTB
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in cases
+*     where the loss of several decimal digits of resolution is
+*     acceptable.  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  For UT, the date & time
+*     method is best matched to the algorithm that is used by the Earth
+*     Rotation Angle routine, called internally:  maximum accuracy (or,
+*     at least, minimum noise) is delivered when the UTA argument is for
+*     0hrs UT1 on the day in question and the UTB argument lies in the
+*     range 0 to 1, or vice versa.
+*
+*  2) The result is compatible with the IAU 2000 resolutions, except
+*     that accuracy has been compromised for the sake of speed and
+*     convenience in two respects:
+*
+*     . UT is used instead of TDB (or TT) to compute the precession
+*       component of GMST and the equation of the equinoxes.  This
+*       results in errors of order 0.1 mas at present.
+*
+*     . The IAU 2000B abridged nutation model (McCarthy & Luzum, 2001)
+*       is used, introducing errors of up to 1 mas.
+*
+*  3) This GAST is compatible with the IAU 2000 resolutions and must be
+*     used only in conjunction with other IAU 2000 compatible components
+*     such as precession-nutation.
+*
+*  4) The algorithm is from Capitaine et al. (2002) and McCarthy (2002).
+*
+*  Called:
+*     iau_GMST00     Greenwich Mean Sidereal Time, IAU 2000
+*     iau_EE00B      equation of the equinoxes, IAU 2000B
+*     iau_ANP        normalize angle into range 0 to 2pi
+*
+*  References:
+*
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
+*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
+*     2000A precession-nutation model", in preparation (2002).
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*     McCarthy, D.D. & Luzum, B.J., "An Abridged Model of the Motion
+*     of the Celestial Pole", preprint, 2001.
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_GST94 ( UTA, UTB )
+*+
+*  - - - - - - - - - -
+*   i a u _ G S T 9 4
+*  - - - - - - - - - -
+*
+*  Greenwich Apparent Sidereal Time (consistent with IAU 1982/94
+*  resolutions).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     UTA, UTB     d      UT1 as a 2-part Julian Date (Notes 1,2)
+*
+*  The result is the Greenwich Apparent Sidereal Time (radians), in the
+*  range 0 to 2pi.
+*
+*  Notes:
+*
+*  1) The UT1 date UTA+UTB is a Julian Date, apportioned in any
+*     convenient way between the argument pair.  For example,
+*     JD=2450123.7 could be expressed in any of these ways, among
+*     others:
+*
+*             UTA            UTB
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in cases
+*     where the loss of several decimal digits of resolution is
+*     acceptable.  The J2000 and MJD methods are good compromises
+*     between resolution and convenience.  For UT, the date & time
+*     method is best matched to the algorithm that is used by the Earth
+*     Rotation Angle routine, called internally:  maximum accuracy (or,
+*     at least, minimum noise) is delivered when the UTA argument is for
+*     0hrs UT1 on the day in question and the UTB argument lies in the
+*     range 0 to 1, or vice versa.
+*
+*  2) The result is compatible with the IAU 1982 and 1994 resolutions,
+*     except that accuracy has been compromised for the sake of
+*     convenience in that UT is used instead of TDB (or TT) to compute
+*     the equation of the equinoxes.
+*
+*  3) This GAST must be used only in conjunction with contemporaneous
+*     IAU standards such as 1976 precession, 1980 obliquity and 1982
+*     nutation.  It is not compatible with the IAU 2000 resolutions.
+*
+*  Called:
+*     iau_GMST82     Greenwich Mean Sidereal Time, IAU 1982
+*     iau_EQEQ94     equation of the equinoxes, IAU 1994
+*     iau_ANP        normalize angle into range 0 to 2pi
+*
+*  References:
+*
+*     Explanatory Supplement to the Astronomical Almanac,
+*     P. Kenneth Seidelmann (ed), University Science Books (1992)
+*
+*     IAU Resolution C7, Recommendation 3 (1994)
 *
 *-
 
@@ -1857,7 +3598,7 @@ CALLS
 *
 *  Reference:
 *
-*     M.Feissel & F.Mignard, Astron. Astrophys. 331, L33-L36 (1998).
+*     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
 *
 *-
 
@@ -1938,7 +3679,7 @@ CALLS
 *
 *  Reference:
 *
-*     M.Feissel & F.Mignard, Astron. Astrophys. 331, L33-L36 (1998).
+*     F.Mignard & M.Froeschle, Astron. Astrophys. 354, 732-739 (2000).
 *
 *-
 
@@ -2014,7 +3755,7 @@ CALLS
 *  Reference:
 *
 *     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
 *     Section 12.92 (p604).
 *
 *-
@@ -2070,14 +3811,432 @@ CALLS
 *  4) NDP should be 4 or less if internal overflows are to be
 *     avoided on machines which use 16-bit integers.
 *
+*  Called:
+*     iau_JD2CAL  JD to Gregorian calendar
+*
 *  Reference:
 *
 *     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
 *     Section 12.92 (p604).
 *
+*-
+
+
+      SUBROUTINE iau_NUM00A ( DATE1, DATE2, RMATN )
+*+
+*  - - - - - - - - - - -
+*   i a u _ N U M 0 0 A
+*  - - - - - - - - - - -
+*
+*  Form the matrix of nutation for a given date, IAU 2000A model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RMATN        d(3,3)    nutation matrix
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix operates in the sense V(true) = RMATN * V(mean),
+*     where the p-vector V(true) is with respect to the true
+*     equatorial triad of date and the p-vector V(mean) is with
+*     respect to the mean equatorial triad of date.
+*
+*  3) A faster, but slightly less accurate result (about 1 mas), can be
+*     obtained by using instead the iau_NUM00B routine.
+*
 *  Called:
-*     iau_JD2CAL  JD to Gregorian calendar
+*     iau_PN00A   bias/precession/nutation, IAU 2000A
+*
+*  Reference:
+*
+*     Explanatory Supplement to the Astronomical Almanac,
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
+*     Section 3.222-3 (p114).
+*
+*-
+
+
+      SUBROUTINE iau_NUM00B ( DATE1, DATE2, RMATN )
+*+
+*  - - - - - - - - - - -
+*   i a u _ N U M 0 0 B
+*  - - - - - - - - - - -
+*
+*  Form the matrix of nutation for a given date, IAU 2000B model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d      TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RMATN       d(3,3)   nutation matrix
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix operates in the sense V(true) = RMATN * V(mean),
+*     where the p-vector V(true) is with respect to the true
+*     equatorial triad of date and the p-vector V(mean) is with
+*     respect to the mean equatorial triad of date.
+*
+*  3) The present routine is faster, but slightly less accurate (about
+*     1 mas), than the iau_NUM00A routine.
+*
+*  Called:
+*     iau_PN00B   bias/precession/nutation, IAU 2000B
+*
+*  Reference:
+*
+*     Explanatory Supplement to the Astronomical Almanac,
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
+*     Section 3.222-3 (p114).
+*
+*-
+
+
+      SUBROUTINE iau_NUMAT ( EPSA, DPSI, DEPS, RMATN )
+*+
+*  - - - - - - - - - -
+*   i a u _ N U M A T
+*  - - - - - - - - - -
+*
+*  Form the matrix of nutation.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     EPSA          d       mean obliquity of date (Note 1)
+*     DPSI,DEPS     d       nutation (Note 2)
+*
+*  Returned:
+*     RMATN       d(3,3)    nutation matrix (Note 3)
+*
+*  Notes:
+*
+*
+*  1) The supplied mean obliquity EPSA, must be consistent with the
+*     precession-nutation models from which DPSI and DEPS were obtained.
+*
+*  2) The caller is responsible for providing the nutation components;
+*     they are in longitude and obliquity, in radians and are with
+*     respect to the equinox and ecliptic of date.
+*
+*  3) The matrix operates in the sense V(true) = RMATN * V(mean),
+*     where the p-vector V(true) is with respect to the true
+*     equatorial triad of date and the p-vector V(mean) is with
+*     respect to the mean equatorial triad of date.
+*
+*  Called:
+*     iau_IR      initialize r-matrix to identity
+*     iau_RX      rotate around X-axis
+*     iau_RZ      rotate around Z-axis
+*
+*  Reference:
+*
+*     Explanatory Supplement to the Astronomical Almanac,
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
+*     Section 3.222-3 (p114).
+*
+*-
+
+
+      SUBROUTINE iau_NUT00A ( DATE1, DATE2, DPSI, DEPS )
+*+
+*  - - - - - - - - - - -
+*   i a u _ N U T 0 0 A
+*  - - - - - - - - - - -
+*
+*  Nutation, IAU 2000A model (MHB_2000 luni-solar and planetary nutation
+*  with free core nutation omitted).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2   d    TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     DPSI,DEPS     d    nutation, luni-solar + planetary (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The nutation components in longitude and obliquity are with
+*     respect to the equinox and ecliptic of date.  The obliquity at
+*     J2000 is assumed to be the Lieske et al. (1977) value of
+*     84381.448 arcsec.
+*
+*     Both the luni-solar and planetary nutations are included.  The
+*     latter are due to direct planetary nutations and the perturbations
+*     of the lunar and terrestrial orbits.
+*
+*  3) The routine computes the MHB_2000 nutation series with the
+*     associated corrections for planetary nutations.  It is an
+*     implementation of the nutation part of the IAU 2000A precession-
+*     nutation model, formally adopted by the IAU General Assembly in
+*     2000, namely MHB2000 (Mathews et al. 2002), but with the free core
+*     nutation (FCN - see Note 4) omitted.
+*
+*  4) The full MHB_2000 model also contains contributions to the
+*     nutations in longitude and obliquity due to the free-excitation of
+*     the free-core-nutation during the period 1979-2000.  These FCN
+*     terms, which are time-dependent and unpredictable, are NOT
+*     included in the present routine and, if required, must be
+*     independently computed.  With the FCN corrections included, the
+*     present routine delivers a pole which is at current epochs
+*     accurate to a few hundred microarcseconds.  The omission of FCN
+*     introduces further errors of about that size.
+*
+*  5) The present routine provides classical nutation.  The MHB_2000
+*     algorithm, from which it is adapted, deals also with (i) the
+*     offsets between the GCRS and mean poles and (ii) the adjustments
+*     in longitude and obliquity due to the changed precession rates.
+*     These additional functions, namely frame bias and precession
+*     adjustments, are supported by the SOFA routines iau_BI00 and
+*     iau_PR00.
+*
+*  6) The MHB_2000 algorithm also provides "total" nutations, comprising
+*     the arithmetic sum of the frame bias, precession adjustments,
+*     luni-solar nutation and planetary nutation.  These total nutations
+*     can be used in combination with an existing IAU 1976 precession
+*     implementation, such as iau_PMAT76, to deliver GCRS-to-true
+*     predictions of sub-mas accuracy at current epochs.  However, there
+*     are three shortcomings in the MHB_2000 model that must be taken
+*     into account if more accurate or definitive results are required
+*     (see Wallace 2002)
+*
+*       (i) The MHB_2000 total nutations are simply arithmetic sums,
+*           yet in reality the various components are successive Euler
+*           rotations. This slight lack of rigor leads to cross terms
+*           that exceed 1 mas after a century.  The rigorous procedure
+*           is to form the GCRS-to-true rotation matrix by applying the
+*           bias, precession and nutation in that order.
+*
+*      (ii) Although the precession adjustments are stated to be with
+*           respect to Lieske et al. (1977), the MHB_2000 model does
+*           not specify which set of Euler angles are to be used and
+*           how the adjustments are to be applied.  The most literal and
+*           straightforward procedure is to adopt the 4-rotation
+*           epsilon_0, psi_A, omega_A, xi_A option, and to add DPSIPR to
+*           psi_A and DEPSPR to both omega_A and eps_A.
+*
+*     (iii) The MHB_2000 model predates the determination by Chapront
+*           et al. (2002) of a 14.6 mas displacement between the J2000
+*           mean equinox and the origin of the ICRS frame.  It should,
+*           however, be noted that neglecting this displacement when
+*           calculating star coordinates does not lead to a 14.6 mas
+*           change in right ascension, only a small second-order
+*           distortion in the pattern of the precession-nutation effect.
+*
+*     For these reasons, the SOFA routines do not generate the "total
+*     nutations" directly, though they can of course easily be generated
+*     by calling iau_BI00, iau_PR00 and the present routine and adding
+*     the results.
+*
+*  References:
+*
+*     Chapront, J., Chapront-Touze, M. & Francou, G., Astron.Astrophys.,
+*     387, 700, 2002.
+*
+*     Lieske, J.H., Lederle, T., Fricke, W. & Morando, B., "Expressions
+*     for the precession quantities based upon the IAU (1976) System of
+*     Astronomical Constants", Astron.Astrophys., 58, 1-16, 1977.
+*
+*     Mathews, P.M., Herring, T.A., Buffet, B.A., "Modeling of nutation
+*     and precession   New nutation series for nonrigid Earth and
+*     insights into the Earth's interior", J.Geophys.Res., 107, B4,
+*     2002.  The MHB_2000 code itself was obtained on 9th September 2002
+*     from ftp //maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
+*
+*     Simon, J.-L., Bretagnon, P., Chapront, J., Chapront-Touze, M.,
+*     Francou, G., Laskar, J., A&A282, 663-683 (1994).
+*
+*     Souchay, J., Loysel, B., Kinoshita, H., Folgueira, M., A&A Supp.
+*     Ser. 135, 111 (1999)
+*
+*     Wallace, P.T., "Software for Implementing the IAU 2000
+*     Resolutions", in IERS Workshop 5.1, 2002.
+*
+*-
+
+
+      SUBROUTINE iau_NUT00B ( DATE1, DATE2, DPSI, DEPS )
+*+
+*  - - - - - - - - - - -
+*   i a u _ N U T 0 0 B
+*  - - - - - - - - - - -
+*
+*  Nutation, IAU 2000B model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2   d   TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     DPSI,DEPS     d   nutation, luni-solar + planetary (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The nutation components in longitude and obliquity are with
+*     respect to the equinox and ecliptic of date.  The obliquity at
+*     J2000 is assumed to be the Lieske et al. (1977) value of
+*     84381.448 arcsec.
+*
+*     The nutation model consists only of luni-solar terms, but includes
+*     also a fixed offset which compensates for certain long-period
+*     planetary terms.
+*
+*  3) This routine is an implementation of the IAU 2000B abridged
+*     nutation model formally adopted by the IAU General Assembly in
+*     2000.  The routine computes the MHB_2000_SHORT luni-solar nutation
+*     series (Luzum 2001), but without the associated corrections for
+*     the precession rate adjustments and the offset between the GCRS
+*     and J2000 mean poles.
+*
+*  4) The full IAU 2000A (MHB2000) nutation model contains nearly 1400
+*     terms.  The IAU 2000B model (McCarthy & Luzum 2001) contains only
+*     77 terms, plus additional simplifications, yet still delivers
+*     results of 1 mas accuracy at present epochs.  This combination of
+*     accuracy and size makes the IAU 2000B abridged nutation model
+*     suitable for most practical applications.
+*
+*     The routine delivers a pole accurate to 1 mas from 1900 to 2100
+*     (usually better than 1 mas, very occasionally just outside 1 mas).
+*     The full IAU 2000A model, which is implemented in the routine
+*     iau_NUT00A (qv), delivers considerably greater accuracy at
+*     current epochs;  however, to realize this improved accuracy,
+*     corrections for the essentially unpredictable free-core-nutation
+*     must also be included.
+*
+*  5) The present routine provides classical nutation.  The
+*     MHB_2000_SHORT algorithm, from which it is adapted, deals also
+*     with (i) the offsets between the GCRS and mean poles and (ii) the
+*     adjustments in longitude and obliquity due to the changed
+*     precession rates.  These additional functions, namely frame bias
+*     and precession adjustments, are supported by the SOFA routines
+*     iau_BI00 and iau_PR00.
+*
+*  6) The MHB_2000_SHORT algorithm also provides "total" nutations,
+*     comprising the arithmetic sum of the frame bias, precession
+*     adjustments, and nutation (luni-solar + planetary).  These total
+*     nutations can be used in combination with an existing IAU 1976
+*     precession implementation, such as iau_PMAT76, to deliver GCRS-to-
+*     true predictions of mas accuracy at current epochs.  However, for
+*     symmetry with the iau_NUT00A routine (qv for the reasons), the
+*     SOFA routines do not generate the "total nutations" directly.  They
+*     can of course easily be generated by calling iau_BI00, iau_PR00 and
+*     the present routine and adding the results.
+*
+*  References:
+*
+*     Luzum, B., private communication, 2001 (Fortran code
+*     MHB_2000_SHORT)
+*
+*     Mathews, P.M., Herring, T.A. & Buffet, B.A., "Modeling of nutation
+*     and precession:  New nutation series for nonrigid Earth and
+*     insights into the Earth's interior", J.Geophys.Res., 107, B4,
+*     2002.
+*
+*     McCarthy, D.D. & Luzum, B.J., "An Abridged Model of the Motion
+*     of the Celestial Pole", preprint, 2001.
+*
+*     Simon, J.-L., Bretagnon, P., Chapront, J., Chapront-Touze, M.,
+*     Francou, G., Laskar, J., A&A282, 663-683 (1994).
 *
 *-
 
@@ -2132,7 +4291,7 @@ CALLS
 *  Reference:
 *
 *     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
 *     Section 3.222 (p111).
 *
 *-
@@ -2152,10 +4311,10 @@ CALLS
 *  Status:  support routine.
 *
 *  Given:
-*     EPOCH1,EPOCH2   d         TDB epoch (Note 1)
+*     EPOCH1,EPOCH2    d       TDB epoch (Note 1)
 *
 *  Returned:
-*     RMATN           d(3,3)    nutation matrix
+*     RMATN          d(3,3)    nutation matrix
 *
 *  Notes:
 *
@@ -2186,15 +4345,7 @@ CALLS
 *  Called:
 *     iau_NUT80   nutation, IAU 1980
 *     iau_OBL80   mean obliquity, IAU 1980
-*     iau_IR      initialize r-matrix to identity
-*     iau_RX      rotate around X-axis
-*     iau_RZ      rotate around Z-axis
-*
-*  Reference:
-*
-*     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
-*     Section 3.222-3 (p114).
+*     iau_NUMAT   form nutation matrix
 *
 *-
 
@@ -2245,7 +4396,7 @@ CALLS
 *  Reference:
 *
 *     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
 *     Expression 3.222-1 (p114).
 *
 *-
@@ -2298,15 +4449,15 @@ CALLS
 *     PHI      d         latitude angle (radians)
 *     R        d         radial distance
 *
-*  Called:
-*     iau_C2S      direction cosines to spherical
-*     iau_PM       modulus of p-vector
-*
 *  Notes:
 *
 *  1) If P is null, zero THETA, PHI and R are returned.
 *
 *  2) At either pole, zero THETA is returned.
+*
+*  Called:
+*     iau_C2S      direction cosines to spherical
+*     iau_PM       modulus of p-vector
 *
 *-
 
@@ -2331,13 +4482,6 @@ CALLS
 *  Returned:
 *     THETA    d         position angle of B with respect to A (radians)
 *
-*  Called:
-*     iau_PN       separate p-vector into modulus and direction
-*     iau_PM       modulus of p-vector
-*     iau_PXP      vector product of two p-vectors
-*     iau_PMP      p-vector minus p-vector
-*     iau_PDP      scalar product of two p-vectors
-*
 *  Notes:
 *
 *  1) The result is the position angle, in radians, of direction B with
@@ -2352,6 +4496,13 @@ CALLS
 *     vector is null.
 *
 *  4) If A is at a pole, the result is ill-defined.
+*
+*  Called:
+*     iau_PN       separate p-vector into modulus and direction
+*     iau_PM       modulus of p-vector
+*     iau_PXP      vector product of two p-vectors
+*     iau_PMP      p-vector minus p-vector
+*     iau_PDP      scalar product of two p-vectors
 *
 *-
 
@@ -2599,6 +4750,64 @@ CALLS
 *-
 
 
+      SUBROUTINE iau_PMAT00 ( DATE1, DATE2, RBP )
+*+
+*  - - - - - - - - - - -
+*   i a u _ P M A T 0 0
+*  - - - - - - - - - - -
+*
+*  Precession matrix (including frame bias) from GCRS to a specified
+*  date, IAU 2000 model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RBP         d(3,3)    bias-precession matrix (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the arguments DATE1 and DATE2.  For
+*     example, JD(TT)=2450123.7 could be expressed in any of these
+*     ways, among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix operates in the sense V(date) = RBP * V(J2000), where
+*     the p-vector V(J2000) is with respect to the Geocentric Celestial
+*     Reference System (IAU, 2000) and the p-vector V(date) is with
+*     respect to the mean equatorial triad of the given date.
+*
+*  Called:
+*     iau_BP00    frame bias and precession matrices
+*
+*  Reference:
+*
+*     IAU: Trans. International Astronomical Union, Vol. XXIVB;  Proc.
+*     24th General Assembly, Manchester, UK.  Resolutions B1.3, B1.6.
+*     (2000)
+*
+*-
+
+
       SUBROUTINE iau_PMAT76 ( EPOCH1, EPOCH2, RMATP )
 *+
 *  - - - - - - - - - - -
@@ -2656,17 +4865,19 @@ CALLS
 *     range 1200BC to 3900AD, exceed 100 arcsec outside 4200BC to
 *     5600AD and exceed 1000 arcsec outside 6800BC to 8200AD.
 *
-*  References:
-*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
-*      equations (6) & (7), p283.
-*     Kaplan,G.H., 1981. USNO circular no. 163, pA2.
-*
 *  Called:
 *     iau_PREC76  accumulated precession angles, IAU 1976
 *     iau_IR      initialize r-matrix to identity
 *     iau_RZ      rotate around Z-axis
 *     iau_RY      rotate around Y-axis
 *     iau_CR      copy r-matrix
+*
+*  References:
+*
+*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
+*      equations (6) & (7), p283.
+*
+*     Kaplan,G.H., 1981. USNO circular no. 163, pA2.
 *
 *-
 
@@ -2714,14 +4925,413 @@ CALLS
 *     R        d         modulus
 *     U        d(3)      unit vector
 *
+*  Note:
+*     If P is null, the result is null.  Otherwise the result is
+*     a unit vector.
+*
 *  Called:
 *     iau_PM       modulus of p-vector
 *     iau_ZP       null a p-vector
 *     iau_SXP      scalar times p-vector
 *
-*  Note:
-*     If P is null, the result is null.  Otherwise the result is
-*     a unit vector.
+*-
+
+
+      SUBROUTINE iau_PN00 ( DATE1, DATE2, DPSI, DEPS,
+     :                      EPSA, RB, RP, RBP, RN, RBPN )
+*+
+*  - - - - - - - - -
+*   i a u _ P N 0 0
+*  - - - - - - - - -
+*
+*  Precession-nutation, IAU 2000 model; a multi-purpose routine,
+*  supporting classical, equinox-based, use directly and CEO-based
+*  use indirectly.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d       TT as a 2-part Julian Date (Note 1)
+*     DPSI,DEPS     d       nutation (Note 2)
+*
+*  Returned:
+*     EPSA          d       mean obliquity (Note 3)
+*     RB          d(3,3)    frame bias matrix (Note 4)
+*     RP          d(3,3)    precession matrix (Note 5)
+*     RBP         d(3,3)    bias-precession matrix (Note 6)
+*     RN          d(3,3)    nutation matrix (Note 7)
+*     RBPN        d(3,3)    GCRS-to-true matrix (Note 8)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The caller is responsible for providing the nutation components;
+*     they are in longitude and obliquity, in radians and are with
+*     respect to the equinox and ecliptic of date.  For high-accuracy
+*     applications, free core nutation should be included as well as
+*     any other relevant corrections to the position of the CIP.
+*
+*  3) The returned mean obliquity is consistent with the IAU 2000
+*     precession-nutation models.
+*
+*  4) The matrix RB transforms vectors from GCRS to mean J2000 by
+*     applying frame bias.
+*
+*  5) The matrix RP transforms vectors from mean J2000 to mean of date
+*     by applying precession.
+*
+*  6) The matrix RBP transforms vectors from GCRS to mean of date by
+*     applying frame bias then precession.  It is the product RP x RB.
+*
+*  7) The matrix RN transforms vectors from mean of date to true of date
+*     by applying the nutation (luni-solar + planetary).
+*
+*  8) The matrix RBPN transforms vectors from GCRS to true of date
+*     (CIP/equinox).  It is the product RN x RBP, applying frame bias,
+*     precession and nutation in that order.
+*
+*  Called:
+*     iau_PR00     IAU 2000 precession adjustments
+*     iau_OBL80    mean obliquity, IAU 1980
+*     iau_BP00     frame bias and precession matrices
+*     iau_NUMAT    form nutation matrix
+*     iau_RXR      r-matrix product
+*
+*  Reference:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*-
+
+
+      SUBROUTINE iau_PN00A ( DATE1, DATE2,
+     :                       DPSI, DEPS, EPSA, RB, RP, RBP, RN, RBPN )
+*+
+*  - - - - - - - - - -
+*   i a u _ P N 0 0 A
+*  - - - - - - - - - -
+*
+*  Precession-nutation, IAU 2000A model; a multi-purpose routine,
+*  supporting both classical equinox-based use (directly) and CEO-based
+*  use (indirectly).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     DPSI,DEPS     d       nutation (Note 2)
+*     EPSA          d       mean obliquity (Note 3)
+*     RB          d(3,3)    frame bias matrix (Note 4)
+*     RP          d(3,3)    precession matrix (Note 5)
+*     RBP         d(3,3)    bias-precession matrix (Note 6)
+*     RN          d(3,3)    nutation matrix (Note 7)
+*     RBPN        d(3,3)    GCRS-to-true matrix (Notes 8,9)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The nutation components (luni-solar + planetary, IAU 2000A) in
+*     longitude and obliquity are in radians and with respect to the
+*     equinox and ecliptic of date.  Free core nutation is omitted;  for
+*     the utmost accuracy, use the iau_PN00 routine, where the nutation
+*     components are caller-specified.  For faster but slightly less
+*     accurate results, use the iau_PN00B routine.
+*
+*  3) The mean obliquity is consistent with the IAU 2000 precession-
+*     nutation models.
+*
+*  4) The matrix RB transforms vectors from GCRS to mean J2000 by
+*     applying frame bias.
+*
+*  5) The matrix RP transforms vectors from mean J2000 to mean of date
+*     by applying precession.
+*
+*  6) The matrix RBP transforms vectors from GCRS to mean of date by
+*     applying frame bias then precession.  It is the product RP x RB.
+*
+*  7) The matrix RN transforms vectors from mean of date to true of date
+*     by applying the nutation (luni-solar + planetary).
+*
+*  8) The matrix RBPN transforms vectors from GCRS to true of date
+*     (CIP/equinox).  It is the product RN x RBP, applying frame bias,
+*     precession and nutation in that order.
+*
+*  9) The X,Y,Z coordinates of the IAU 2000A Celestial Intermediate Pole
+*     are elements (3,1-3) of the matrix RBPN.
+*
+*  Called:
+*     iau_NUT00A   nutation, IAU 2000A
+*     iau_PN00     bias/precession/nutation results
+*
+*  Reference:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*-
+
+
+      SUBROUTINE iau_PN00B ( DATE1, DATE2,
+     :                       DPSI, DEPS, EPSA, RB, RP, RBP, RN, RBPN )
+*+
+*  - - - - - - - - - -
+*   i a u _ P N 0 0 B
+*  - - - - - - - - - -
+*
+*  Precession-nutation, IAU 2000B model; a multi-purpose routine,
+*  supporting classical, equinox-based, use directly and CEO-based
+*  use indirectly.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     DPSI,DEPS     d       nutation (Note 2)
+*     EPSA          d       mean obliquity (Note 3)
+*     RB          d(3,3)    frame bias matrix (Note 4)
+*     RP          d(3,3)    bias-precession matrix (Note 5)
+*     RBP         d(3,3)    precession matrix (Note 6)
+*     RN          d(3,3)    nutation matrix (Note 7)
+*     RBPN        d(3,3)    GCRS-to-true matrix (Notes 8,9)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The nutation components (luni-solar + planetary, IAU 2000B) in
+*     longitude and obliquity are in radians and with respect to the
+*     equinox and ecliptic of date.  For more accurate results, but
+*     at the cost of increased computation, use the iau_PN00A routine.
+*     For the utmost accuracy, use the iau_PN00 routine, where the
+*     nutation components are caller-specified.
+*
+*  3) The mean obliquity is consistent with the IAU 2000 precession-
+*     nutation models.
+*
+*  4) The matrix RB transforms vectors from GCRS to mean J2000 by
+*     applying frame bias.
+*
+*  5) The matrix RP transforms vectors from mean J2000 to mean of date
+*     by applying precession.
+*
+*  6) The matrix RBP transforms vectors from GCRS to mean of date by
+*     applying frame bias then precession.  It is the product RP x RB.
+*
+*  7) The matrix RN transforms vectors from mean of date to true of date
+*     by applying the nutation (luni-solar + planetary).
+*
+*  8) The matrix RBPN transforms vectors from GCRS to true of date
+*     (CIP/equinox).  It is the product RN x RBP, applying frame bias,
+*     precession and nutation in that order.
+*
+*  9) The X,Y,Z coordinates of the IAU 2000B Celestial Intermediate Pole
+*     are elements (3,1-3) of the matrix RBPN.
+*
+*  Called:
+*     iau_NUT00B   nutation, IAU 2000B
+*     iau_PN00     bias/precession/nutation results
+*
+*  Reference:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*-
+
+
+      SUBROUTINE iau_PNM00A ( DATE1, DATE2, RBPN )
+*+
+*  - - - - - - - - - - -
+*   i a u _ P N M 0 0 A
+*  - - - - - - - - - - -
+*
+*  Form the matrix of precession-nutation for a given date (including
+*  frame bias), IAU 2000A model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RBPN         d(3,3)    bias+precession+nutation matrix (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix operates in the sense V(date) = RBPN * V(GCRS), where
+*     the p-vector V(date) is with respect to the true equatorial triad
+*     of date DATE1+DATE2 and the p-vector V(J2000) is with respect to
+*     the mean equatorial triad of the Geocentric Celestial Reference
+*     System (IAU, 2000).
+*
+*  3) A faster, but slightly less accurate result (about 1 mas), can be
+*     obtained by using instead the iau_PNM00B routine.
+*
+*  Called:
+*     iau_PN00A   bias/precession/nutation, IAU 2000A
+*
+*  Reference:
+*
+*     IAU: Trans. International Astronomical Union, Vol. XXIVB;  Proc.
+*     24th General Assembly, Manchester, UK.  Resolutions B1.3, B1.6.
+*     (2000)
+*
+*-
+
+
+      SUBROUTINE iau_PNM00B ( DATE1, DATE2, RBPN )
+*+
+*  - - - - - - - - - - -
+*   i a u _ P N M 0 0 B
+*  - - - - - - - - - - -
+*
+*  Form the matrix of precession-nutation for a given date (including
+*  frame bias), IAU 2000B model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     RBPN         d(3,3)    bias-precession-nutation matrix (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The matrix operates in the sense V(date) = RBPN * V(GCRS), where
+*     the p-vector V(date) is with respect to the true equatorial triad
+*     of date DATE1+DATE2 and the p-vector V(J2000) is with respect to
+*     the mean equatorial triad of the Geocentric Celestial Reference
+*     System (IAU, 2000).
+*
+*  3) The present routine is faster, but slightly less accurate (about
+*     1 mas), than the iau_PNM00A routine.
+*
+*  Called:
+*     iau_PN00B   bias/precession/nutation, IAU 2000B
+*
+*  Reference:
+*
+*     IAU: Trans. International Astronomical Union, Vol. XXIVB;  Proc.
+*     24th General Assembly, Manchester, UK.  Resolutions B1.3, B1.6.
+*     (2000)
 *
 *-
 
@@ -2781,8 +5391,63 @@ CALLS
 *  Reference:
 *
 *     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
 *     Section 3.3 (p145).
+*
+*-
+
+
+      SUBROUTINE iau_POM00 ( XP, YP, SP, RPOM )
+*+
+*  - - - - - - - - - - -
+*   i a u _ P O M 0 0
+*  - - - - - - - - - - -
+*
+*  Form the matrix of polar motion for a given date, IAU 2000.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     XP,YP      d      coordinates of the pole (radians, Note 1)
+*     SP         d      the quantity s' (radians, Note 2)
+*
+*  Returned:
+*     RPOM     d(3,3)   polar-motion matrix (Note 3)
+*
+*  Notes:
+*
+*  1) XP and YP are the "coordinates of the pole", in radians, which
+*     position the Celestial Intermediate Pole in the International
+*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     geocentric right-handed triad u,v,w, where the w-axis points at
+*     the north geographic pole, the v-axis points towards the origin
+*     of longitudes and the u axis completes the system, XP = +u and
+*     YP = -v.
+*
+*  2) SP is the quantity s', in radians, which positions the Terrestrial
+*     Ephemeris Origin on the equator.  It is obtained from polar motion
+*     observations by numerical integration, and so is in essence
+*     unpredictable.  However, it is dominated by a secular drift of
+*     about 47 microarcseconds per century, and so can be taken into
+*     account by using s' = -47*t, where t is centuries since J2000.
+*     The routine iau_SP00 implements this approximation.
+*
+*  3) The matrix operates in the sense V(TRS) = RPOM * V(CIP), meaning
+*     that it is the final rotation when computing the pointing
+*     direction to a celestial source.
+*
+*  Called:
+*     iau_IR       initialize r-matrix to identity
+*     iau_RZ       rotate around Z-axis
+*     iau_RY       rotate around Y-axis
+*     iau_RX       rotate around X-axis
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
 *
 *-
 
@@ -2830,6 +5495,81 @@ CALLS
 *
 *  Returned:
 *     SAPB     d(3)      A + S*B
+*
+*-
+
+
+      SUBROUTINE iau_PR00 ( DATE1, DATE2, DPSIPR, DEPSPR )
+*+
+*  - - - - - - - - -
+*   i a u _ P R 0 0
+*  - - - - - - - - -
+*
+*  Precession-rate part of the IAU 2000 precession-nutation models
+*  (part of MHB_2000).
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2    d   TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     DPSIPR,DEPSPR  d   precession corrections (Notes 2,3)
+*
+*  Notes
+*
+*  1) The T date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The precession adjustments are expressed as "nutation components",
+*     corrections in longitude and obliquity with respect to the J2000
+*     equinox and ecliptic.
+*
+*  3) Although the precession adjustments are stated to be with respect
+*     to Lieske et al. (1977), the MHB_2000 model does not specify which
+*     set of Euler angles are to be used and how the adjustments are to
+*     be applied.  The most literal and straightforward procedure is to
+*     adopt the 4-rotation epsilon_0, psi_A, omega_A, xi_A option, and
+*     to add DPSIPR to psi_A and DEPSPR to both omega_A and eps_A
+*     (Wallace 2002).
+*
+*  4) This is an implementation of one aspect of the IAU 2000A nutation
+*     model, formally adopted by the IAU General Assembly in 2000,
+*     namely MHB2000 (Mathews et al. 2002).
+*
+*  References
+*
+*     Lieske, J.H., Lederle, T., Fricke, W. & Morando, B., "Expressions
+*     for the precession quantities based upon the IAU (1976) System of
+*     Astronomical Constants", Astron.Astrophys., 58, 1-16, 1977.
+*
+*     Mathews, P.M., Herring, T.A., Buffet, B.A., "Modeling of nutation
+*     and precession   New nutation series for nonrigid Earth and
+*     insights into the Earth's interior", J.Geophys.Res., 107, B4,
+*     2002.  The MHB_2000 code itself was obtained on 9th September 2002
+*     from ftp //maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
+*
+*     Wallace, P.T., "Software for Implementing the IAU 2000
+*     Resolutions", in IERS Workshop 5.1, 2002.
 *
 *-
 
@@ -2898,7 +5638,8 @@ CALLS
 *     is not the same as the order of the corresponding Euler rotations.
 *     The precession matrix is R_3(-z) x R_2(+theta) x R_3(-zeta).
 *
-*  References:
+*  Reference:
+*
 *     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
 *      equations (6) & (7), p283.
 *
@@ -2990,15 +5731,15 @@ CALLS
 *  Returned:
 *     ADB      d(2)        A . B (see note)
 *
-*  Called:
-*     iau_PDP      inner product of two p-vectors
-*
 *  Note:
 *
 *     If the position and velocity components of the two pv-vectors are
 *     ( Ap, Av ) and ( Bp, Bv ), the result, A . B, is the pair of
 *     numbers ( Ap . Bp , Ap . Bv + Av . Bp ).  The two numbers are the
 *     dot-product of the two p-vectors and its derivative.
+*
+*  Called:
+*     iau_PDP      inner product of two p-vectors
 *
 *-
 
@@ -3109,16 +5850,6 @@ CALLS
 *                          -1 = superluminal speed (Note 5)
 *                          -2 = null position vector
 *
-*  Called:
-*     iau_PN       normalize p-vector returning modulus
-*     iau_PDP      scalar product
-*     iau_SXP      multiply p-vector by scalar
-*     iau_PMP      p-vector minus p-vector
-*     iau_PM       modulus of p-vector
-*     iau_PPP      p-vector plus p-vector
-*     iau_PV2S     pv-vector to spherical coordinates
-*     iau_ANP      normalize radians to range 0 to 2pi
-*
 *  Notes:
 *
 *  1) The specified pv-vector is the coordinate direction (and its rate
@@ -3172,6 +5903,16 @@ CALLS
 *
 *  6) The inverse transformation is performed by the routine iau_STARPV.
 *
+*  Called:
+*     iau_PN       normalize p-vector returning modulus
+*     iau_PDP      scalar product
+*     iau_SXP      multiply p-vector by scalar
+*     iau_PMP      p-vector minus p-vector
+*     iau_PM       modulus of p-vector
+*     iau_PPP      p-vector plus p-vector
+*     iau_PV2S     pv-vector to spherical coordinates
+*     iau_ANP      normalize radians to range 0 to 2pi
+*
 *  Reference:
 *
 *     Stumpff, P., Astron.Astrophys. 144, 232-240 (1985).
@@ -3199,16 +5940,16 @@ CALLS
 *  Returned:
 *     UPV      d(3,2)      p updated, v unchanged
 *
-*  Called:
-*     iau_PPSP     p-vector plus scaled p-vector
-*     iau_CP       copy p-vector
-*
 *  Notes:
 *
 *  1) "Update" means "refer the position component of the vector
 *     to a new epoch DT time units from the existing epoch".
 *
 *  2) The time units of DT must match those of the velocity.
+*
+*  Called:
+*     iau_PPSP     p-vector plus scaled p-vector
+*     iau_CP       copy p-vector
 *
 *-
 
@@ -3263,16 +6004,17 @@ CALLS
 *  Returned:
 *     AXB      d(3,2)      A x B
 *
-*  Called:
-*     iau_PXP      outer product of two p-vectors
-*     iau_PPP      p-vector addition
-*
 *  Note:
 *
 *     If the position and velocity components of the two pv-vectors are
 *     ( Ap, Av ) and ( Bp, Bv ), the result, A x B, is the pair of
 *     vectors ( Ap x Bp, Ap x Bv + Av x Bp ).  The two vectors are the
 *     cross-product of the two p-vectors and its derivative.
+*
+*  Called:
+*     iau_CPV      copy pv-vector
+*     iau_PXP      outer product of two p-vectors
+*     iau_PPP      p-vector addition
 *
 *-
 
@@ -3430,6 +6172,9 @@ CALLS
 *  Returned:
 *     RP       d(3)      R * P
 *
+*  Called:
+*     iau_CP       copy a p-vector
+*
 *-
 
 
@@ -3547,6 +6292,222 @@ CALLS
 *     iau_IR       initialize r-matrix to identity
 *     iau_RXR      r-matrix multiply
 *     iau_CR       r-matrix copy
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_S00 ( DATE1, DATE2, X, Y )
+*+
+*  - - - - - - - -
+*   i a u _ S 0 0
+*  - - - - - - - -
+*
+*  The quantity s, positioning the Celestial Ephemeris Origin on the
+*  equator of the Celestial Intermediate Pole, given the CIP's X,Y
+*  coordinates.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2    d      TT as a 2-part Julian Date (Note 1)
+*     X,Y            d      CIP coordinates (Note 3)
+*
+*  Returned:
+*     iau_S00        d      the quantity s in radians (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The quantity s is the difference between the right ascensions
+*     of the same point in two frames.  The two systems are the GCRS
+*     and the CIP,CEO, and the point is the ascending node of the
+*     respective equators.  The quantity s remains a small fraction of
+*     1 arcsecond throughout 1900-2100.
+*
+*  3) The series used to compute s is in fact for s+XY/2, where X and Y
+*     are the x and y components of the CIP unit vector;  this series is
+*     more compact than a direct series for s would be.  This routine
+*     requires X,Y to be supplied by the caller, who is responsible for
+*     providing values that are consistent with the supplied date.
+*
+*  Called:
+*     iau_ANPM      normalize angle into range +/- pi
+*
+*  References:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_S00A ( DATE1, DATE2 )
+*+
+*  - - - - - - - - -
+*   i a u _ S 0 0 A
+*  - - - - - - - - -
+*
+*  The quantity s, positioning the Celestial Ephemeris Origin on the
+*  equator of the Celestial Intermediate Pole, using the IAU 2000A
+*  precession-nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d      TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     iau_S00A       d      the quantity s in radians (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The quantity s is the difference between the right ascensions
+*     of the same point in two frames.  The two systems are the GCRS
+*     and the CIP,CEO, and the point is the ascending node of the
+*     respective equators.  The quantity s remains a small fraction of
+*     1 arcsecond throughout 1900-2100.
+*
+*  3) The series used to compute s is in fact for s+XY/2, where X and Y
+*     are the x and y components of the CIP unit vector;  this series is
+*     more compact than a direct series for s would be.  The present
+*     uses the full IAU 2000A nutation model when predicting the CIP
+*     position.  Faster results, with no significant loss of accuracy.
+*     can be obtained via the routine iau_s00B, which uses instead the
+*     IAU 2000B truncated model.
+*
+*  Called:
+*     iau_PNM00A    bias-precession-nutation matrix, IAU 2000A
+*     iau_BNP2XY    extract CIP X,Y from the BPN matrix
+*     iau_S00       the quantity s, given X,Y
+*
+*  References:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      DOUBLE PRECISION FUNCTION iau_S00B ( DATE1, DATE2 )
+*+
+*  - - - - - - - - -
+*   i a u _ S 0 0 B
+*  - - - - - - - - -
+*
+*  The quantity s, positioning the Celestial Ephemeris Origin on the
+*  equator of the Celestial Intermediate Pole, using the IAU 2000B
+*  precession-nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2    d      TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     iau_S00B       d      the quantity s in radians (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The quantity s is the difference between the right ascensions
+*     of the same point in two frames.  The two systems are the GCRS
+*     and the CIP,CEO, and the point is the ascending node of the
+*     respective equators.  The quantity s remains a small fraction of
+*     1 arcsecond throughout 1900-2100.
+*
+*  3) The series used to compute s is in fact for s+XY/2, where X and Y
+*     are the x and y components of the CIP unit vector;  this series is
+*     more compact than a direct series for s would be.  The present
+*     uses the full IAU 2000A nutation model when predicting the CIP
+*     position.  Faster results, with no significant loss of accuracy.
+*     can be obtained via the routine iau_s00B, which uses instead the
+*     IAU 2000B truncated model.
+*
+*  Called:
+*     iau_PNM00B    bias-precession-nutation matrix, IAU 2000B
+*     iau_BNP2XY    extract CIP X,Y from the BPN matrix
+*     iau_S00       the quantity s, given X,Y
+*
+*  References:
+*
+*     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
+*     "Expressions for the Celestial Intermediate Pole and Celestial
+*     Ephemeris Origin consistent with the IAU 2000A precession-nutation
+*     model", submitted to A&A (2002)
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
 *
 *-
 
@@ -3723,6 +6684,60 @@ CALLS
 *-
 
 
+      DOUBLE PRECISION FUNCTION iau_SP00 ( DATE1, DATE2 )
+*+
+*  - - - - - - - - -
+*   i a u _ S P 0 0
+*  - - - - - - - - -
+*
+*  The quantity s', positioning the Terrestrial Ephemeris Origin on the
+*  equator of the Celestial Intermediate Pole.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  canonical model.
+*
+*  Given:
+*     DATE1,DATE2    d      TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     iau_SP00       d      the quantity s' in radians (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The quantity s' is obtained from polar motion observations by
+*     numerical integration, and so is in essence unpredictable.
+*     However, it is dominated by a secular drift of about
+*     47 microarcseconds per century, which is the approximation
+*     evaluated by the present routine.
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
       SUBROUTINE iau_STARPM ( RA1, DEC1, PMR1, PMD1, PX1, RV1,
      :                        EP1A, EP1B, EP2A, EP2B,
      :                        RA2, DEC2, PMR2, PMD2, PX2, RV2, J )
@@ -3764,12 +6779,6 @@ CALLS
 *                           2 = excessive velocity (Note 7)
 *                           4 = solution didn't converge (Note 8)
 *                        else = binary logical OR of the above warnings
-*
-*  Called:
-*     iau_STARPV   star catalog data to space motion pv-vector
-*     iau_PVU      update a pv-vector
-*     iau_PDP      p-vector dot product
-*     iau_PVSTAR   space motion pv-vector to star catalog data
 *
 *  Notes:
 *
@@ -3830,6 +6839,12 @@ CALLS
 *     converge within a set number of iterations, 4 is added to the
 *     status.
 *
+*  Called:
+*     iau_STARPV   star catalog data to space motion pv-vector
+*     iau_PVU      update a pv-vector
+*     iau_PDP      p-vector dot product
+*     iau_PVSTAR   space motion pv-vector to star catalog data
+*
 *-
 
 
@@ -3862,16 +6877,6 @@ CALLS
 *                           2 = excessive velocity (Note 7)
 *                           4 = solution didn't converge (Note 8)
 *                        else = binary logical OR of the above
-*
-*  Called:
-*     iau_S2PV     spherical coordinates to pv-vector
-*     iau_PM       modulus of p-vector
-*     iau_ZP       zero a p-vector
-*     iau_PN       normalize p-vector returning modulus
-*     iau_PDP      dot product of two p-vectors
-*     iau_SXP      multiply p-vector by scalar
-*     iau_PMP      p-vector minus p-vector
-*     iau_PPP      p-vector plus p-vector
 *
 *  Notes:
 *
@@ -3940,6 +6945,16 @@ CALLS
 *     iterations, 4 is added to the status.
 *
 *  9) The inverse transformation is performed by the routine iau_PVSTAR.
+*
+*  Called:
+*     iau_S2PV     spherical coordinates to pv-vector
+*     iau_PM       modulus of p-vector
+*     iau_ZP       zero a p-vector
+*     iau_PN       normalize p-vector returning modulus
+*     iau_PDP      dot product of two p-vectors
+*     iau_SXP      multiply p-vector by scalar
+*     iau_PMP      p-vector minus p-vector
+*     iau_PPP      p-vector plus p-vector
 *
 *  Reference:
 *
@@ -4076,6 +7091,134 @@ CALLS
 *-
 
 
+      SUBROUTINE iau_XYS00A ( DATE1, DATE2, X, Y, S )
+*+
+*  - - - - - - - - - - -
+*   i a u _ X Y S 0 0 A
+*  - - - - - - - - - - -
+*
+*  For a given TT date, compute the X,Y coordinates of the Celestial
+*  Intermediate Pole and the quantity s, using the IAU 2000A precession-
+*  nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d    TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     X,Y           d    Celestial Intermediate Pole (Note 2)
+*     S             d    the quantity s (Note 2)
+*
+*  Notes:
+**
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The Celestial Intermediate Pole coordinates are the x,y components
+*     of the unit vector in the Geocentric Celestial Reference System.
+*
+*  3) The quantity s (in radians) positions the Celestial Ephemeris
+*     Origin on the equator of the CIP.
+*
+*  4) A faster, but slightly less accurate result (about 1 mas for X,Y),
+*     can be obtained by using instead the iau_XYS00B routine.
+*
+*  Called:
+*     iau_PNM00A   bias-precession-nutation matrix, IAU 2000A
+*     iau_BPN2XY   extract CIP coordinates from b-p-n matrix
+*     iau_S00      the quantity s, given X,Y
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
+      SUBROUTINE iau_XYS00B ( DATE1, DATE2, X, Y, S )
+*+
+*  - - - - - - - - - - -
+*   i a u _ X Y S 0 0 B
+*  - - - - - - - - - - -
+*
+*  For a given TT date, compute the X,Y coordinates of the Celestial
+*  Intermediate Pole and the quantity s, using the IAU 2000B precession-
+*  nutation model.
+*
+*  This routine is part of the International Astronomical Union's
+*  SOFA (Standards of Fundamental Astronomy) software collection.
+*
+*  Status:  support routine.
+*
+*  Given:
+*     DATE1,DATE2   d    TT as a 2-part Julian Date (Note 1)
+*
+*  Returned:
+*     X,Y           d    Celestial Intermediate Pole (Note 2)
+*     S             d    the quantity s (Note 2)
+*
+*  Notes:
+*
+*  1) The TT date DATE1+DATE2 is a Julian Date, apportioned in any
+*     convenient way between the two arguments.  For example,
+*     JD(TT)=2450123.7 could be expressed in any of these ways,
+*     among others:
+*
+*            DATE1          DATE2
+*
+*         2450123.7D0        0D0        (JD method)
+*          2451545D0      -1421.3D0     (J2000 method)
+*         2400000.5D0     50123.2D0     (MJD method)
+*         2450123.5D0       0.2D0       (date & time method)
+*
+*     The JD method is the most natural and convenient to use in
+*     cases where the loss of several decimal digits of resolution
+*     is acceptable.  The J2000 method is best matched to the way
+*     the argument is handled internally and will deliver the
+*     optimum resolution.  The MJD method and the date & time methods
+*     are both good compromises between resolution and convenience.
+*
+*  2) The Celestial Intermediate Pole coordinates are the x,y components
+*     of the unit vector in the Geocentric Celestial Reference System.
+*
+*  3) The quantity s (in radians) positions the Celestial Ephemeris
+*     Origin on the equator of the CIP.
+*
+*  4) The present routine is faster, but slightly less accurate (about
+*     1 mas in X,Y), than the iau_XYS00A routine.
+*
+*  Called:
+*     iau_PNM00B   bias-precession-nutation matrix, IAU 2000B
+*     iau_BPN2XY   extract CIP coordinates from b-p-n matrix
+*     iau_S00      the quantity s, given X,Y
+*
+*  Reference:
+*
+*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*
+*-
+
+
       SUBROUTINE iau_ZP ( P )
 *+
 *  - - - - - - -
@@ -4135,17 +7278,17 @@ CALLS
 *
 *-
 
-copyr.lis                                                      2001 March 2
+copyr.lis                                                 2002 January 9
 
 
 COPYRIGHT NOTICE
 
 
-The following text appears at the end of every SOFA routine.
+Text like the following appears at the end of every SOFA routine.
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *
@@ -4225,6 +7368,7 @@ The following text appears at the end of every SOFA routine.
 *-----------------------------------------------------------------------
 
       END
+
 consts.lis                                                     2001 March 13
 
 
@@ -4272,6 +7416,7 @@ These must be used exactly as presented below.
 *  Arc seconds to radians
       DOUBLE PRECISION DAS2R
       PARAMETER ( DAS2R = 4.848136811095359935899141D-6 )
+
 board.lis                                                      2001 March 2
 
 
@@ -4287,8 +7432,8 @@ Current Membership
    Catherine Hohenkerk    Rutherford Appleton Laboratory
    Wen-Jing Jin           Shanghai Observatory
    Zinovy Malkin          Inst. Appl. Astron., St Petersburg
-   Dennis McCarthy        United States Naval Observatory   
-   Jeffrey Percival       University of Wisconsin   
+   Dennis McCarthy        United States Naval Observatory
+   Jeffrey Percival       University of Wisconsin
    Patrick Wallace        Rutherford Appleton Laboratory      (chair)
 
 
@@ -4299,3 +7444,4 @@ Past Members
 
 
 The e-mail address for the Board chair is ptw@star.rl.ac.uk
+

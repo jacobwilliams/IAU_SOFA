@@ -62,13 +62,14 @@
 *     is not the same as the order of the corresponding Euler rotations.
 *     The precession matrix is R_3(-z) x R_2(+theta) x R_3(-zeta).
 *
-*  References:
+*  Reference:
+*
 *     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
 *      equations (6) & (7), p283.
 *
-*  This revision:  2000 November 25
+*  This revision:  2003 January 14
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -123,7 +124,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

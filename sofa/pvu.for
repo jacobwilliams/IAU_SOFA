@@ -18,10 +18,6 @@
 *  Returned:
 *     UPV      d(3,2)      p updated, v unchanged
 *
-*  Called:
-*     iau_PPSP     p-vector plus scaled p-vector
-*     iau_CP       copy p-vector
-*
 *  Notes:
 *
 *  1) "Update" means "refer the position component of the vector
@@ -29,9 +25,13 @@
 *
 *  2) The time units of DT must match those of the velocity.
 *
-*  This revision:  2000 November 25
+*  Called:
+*     iau_PPSP     p-vector plus scaled p-vector
+*     iau_CP       copy p-vector
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -48,7 +48,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

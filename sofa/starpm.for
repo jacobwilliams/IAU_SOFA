@@ -40,12 +40,6 @@
 *                           4 = solution didn't converge (Note 8)
 *                        else = binary logical OR of the above warnings
 *
-*  Called:
-*     iau_STARPV   star catalog data to space motion pv-vector
-*     iau_PVU      update a pv-vector
-*     iau_PDP      p-vector dot product
-*     iau_PVSTAR   space motion pv-vector to star catalog data
-*
 *  Notes:
 *
 *  1) The starting and ending TDB epochs EP1A+EP1B and EP2A+EP2B are
@@ -105,9 +99,15 @@
 *     converge within a set number of iterations, 4 is added to the
 *     status.
 *
-*  This revision:  2001 March 10
+*  Called:
+*     iau_STARPV   star catalog data to space motion pv-vector
+*     iau_PVU      update a pv-vector
+*     iau_PDP      p-vector dot product
+*     iau_PVSTAR   space motion pv-vector to star catalog data
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -176,7 +176,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

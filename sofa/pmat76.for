@@ -55,11 +55,6 @@
 *     range 1200BC to 3900AD, exceed 100 arcsec outside 4200BC to
 *     5600AD and exceed 1000 arcsec outside 6800BC to 8200AD.
 *
-*  References:
-*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
-*      equations (6) & (7), p283.
-*     Kaplan,G.H., 1981. USNO circular no. 163, pA2.
-*
 *  Called:
 *     iau_PREC76  accumulated precession angles, IAU 1976
 *     iau_IR      initialize r-matrix to identity
@@ -67,9 +62,16 @@
 *     iau_RY      rotate around Y-axis
 *     iau_CR      copy r-matrix
 *
-*  This revision:  2001 January 12
+*  References:
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*     Lieske,J.H., 1979. Astron.Astrophys.,73,282.
+*      equations (6) & (7), p283.
+*
+*     Kaplan,G.H., 1981. USNO circular no. 163, pA2.
+*
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -89,17 +91,17 @@
       CALL iau_PREC76 ( DJ0, 0D0, EPOCH1, EPOCH2, ZETA, Z, THETA )
 
 *  Form the rotation matrix.
-      CALL iau_IR ( WMAT)
-      CALL iau_RZ ( -ZETA, WMAT)
-      CALL iau_RY ( THETA, WMAT)
-      CALL iau_RZ ( -Z, WMAT)
+      CALL iau_IR ( WMAT )
+      CALL iau_RZ ( -ZETA, WMAT )
+      CALL iau_RY ( THETA, WMAT )
+      CALL iau_RZ ( -Z, WMAT )
       CALL iau_CR ( WMAT, RMATP )
 
 *  Finished.
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

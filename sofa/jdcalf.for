@@ -48,18 +48,18 @@
 *  4) NDP should be 4 or less if internal overflows are to be
 *     avoided on machines which use 16-bit integers.
 *
-*  Reference:
-*
-*     Explanatory Supplement to the Astronomical Almanac,
-*     P.Kenneth Seidelmann (ed), University Science Books (1992),
-*     Section 12.92 (p604).
-*
 *  Called:
 *     iau_JD2CAL  JD to Gregorian calendar
 *
-*  This revision:  2001 January 4
+*  Reference:
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*     Explanatory Supplement to the Astronomical Almanac,
+*     P. Kenneth Seidelmann (ed), University Science Books (1992),
+*     Section 12.92 (p604).
+*
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -116,7 +116,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *

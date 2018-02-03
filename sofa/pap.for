@@ -18,13 +18,6 @@
 *  Returned:
 *     THETA    d         position angle of B with respect to A (radians)
 *
-*  Called:
-*     iau_PN       separate p-vector into modulus and direction
-*     iau_PM       modulus of p-vector
-*     iau_PXP      vector product of two p-vectors
-*     iau_PMP      p-vector minus p-vector
-*     iau_PDP      scalar product of two p-vectors
-*
 *  Notes:
 *
 *  1) The result is the position angle, in radians, of direction B with
@@ -40,9 +33,16 @@
 *
 *  4) If A is at a pole, the result is ill-defined.
 *
-*  This revision:  2000 December 19
+*  Called:
+*     iau_PN       separate p-vector into modulus and direction
+*     iau_PM       modulus of p-vector
+*     iau_PXP      vector product of two p-vectors
+*     iau_PMP      p-vector minus p-vector
+*     iau_PDP      scalar product of two p-vectors
 *
-*  Copyright (C) 2001 IAU SOFA Review Board.  See notes at end.
+*  This revision:  2003 January 14
+*
+*  Copyright (C) 2003 IAU SOFA Review Board.  See notes at end.
 *
 *-----------------------------------------------------------------------
 
@@ -97,7 +97,7 @@
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2001
+*  Copyright (C) 2003
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *
