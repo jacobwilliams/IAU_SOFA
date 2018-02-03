@@ -1,9 +1,0 @@
-#!/bin/csh
-#
-foreach f (*.for *.lis makefile 00READ.ME)
-#
-dos2unix $f 
-#
-end
-#
-exit
