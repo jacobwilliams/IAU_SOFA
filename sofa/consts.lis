@@ -1,4 +1,4 @@
-consts.lis                                                     2001 March 13
+consts.lis                                                    2003 October 5
 
 
 SOFA Fortran constants
@@ -28,7 +28,7 @@ These must be used exactly as presented below.
 
 *  Radians to arc seconds
       DOUBLE PRECISION DR2AS
-      PARAMETER ( DR2AS = 206264.8062470963551564733D0 )
+      PARAMETER ( DR2AS = 206264.8062470963551564734D0 )
 
 *  Hours to radians
       DOUBLE PRECISION DH2R

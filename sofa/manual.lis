@@ -55,8 +55,9 @@
 
 
 
+                               Release 3
 
-                             2003 March 17
+                             2005 August 31
 
 contents.lis                                              2002 November 18
 
@@ -275,7 +276,7 @@ Board are provided by the UK's Particle Physics and Astronomy Research
 Council through its various astronomy programs at the Rutherford Appleton
 Laboratory.
 
-sofa_lib.lis                                                 2003 March 17
+sofa_lib.lis                                                2005 August 24
 
                      ----------------------
                      SOFA Astronomy Library
@@ -284,11 +285,11 @@ sofa_lib.lis                                                 2003 March 17
 
 PREFACE
 
-The routines described here are the second release of the SOFA astronomy
-library.  Their general appearance and coding style conforms to
-conventions agreed by the SOFA Review Board, and their functions, names
-and algorithms have been ratified by the Board.  Procedures for
-soliciting and agreeing additions to the library are still evolving.
+The routines described here comprise the SOFA astronomy library.  Their
+general appearance and coding style conforms to conventions agreed by
+the SOFA Review Board, and their functions, names and algorithms have
+been ratified by the Board.  Procedures for soliciting and agreeing
+additions to the library are still evolving.
 
 At present the routines are all written in Fortran 77, complying
 with the ANSI standard (X3.9-1978) except in two respects:
@@ -316,7 +317,7 @@ which are separately listed.
 
 The routines are designed to exploit the full floating-point accuracy
 of the machines on which they run, and not to rely on compiler
-optimizions.  Within these constraints, the intention is that the code
+optimizations.  Within these constraints, the intention is that the code
 corresponds to the published formulation (if any).
 
 Epochs (or simply "dates") are always Julian Dates (except in calendar
@@ -373,7 +374,7 @@ ROUTINES
 
      BI00      frame bias, ICRS to mean J2000, IAU 2000
      BP00      frame bias and precession matrices, IAU 2000
-     BPN2XY    bias-precession-nutation matrix given CIP
+     BPN2XY    extract CIP X,Y from bias-precession-nutation matrix
      C2I00A    celestial-to-intermediate matrix, IAU 2000A
      C2I00B    celestial-to-intermediate matrix, IAU 2000B
      C2IBPN    celestial-to-intermediate matrix given b-p-n
@@ -400,14 +401,14 @@ ROUTINES
      PN00B     b,p,n matrices, IAU 2000B
      PNM00A    celestial-to-true (b-p-n) matrix, IAU 2000A
      PNM00B    celestial-to-true (b-p-n) matrix, IAU 2000B
+     PNM80     precession/nutation matrix, IAU 1976/1980
      POM00     polar-motion matrix, IAU 2000
      PR00      adjustments to IAU 1976 precession, IAU 2000
-     PNM80     precession/nutation matrix, IAU 1976/1980
      PREC76    precession, IAU 1976
      S00       the quantity s, IAU 2000, given CIP
      S00A      the quantity s, IAU 2000A
      S00B      the quantity s, IAU 2000B
-     SP00      the quantity s', IERS 2000
+     SP00      the quantity s', IERS 2003
      XYS00A    CIP and s, IAU 2000A
      XYS00B    CIP and s, IAU 2000B
 
@@ -525,7 +526,7 @@ CALLS
    SUBROUTINE        iau_XYS00A ( DATE1, DATE2, X, Y, S )
    SUBROUTINE        iau_XYS00B ( DATE1, DATE2, X, Y, S )
 
-sofa_vml.lis                                            2002 December 23
+sofa_vml.lis                                               2005 August 11
 
                    --------------------------
                    SOFA Vector/Matrix Library
@@ -533,10 +534,10 @@ sofa_vml.lis                                            2002 December 23
 
 PREFACE
 
-The routines described here are the first release of the SOFA vector/
-matrix library.  Their general appearance and coding style conforms to
-conventions agreed by the SOFA Review Board, and their functions, names
-and algorithms have been ratified by the Board.  Procedures for
+The routines described here comprise the SOFA vector/matrix library.
+Their general appearance and coding style conforms to conventions
+agreed by the SOFA Review Board, and their functions, names and
+algorithms have been ratified by the Board.  Procedures for
 soliciting and agreeing additions to the library are still evolving.
 
 At present the routines are all written in Fortran 77, complying with
@@ -814,13 +815,13 @@ CALLS
 *      3            0 00 00.001
 *      :            0 00 00.000...
 *
-*  2) The largest +ve useful value for NDP is determined by the size
-*     of ANGLE, the format of DOUBLE PRECISION floating-point numbers
-*     on the target platform, and the risk of overflowing IDMSF(4).
-*     On a typical platform, for ANGLE up to 2pi, the available
-*     floating-point precision might correspond to NDP=12.  However,
-*     the practical limit is typically NDP=9, set by the capacity of
-*     a 32-bit IDMSF(4).
+*  2) The largest positive useful value for NDP is determined by the
+*     size of ANGLE, the format of DOUBLE PRECISION floating-point
+*     numbers on the target platform, and the risk of overflowing
+*     IDMSF(4).  On a typical platform, for ANGLE up to 2pi, the
+*     available floating-point precision might correspond to NDP=12.
+*     However, the practical limit is typically NDP=9, set by the
+*     capacity of a 32-bit IDMSF(4).
 *
 *  3) The absolute value of ANGLE may exceed 2pi.  In cases where it
 *     does not, it is up to the caller to test for and handle the
@@ -940,7 +941,7 @@ CALLS
 *  - - - - - - - - -
 *
 *  Frame bias components of IAU 2000 precession-nutation models (part of
-*  MHB_2000 with additions).
+*  MHB2000 with additions).
 *
 *  This routine is part of the International Astronomical Union's
 *  SOFA (Standards of Fundamental Astronomy) software collection.
@@ -968,7 +969,7 @@ CALLS
 *     2000A nutation model, formally adopted by the IAU General Assembly
 *     in 2000, namely MHB2000 (Mathews et al. 2002).
 *
-*  References
+*  References:
 *
 *     Chapront, J., Chapront-Touze, M. & Francou, G., Astron.Astrophys.,
 *     387, 700, 2002.
@@ -976,8 +977,8 @@ CALLS
 *     Mathews, P.M., Herring, T.A., Buffet, B.A., "Modeling of nutation
 *     and precession   New nutation series for nonrigid Earth and
 *     insights into the Earth's interior", J.Geophys.Res., 107, B4,
-*     2002.  The MHB_2000 code itself was obtained on 9th September 2002
-*     from ftp //maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
+*     2002.  The MHB2000 code itself was obtained on 9th September 2002
+*     from ftp://maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
 *
 *-
 
@@ -1047,7 +1048,7 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
 *-
 
@@ -1086,7 +1087,7 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
 *-
 
@@ -1141,7 +1142,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Reference System (see IERS Conventions 2003), ERA is the Earth
 *     Rotation Angle and RPOM is the polar motion matrix.
 *
 *  3) A faster, but slightly less accurate result (about 1 mas), can be
@@ -1156,9 +1157,10 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1213,7 +1215,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Reference System (see IERS Conventions 2003), ERA is the Earth
 *     Rotation Angle and RPOM is the polar motion matrix.
 *
 *  3) The present routine is faster, but slightly less accurate (about
@@ -1228,9 +1230,10 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1289,19 +1292,22 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Reference System (see IERS Conventions 2003), ERA is the Earth
 *     Rotation Angle and RPOM is the polar motion matrix.
 *
 *  Called:
 *     iau_BPN2XY  extract CIP coordinates from b-p-n matrix
 *     iau_C2IXY   celestial-to-intermediate matrix given X,Y
 *
-*  Reference:
+*  References:
 *
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
+*
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1360,7 +1366,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Reference System (see IERS Conventions 2003), ERA is the Earth
 *     Rotation Angle and RPOM is the polar motion matrix.
 *
 *  Called:
@@ -1369,7 +1375,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1412,7 +1419,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Reference System (see IERS Conventions 2003), ERA is the Earth
 *     Rotation Angle and RPOM is the polar motion matrix.
 *
 *  Called:
@@ -1422,7 +1429,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1506,7 +1514,7 @@ CALLS
 *
 *  2) XP and YP are the "coordinates of the pole", in radians, which
 *     position the Celestial Intermediate Pole in the International
-*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     Terrestrial Reference System (see IERS Conventions 2003).  In a
 *     geocentric right-handed triad u,v,w, where the w-axis points at
 *     the north geographic pole, the v-axis points towards the origin
 *     of longitudes and the u axis completes the system, XP = +u and
@@ -1521,7 +1529,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), RC2I is the
+*     Reference System (see IERS Conventions 2003), RC2I is the
 *     celestial-to-intermediate matrix, ERA is the Earth Rotation Angle
 *     and RPOM is the polar motion matrix.
 *
@@ -1538,7 +1546,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1591,7 +1600,7 @@ CALLS
 *
 *  2) XP and YP are the "coordinates of the pole", in radians, which
 *     position the Celestial Intermediate Pole in the International
-*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     Terrestrial Reference System (see IERS Conventions 2003).  In a
 *     geocentric right-handed triad u,v,w, where the w-axis points at
 *     the north geographic pole, the v-axis points towards the origin
 *     of longitudes and the u axis completes the system, XP = +u and
@@ -1606,7 +1615,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), RC2I is the
+*     Reference System (see IERS Conventions 2003), RC2I is the
 *     celestial-to-intermediate matrix, ERA is the Earth Rotation Angle
 *     and RPOM is the polar motion matrix.
 *
@@ -1621,7 +1630,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1670,7 +1680,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000).
+*     Reference System (see IERS Conventions 2003).
 *
 *  Called:
 *     iau_CR       copy r-matrix
@@ -1679,7 +1689,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1728,7 +1739,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000).
+*     Reference System (see IERS Conventions 2003).
 *
 *  Called:
 *     iau_CR       copy r-matrix
@@ -1737,7 +1748,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1798,7 +1810,7 @@ CALLS
 *
 *  3) XP and YP are the "coordinates of the pole", in radians, which
 *     position the Celestial Intermediate Pole in the International
-*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     Terrestrial Reference System (see IERS Conventions 2003).  In a
 *     geocentric right-handed triad u,v,w, where the w-axis points at
 *     the north geographic pole, the v-axis points towards the origin
 *     of longitudes and the u axis completes the system, XP = +u and
@@ -1813,7 +1825,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), RBPN is the
+*     Reference System (see IERS Conventions 2003), RBPN is the
 *     bias-precession-nutation matrix, GST is the Greenwich (apparent)
 *     Sidereal Time and RPOM is the polar motion matrix.
 *
@@ -1827,7 +1839,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -1884,7 +1897,7 @@ CALLS
 *
 *  3) XP and YP are the "coordinates of the pole", in radians, which
 *     position the Celestial Intermediate Pole in the International
-*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     Terrestrial Reference System (see IERS Conventions 2003).  In a
 *     geocentric right-handed triad u,v,w, where the w-axis points at
 *     the north geographic pole, the v-axis points towards the origin
 *     of longitudes and the u axis completes the system, XP = +u and
@@ -1899,7 +1912,7 @@ CALLS
 *
 *     where [CRS] is a vector in the Geocentric Celestial Reference
 *     System and [TRS] is a vector in the International Terrestrial
-*     Reference System (see IERS Conventions 2000), ERA is the Earth
+*     Reference System (see IERS Conventions 2003), ERA is the Earth
 *     Rotation Angle and RPOM is the polar motion matrix.
 *
 *  Called:
@@ -1909,9 +1922,10 @@ CALLS
 *     iau_POM00    polar motion matrix
 *     iau_C2TCEO   construct CEO-based celestial-to-terrestrial matrix
 *
-*  Reference:
+* Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -2077,13 +2091,13 @@ CALLS
 *      3            0 00 00.001
 *      :            0 00 00.000...
 *
-*  2) The largest +ve useful value for NDP is determined by the size
-*     of DAYS, the format of DOUBLE PRECISION floating-point numbers
-*     on the target platform, and the risk of overflowing IHMSF(4).
-*     On a typical platform, for DAYS up to 1D0, the available
-*     floating-point precision might correspond to NDP=12.  However,
-*     the practical limit is typically NDP=9, set by the capacity of
-*     a 32-bit IHMSF(4).
+*  2) The largest positive useful value for NDP is determined by the
+*     size of DAYS, the format of DOUBLE PRECISION floating-point
+*     numbers on the target platform, and the risk of overflowing
+*     IHMSF(4).  On a typical platform, for DAYS up to 1D0, the
+*     available floating-point precision might correspond to NDP=12.
+*     However, the practical limit is typically NDP=9, set by the
+*     capacity of a 32-bit IHMSF(4).
 *
 *  3) The absolute value of DAYS may exceed 1D0.  In cases where it
 *     does not, it is up to the caller to test for and handle the
@@ -2107,7 +2121,7 @@ CALLS
 *     :                                          :
 *     :  A new version of this routine must be   :
 *     :  produced whenever a new leap second is  :
-*     :  announced.  There are three items to    :
+*     :  announced.  There are five items to     :
 *     :  change on each such occasion:           :
 *     :                                          :
 *     :  1) The parameter NDAT must be           :
@@ -2120,12 +2134,19 @@ CALLS
 *     :  3) The parameter IYV must be set to     :
 *     :     the current year.                    :
 *     :                                          :
+*     :  4) The "Latest leap second" comment     :
+*     :     below must be set to the new leap    :
+*     :     second date.                         :
+*     :                                          :
+*     :  5) The "This revision" comment, later,  :
+*     :     must be set to the current date.     :
+*     :                                          :
 *     :  Change (3) must also be carried out     :
 *     :  whenever the routine is re-issued,      :
 *     :  even if no leap seconds have been       :
 *     :  added.                                  :
 *     :                                          :
-*     :  Latest leap second:  1999 January 1     :
+*     :  Latest leap second:  2006 January 1     :
 *     :                                          :
 *     :__________________________________________:
 *
@@ -2261,7 +2282,7 @@ CALLS
 *  Given:
 *     EPOCH1,EPOCH2   d   epoch, TDB (Notes 1-3)
 *     UT              d   universal time (UT1, fraction of one day)
-*     ELONG           d   longitude (east +ve, radians)
+*     ELONG           d   longitude (east positive, radians)
 *     U               d   distance from Earth spin axis (km)
 *     V               d   distance north of equatorial plane (km)
 *
@@ -2417,18 +2438,20 @@ CALLS
 *        Greenwich apparent ST = GMST + equation of the equinoxes
 *
 *  4) The result is compatible with the IAU 2000 resolutions.  For
-*     further details, see McCarthy (2002) and Capitaine et al. (2002).
+*     further details, see IERS Conventions 2003 and Capitaine et al.
+*     (2002).
 *
 *  Called:
 *     iau_EECT00    equation of the equinoxes complementary terms
 *
 *  References:
 *
-*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
-*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
-*     2000A precession-nutation model", in preparation (2002).
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
+*     implement the IAU 2000 definition of UT1", Astronomy &
+*     Astrophysics, 406, 1135-1149 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -2478,7 +2501,8 @@ CALLS
 *        Greenwich apparent ST = GMST + equation of the equinoxes
 *
 *  3) The result is compatible with the IAU 2000 resolutions.  For
-*     further details, see McCarthy (2002) and Capitaine et al. (2002).
+*     further details, see IERS Conventions 2003 and Capitaine et al.
+*     (2002).
 *
 *  Called:
 *     iau_PR00      IAU 2000 precession adjustments
@@ -2488,11 +2512,12 @@ CALLS
 *
 *  References:
 *
-*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
-*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
-*     2000A precession-nutation model", in preparation (2002).
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
+*     implement the IAU 2000 definition of UT1", Astronomy &
+*     Astrophysics, 406, 1135-1149 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -2544,8 +2569,8 @@ CALLS
 *
 *  3) The result is compatible with the IAU 2000 resolutions except that
 *     accuracy has been compromised for the sake of speed.  For further
-*     details, see McCarthy & Luzum (2001), McCarthy (2002), Capitaine
-*     et al. (2002).
+*     details, see McCarthy & Luzum (2001), IERS Conventions 2003 and
+*     Capitaine et al. (2003).
 *
 *  Called:
 *     iau_PR00      IAU 2000 precession adjustments
@@ -2555,14 +2580,16 @@ CALLS
 *
 *  References:
 *
-*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
-*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
-*     2000A precession-nutation model", in preparation (2002).
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
+*     implement the IAU 2000 definition of UT1", Astronomy &
+*     Astrophysics, 406, 1135-1149 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D.D. & Luzum, B.J., "An abridged model of the
+*     precession-nutation of the celestial pole", Celestial Mechanics &
+*     Dynamical Astronomy, 85, 37-49 (2003)
 *
-*     McCarthy, D.D. & Luzum, B.J., "An Abridged Model of the Motion
-*     of the Celestial Pole", preprint, 2001.
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -2633,25 +2660,26 @@ CALLS
 *     Time.  This slightly compromises the "geometrical" interpretation
 *     of mean sidereal time but is otherwise inconsequential.
 *
-*     The present routine computes CT in the above expression, compatible
-*     with IAU 2000 resolutions (Capitaine et al., 2002, and McCarthy,
-*     2002).
+*     The present routine computes CT in the above expression,
+*     compatible with IAU 2000 resolutions (Capitaine et al., 2002, and
+*     IERS Conventions 2003).
 *
 *  Called:
 *     iau_ANPM      normalize angle into range +/- pi
 *
 *  References:
 *
-*     IAU Resolution C7, Recommendation 3 (1994)
-*
 *     Capitaine, N. & Gontier, A.-M., Astron. Astrophys., 275,
 *     645-650 (1993)
 *
-*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
-*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
-*     2000A precession-nutation model", in preparation (2002).
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
+*     implement the IAU 2000 definition of UT1", Astronomy &
+*     Astrophysics, 406, 1135-1149 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     IAU Resolution C7, Recommendation 3 (1994)
+*
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -2860,9 +2888,9 @@ CALLS
 *     Reference Frame.  The time unit is one day in TDB.
 *
 *  3) The routine is a SIMPLIFIED SOLUTION from the planetary theory
-*     VSOP2000 (X. Moisson, P. Bretagnon, 2001, Celes. Mech., to be
-*     published) and is an adaptation of original Fortran code
-*     supplied by P. Bretagnon (private communication, 2000).
+*     VSOP2000 (X. Moisson, P. Bretagnon, 2001, Celes. Mechanics &
+*     Dyn. Astron., 80, 3/4, 205-213) and is an adaptation of original
+*     Fortran code supplied by P. Bretagnon (private comm., 2000).
 *
 *  4) Comparisons over the time span 1900-2100 with this simplified
 *     solution and the JPL DE405 ephemeris give the following results:
@@ -3019,7 +3047,7 @@ CALLS
 *     DR5       d      proper motion in RA (dRA/dt, rad/Jyear)
 *     DD5       d      proper motion in Dec (dDec/dt, rad/Jyear)
 *     PX5       d      parallax (arcsec)
-*     RV5       d      radial velocity (+ve = receding)
+*     RV5       d      radial velocity (positive = receding)
 *
 *  Returned (all Hipparcos, epoch J2000):
 *     RH        d      RA (radians)
@@ -3027,7 +3055,7 @@ CALLS
 *     DRH       d      proper motion in RA (dRA/dt, rad/Jyear)
 *     DDH       d      proper motion in Dec (dDec/dt, rad/Jyear)
 *     PXH       d      parallax (arcsec)
-*     RVH       d      radial velocity (+ve = receding)
+*     RVH       d      radial velocity (positive = receding)
 *
 *  Notes:
 *
@@ -3238,7 +3266,8 @@ CALLS
 *     used only in conjunction with other IAU 2000 compatible components
 *     such as precession-nutation and equation of the equinoxes.
 *
-*  4) The algorithm is from Capitaine et al. (2002) and McCarthy (2002).
+*  4) The algorithm is from Capitaine et al. (2003) and IERS Conventions
+*     2003.
 *
 *  Called:
 *     iau_ERA00      Earth Rotation Angle, IAU 2000
@@ -3246,11 +3275,12 @@ CALLS
 *
 *  References:
 *
-*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
-*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
-*     2000A precession-nutation model", in preparation (2002).
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
+*     implement the IAU 2000 definition of UT1", Astronomy &
+*     Astrophysics, 406, 1135-1149 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -3370,13 +3400,15 @@ CALLS
 *
 *  2) Both UT1 and TT are required, UT1 to predict the Earth rotation
 *     and TT to predict the effects of precession-nutation.  If UT1 is
-*     used for both purposes, errors of order 100 microarcseconds result.
+*     used for both purposes, errors of order 100 microarcseconds
+*     result.
 *
 *  3) This GAST is compatible with the IAU 2000 resolutions and must be
 *     used only in conjunction with other IAU 2000 compatible components
 *     such as precession-nutation.
 *
-*  4) The algorithm is from Capitaine et al. (2002) and McCarthy (2002).
+*  4) The algorithm is from Capitaine et al. (2003) and IERS Conventions
+*     2003.
 *
 *  Called:
 *     iau_GMST00     Greenwich Mean Sidereal Time, IAU 2000
@@ -3385,11 +3417,12 @@ CALLS
 *
 *  References:
 *
-*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
-*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
-*     2000A precession-nutation model", in preparation (2002).
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
+*     implement the IAU 2000 definition of UT1", Astronomy &
+*     Astrophysics, 406, 1135-1149 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -3453,7 +3486,8 @@ CALLS
 *     used only in conjunction with other IAU 2000 compatible components
 *     such as precession-nutation.
 *
-*  4) The algorithm is from Capitaine et al. (2002) and McCarthy (2002).
+*  4) The algorithm is from Capitaine et al. (2003) and IERS Conventions
+*     2003.
 *
 *  Called:
 *     iau_GMST00     Greenwich Mean Sidereal Time, IAU 2000
@@ -3462,14 +3496,16 @@ CALLS
 *
 *  References:
 *
-*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions for
-*     the Earth Rotation Angle and Sidereal Time consistent with the IAU
-*     2000A precession-nutation model", in preparation (2002).
+*     Capitaine, N., Wallace, P.T. and McCarthy, D.D., "Expressions to
+*     implement the IAU 2000 definition of UT1", Astronomy &
+*     Astrophysics, 406, 1135-1149 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D.D. & Luzum, B.J., "An abridged model of the
+*     precession-nutation of the celestial pole", Celestial Mechanics &
+*     Dynamical Astronomy, 85, 37-49 (2003)
 *
-*     McCarthy, D.D. & Luzum, B.J., "An Abridged Model of the Motion
-*     of the Celestial Pole", preprint, 2001.
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -3562,7 +3598,7 @@ CALLS
 *     DRH       d      proper motion in RA (dRA/dt, rad/Jyear)
 *     DDH       d      proper motion in Dec (dDec/dt, rad/Jyear)
 *     PXH       d      parallax (arcsec)
-*     RVH       d      radial velocity (+ve = receding)
+*     RVH       d      radial velocity (positive = receding)
 *
 *  Returned (all FK5, equinox J2000, epoch J2000):
 *     R5        d      RA (radians)
@@ -3570,7 +3606,7 @@ CALLS
 *     DR5       d      proper motion in RA (dRA/dt, rad/Jyear)
 *     DD5       d      proper motion in Dec (dDec/dt, rad/Jyear)
 *     PX5       d      parallax (arcsec)
-*     RV5       d      radial velocity (+ve = receding)
+*     RV5       d      radial velocity (positive = receding)
 *
 *  Notes:
 *
@@ -3998,7 +4034,7 @@ CALLS
 *   i a u _ N U T 0 0 A
 *  - - - - - - - - - - -
 *
-*  Nutation, IAU 2000A model (MHB_2000 luni-solar and planetary nutation
+*  Nutation, IAU 2000A model (MHB2000 luni-solar and planetary nutation
 *  with free core nutation omitted).
 *
 *  This routine is part of the International Astronomical Union's
@@ -4042,14 +4078,14 @@ CALLS
 *     latter are due to direct planetary nutations and the perturbations
 *     of the lunar and terrestrial orbits.
 *
-*  3) The routine computes the MHB_2000 nutation series with the
+*  3) The routine computes the MHB2000 nutation series with the
 *     associated corrections for planetary nutations.  It is an
 *     implementation of the nutation part of the IAU 2000A precession-
 *     nutation model, formally adopted by the IAU General Assembly in
 *     2000, namely MHB2000 (Mathews et al. 2002), but with the free core
 *     nutation (FCN - see Note 4) omitted.
 *
-*  4) The full MHB_2000 model also contains contributions to the
+*  4) The full MHB2000 model also contains contributions to the
 *     nutations in longitude and obliquity due to the free-excitation of
 *     the free-core-nutation during the period 1979-2000.  These FCN
 *     terms, which are time-dependent and unpredictable, are NOT
@@ -4059,7 +4095,7 @@ CALLS
 *     accurate to a few hundred microarcseconds.  The omission of FCN
 *     introduces further errors of about that size.
 *
-*  5) The present routine provides classical nutation.  The MHB_2000
+*  5) The present routine provides classical nutation.  The MHB2000
 *     algorithm, from which it is adapted, deals also with (i) the
 *     offsets between the GCRS and mean poles and (ii) the adjustments
 *     in longitude and obliquity due to the changed precession rates.
@@ -4067,32 +4103,32 @@ CALLS
 *     adjustments, are supported by the SOFA routines iau_BI00 and
 *     iau_PR00.
 *
-*  6) The MHB_2000 algorithm also provides "total" nutations, comprising
+*  6) The MHB2000 algorithm also provides "total" nutations, comprising
 *     the arithmetic sum of the frame bias, precession adjustments,
 *     luni-solar nutation and planetary nutation.  These total nutations
 *     can be used in combination with an existing IAU 1976 precession
 *     implementation, such as iau_PMAT76, to deliver GCRS-to-true
 *     predictions of sub-mas accuracy at current epochs.  However, there
-*     are three shortcomings in the MHB_2000 model that must be taken
+*     are three shortcomings in the MHB2000 model that must be taken
 *     into account if more accurate or definitive results are required
-*     (see Wallace 2002)
+*     (see Wallace 2002):
 *
-*       (i) The MHB_2000 total nutations are simply arithmetic sums,
+*       (i) The MHB2000 total nutations are simply arithmetic sums,
 *           yet in reality the various components are successive Euler
-*           rotations. This slight lack of rigor leads to cross terms
+*           rotations.  This slight lack of rigor leads to cross terms
 *           that exceed 1 mas after a century.  The rigorous procedure
 *           is to form the GCRS-to-true rotation matrix by applying the
 *           bias, precession and nutation in that order.
 *
 *      (ii) Although the precession adjustments are stated to be with
-*           respect to Lieske et al. (1977), the MHB_2000 model does
+*           respect to Lieske et al. (1977), the MHB2000 model does
 *           not specify which set of Euler angles are to be used and
 *           how the adjustments are to be applied.  The most literal and
 *           straightforward procedure is to adopt the 4-rotation
 *           epsilon_0, psi_A, omega_A, xi_A option, and to add DPSIPR to
 *           psi_A and DEPSPR to both omega_A and eps_A.
 *
-*     (iii) The MHB_2000 model predates the determination by Chapront
+*     (iii) The MHB2000 model predates the determination by Chapront
 *           et al. (2002) of a 14.6 mas displacement between the J2000
 *           mean equinox and the origin of the ICRS frame.  It should,
 *           however, be noted that neglecting this displacement when
@@ -4108,26 +4144,26 @@ CALLS
 *  References:
 *
 *     Chapront, J., Chapront-Touze, M. & Francou, G., Astron.Astrophys.,
-*     387, 700, 2002.
+*     387, 700 (2002)
 *
 *     Lieske, J.H., Lederle, T., Fricke, W. & Morando, B., "Expressions
 *     for the precession quantities based upon the IAU (1976) System of
-*     Astronomical Constants", Astron.Astrophys., 58, 1-16, 1977.
+*     Astronomical Constants", Astron.Astrophys., 58, 1-16 (1977)
 *
 *     Mathews, P.M., Herring, T.A., Buffet, B.A., "Modeling of nutation
 *     and precession   New nutation series for nonrigid Earth and
 *     insights into the Earth's interior", J.Geophys.Res., 107, B4,
-*     2002.  The MHB_2000 code itself was obtained on 9th September 2002
-*     from ftp //maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
+*     2002.  The MHB2000 code itself was obtained on 9th September 2002
+*     from ftp://maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
 *
 *     Simon, J.-L., Bretagnon, P., Chapront, J., Chapront-Touze, M.,
-*     Francou, G., Laskar, J., A&A282, 663-683 (1994).
+*     Francou, G., Laskar, J., A&A282, 663-683 (1994)
 *
 *     Souchay, J., Loysel, B., Kinoshita, H., Folgueira, M., A&A Supp.
 *     Ser. 135, 111 (1999)
 *
 *     Wallace, P.T., "Software for Implementing the IAU 2000
-*     Resolutions", in IERS Workshop 5.1, 2002.
+*     Resolutions", in IERS Workshop 5.1 (2002)
 *
 *-
 
@@ -4232,8 +4268,9 @@ CALLS
 *     insights into the Earth's interior", J.Geophys.Res., 107, B4,
 *     2002.
 *
-*     McCarthy, D.D. & Luzum, B.J., "An Abridged Model of the Motion
-*     of the Celestial Pole", preprint, 2001.
+*     McCarthy, D.D. & Luzum, B.J., "An abridged model of the
+*     precession-nutation of the celestial pole", Celestial Mechanics &
+*     Dynamical Astronomy, 85, 37-49 (2003)
 *
 *     Simon, J.-L., Bretagnon, P., Chapront, J., Chapront-Touze, M.,
 *     Francou, G., Laskar, J., A&A282, 663-683 (1994).
@@ -4350,7 +4387,7 @@ CALLS
 *-
 
 
-      DOUBLE PRECISION FUNCTION iau_OBL80 ( EPOCH1, EPOCH2 )
+      DOUBLE PRECISION FUNCTION iau_OBL80 ( DATE1, DATE2 )
 *+
 *  - - - - - - - - - -
 *   i a u _ O B L 8 0
@@ -4364,19 +4401,19 @@ CALLS
 *  Status:  canonical model.
 *
 *  Given:
-*     EPOCH1,EPOCH2   d      TDB starting epoch (Note 1)
+*     DATE1,DATE2     d      TDB date (Note 1)
 *
 *  Returned:
 *     iau_OBL80       d      obliquity of the ecliptic (radians, Note 2)
 *
 *  Notes:
 *
-*  1) The epoch EPOCH1+EPOCH2 is a Julian Date, apportioned in any
+*  1) The date DATE1+DATE2 is a Julian Date, apportioned in any
 *     convenient way between the two arguments.  For example,
 *     JD(TDB)=2450123.7 could be expressed in any of these ways,
 *     among others:
 *
-*            EPOCH1        EPOCH2
+*             DATE1         DATE2
 *
 *         2450123.7D0        0D0        (JD method)
 *          2451545D0      -1421.3D0     (J2000 method)
@@ -4391,7 +4428,7 @@ CALLS
 *     are both good compromises between resolution and convenience.
 *
 *  2) The result is the angle between the ecliptic of J2000 and the mean
-*     equator of date EPOCH1+EPOCH2.
+*     equator of date DATE1+DATE2.
 *
 *  Reference:
 *
@@ -5023,7 +5060,7 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
 *-
 
@@ -5115,7 +5152,7 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
 *-
 
@@ -5207,7 +5244,7 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
 *-
 
@@ -5230,7 +5267,7 @@ CALLS
 *     DATE1,DATE2    d       TT as a 2-part Julian Date (Note 1)
 *
 *  Returned:
-*     RBPN         d(3,3)    bias+precession+nutation matrix (Note 2)
+*     RBPN         d(3,3)    bias-precession-nutation matrix (Note 2)
 *
 *  Notes:
 *
@@ -5421,7 +5458,7 @@ CALLS
 *
 *  1) XP and YP are the "coordinates of the pole", in radians, which
 *     position the Celestial Intermediate Pole in the International
-*     Terrestrial Reference System (see IERS Conventions 2000).  In a
+*     Terrestrial Reference System (see IERS Conventions 2003).  In a
 *     geocentric right-handed triad u,v,w, where the w-axis points at
 *     the north geographic pole, the v-axis points towards the origin
 *     of longitudes and the u axis completes the system, XP = +u and
@@ -5447,7 +5484,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -5506,7 +5544,7 @@ CALLS
 *  - - - - - - - - -
 *
 *  Precession-rate part of the IAU 2000 precession-nutation models
-*  (part of MHB_2000).
+*  (part of MHB2000).
 *
 *  This routine is part of the International Astronomical Union's
 *  SOFA (Standards of Fundamental Astronomy) software collection.
@@ -5545,7 +5583,7 @@ CALLS
 *     equinox and ecliptic.
 *
 *  3) Although the precession adjustments are stated to be with respect
-*     to Lieske et al. (1977), the MHB_2000 model does not specify which
+*     to Lieske et al. (1977), the MHB2000 model does not specify which
 *     set of Euler angles are to be used and how the adjustments are to
 *     be applied.  The most literal and straightforward procedure is to
 *     adopt the 4-rotation epsilon_0, psi_A, omega_A, xi_A option, and
@@ -5560,16 +5598,16 @@ CALLS
 *
 *     Lieske, J.H., Lederle, T., Fricke, W. & Morando, B., "Expressions
 *     for the precession quantities based upon the IAU (1976) System of
-*     Astronomical Constants", Astron.Astrophys., 58, 1-16, 1977.
+*     Astronomical Constants", Astron.Astrophys., 58, 1-16 (1977)
 *
 *     Mathews, P.M., Herring, T.A., Buffet, B.A., "Modeling of nutation
 *     and precession   New nutation series for nonrigid Earth and
 *     insights into the Earth's interior", J.Geophys.Res., 107, B4,
-*     2002.  The MHB_2000 code itself was obtained on 9th September 2002
-*     from ftp //maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
+*     2002.  The MHB2000 code itself was obtained on 9th September 2002
+*     from ftp://maia.usno.navy.mil/conv2000/chapter5/IAU2000A.
 *
 *     Wallace, P.T., "Software for Implementing the IAU 2000
-*     Resolutions", in IERS Workshop 5.1, 2002.
+*     Resolutions", in IERS Workshop 5.1 (2002)
 *
 *-
 
@@ -5844,7 +5882,7 @@ CALLS
 *     PMR      d         RA proper motion (radians/year)
 *     PMD      d         Dec proper motion (radians/year)
 *     PX       d         parallax (arcsec)
-*     RV       d         radial velocity (km/s, +ve = receding)
+*     RV       d         radial velocity (km/s, positive = receding)
 *     J        i         status:
 *                           0 = OK
 *                          -1 = superluminal speed (Note 5)
@@ -6340,9 +6378,9 @@ CALLS
 *     are both good compromises between resolution and convenience.
 *
 *  2) The quantity s is the difference between the right ascensions
-*     of the same point in two frames.  The two systems are the GCRS
+*     of the same point in two systems.  The two systems are the GCRS
 *     and the CIP,CEO, and the point is the ascending node of the
-*     respective equators.  The quantity s remains a small fraction of
+*     CIP equator.  The quantity s remains a small fraction of
 *     1 arcsecond throughout 1900-2100.
 *
 *  3) The series used to compute s is in fact for s+XY/2, where X and Y
@@ -6359,9 +6397,10 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -6409,18 +6448,18 @@ CALLS
 *     are both good compromises between resolution and convenience.
 *
 *  2) The quantity s is the difference between the right ascensions
-*     of the same point in two frames.  The two systems are the GCRS
+*     of the same point in two systems.  The two systems are the GCRS
 *     and the CIP,CEO, and the point is the ascending node of the
-*     respective equators.  The quantity s remains a small fraction of
+*     CIP equator.  The quantity s remains a small fraction of
 *     1 arcsecond throughout 1900-2100.
 *
 *  3) The series used to compute s is in fact for s+XY/2, where X and Y
 *     are the x and y components of the CIP unit vector;  this series is
 *     more compact than a direct series for s would be.  The present
-*     uses the full IAU 2000A nutation model when predicting the CIP
-*     position.  Faster results, with no significant loss of accuracy.
-*     can be obtained via the routine iau_s00B, which uses instead the
-*     IAU 2000B truncated model.
+*     routine uses the full IAU 2000A nutation model when predicting the
+*     CIP position.  Faster results, with no significant loss of
+*     accuracy, can be obtained via the routine iau_S00B, which uses
+*     instead the IAU 2000B truncated model.
 *
 *  Called:
 *     iau_PNM00A    bias-precession-nutation matrix, IAU 2000A
@@ -6432,9 +6471,10 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -6482,18 +6522,18 @@ CALLS
 *     are both good compromises between resolution and convenience.
 *
 *  2) The quantity s is the difference between the right ascensions
-*     of the same point in two frames.  The two systems are the GCRS
+*     of the same point in two systems.  The two systems are the GCRS
 *     and the CIP,CEO, and the point is the ascending node of the
-*     respective equators.  The quantity s remains a small fraction of
+*     CIP equator.  The quantity s remains a small fraction of
 *     1 arcsecond throughout 1900-2100.
 *
 *  3) The series used to compute s is in fact for s+XY/2, where X and Y
 *     are the x and y components of the CIP unit vector;  this series is
 *     more compact than a direct series for s would be.  The present
-*     uses the full IAU 2000A nutation model when predicting the CIP
-*     position.  Faster results, with no significant loss of accuracy.
-*     can be obtained via the routine iau_s00B, which uses instead the
-*     IAU 2000B truncated model.
+*     routine uses the IAU 2000B truncated nutation model when
+*     predicting the CIP position.  The routine iau_S00A uses instead
+*     the full IAU 2000A model, but with no significant increase in
+*     accuracy and at some cost in speed.
 *
 *  Called:
 *     iau_PNM00B    bias-precession-nutation matrix, IAU 2000B
@@ -6505,9 +6545,10 @@ CALLS
 *     Capitaine, N., Chapront, J., Lambert, S. and Wallace, P.,
 *     "Expressions for the Celestial Intermediate Pole and Celestial
 *     Ephemeris Origin consistent with the IAU 2000A precession-nutation
-*     model", submitted to A&A (2002)
+*     model", Astronomy & Astrophysics, 400, 1145-1154 (2003)
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -6635,7 +6676,7 @@ CALLS
 *     B        d(3)      second p-vector (not necessarily unit length)
 *
 *  Returned:
-*     S        d         angular separation (radians, always +ve)
+*     S        d         angular separation (radians, always positive)
 *
 *  Notes:
 *
@@ -6733,7 +6774,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -6867,7 +6909,7 @@ CALLS
 *     PMR      d         RA proper motion (radians/year)
 *     PMD      d         Dec proper motion (radians/year)
 *     PX       d         parallax (arcseconds)
-*     RV       d         radial velocity (km/s, +ve = receding)
+*     RV       d         radial velocity (km/s, positive = receding)
 *
 *  Returned (Note 2):
 *     PV       d(3,2)    pv-vector (AU, AU/day)
@@ -7150,7 +7192,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -7214,7 +7257,8 @@ CALLS
 *
 *  Reference:
 *
-*     McCarthy, D.D., IERS Conventions 2000, Chapter 5 (2002).
+*     McCarthy, D. D., Petit, G. (eds.), IERS Conventions (2003),
+*     IERS Technical Note No. 32, BKG (2004)
 *
 *-
 
@@ -7278,7 +7322,7 @@ CALLS
 *
 *-
 
-copyr.lis                                                 2002 January 9
+copyr.lis                                                 2005 January 1
 
 
 COPYRIGHT NOTICE
@@ -7288,7 +7332,7 @@ Text like the following appears at the end of every SOFA routine.
 
 *+----------------------------------------------------------------------
 *
-*  Copyright (C) 2003
+*  Copyright (C) 2005
 *  Standards Of Fundamental Astronomy Review Board
 *  of the International Astronomical Union.
 *
@@ -7369,7 +7413,7 @@ Text like the following appears at the end of every SOFA routine.
 
       END
 
-consts.lis                                                     2001 March 13
+consts.lis                                                    2003 October 5
 
 
 SOFA Fortran constants
@@ -7399,7 +7443,7 @@ These must be used exactly as presented below.
 
 *  Radians to arc seconds
       DOUBLE PRECISION DR2AS
-      PARAMETER ( DR2AS = 206264.8062470963551564733D0 )
+      PARAMETER ( DR2AS = 206264.8062470963551564734D0 )
 
 *  Hours to radians
       DOUBLE PRECISION DH2R

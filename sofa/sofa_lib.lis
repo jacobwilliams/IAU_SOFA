@@ -1,4 +1,4 @@
-sofa_lib.lis                                                 2003 March 17
+sofa_lib.lis                                                2005 August 24
 
                      ----------------------
                      SOFA Astronomy Library
@@ -7,11 +7,11 @@ sofa_lib.lis                                                 2003 March 17
 
 PREFACE
 
-The routines described here are the second release of the SOFA astronomy
-library.  Their general appearance and coding style conforms to
-conventions agreed by the SOFA Review Board, and their functions, names
-and algorithms have been ratified by the Board.  Procedures for
-soliciting and agreeing additions to the library are still evolving.
+The routines described here comprise the SOFA astronomy library.  Their
+general appearance and coding style conforms to conventions agreed by
+the SOFA Review Board, and their functions, names and algorithms have
+been ratified by the Board.  Procedures for soliciting and agreeing
+additions to the library are still evolving.
 
 At present the routines are all written in Fortran 77, complying
 with the ANSI standard (X3.9-1978) except in two respects:
@@ -39,7 +39,7 @@ which are separately listed.
 
 The routines are designed to exploit the full floating-point accuracy
 of the machines on which they run, and not to rely on compiler
-optimizions.  Within these constraints, the intention is that the code
+optimizations.  Within these constraints, the intention is that the code
 corresponds to the published formulation (if any).
 
 Epochs (or simply "dates") are always Julian Dates (except in calendar
@@ -96,7 +96,7 @@ ROUTINES
 
      BI00      frame bias, ICRS to mean J2000, IAU 2000
      BP00      frame bias and precession matrices, IAU 2000
-     BPN2XY    bias-precession-nutation matrix given CIP
+     BPN2XY    extract CIP X,Y from bias-precession-nutation matrix
      C2I00A    celestial-to-intermediate matrix, IAU 2000A
      C2I00B    celestial-to-intermediate matrix, IAU 2000B
      C2IBPN    celestial-to-intermediate matrix given b-p-n
@@ -123,14 +123,14 @@ ROUTINES
      PN00B     b,p,n matrices, IAU 2000B
      PNM00A    celestial-to-true (b-p-n) matrix, IAU 2000A
      PNM00B    celestial-to-true (b-p-n) matrix, IAU 2000B
+     PNM80     precession/nutation matrix, IAU 1976/1980
      POM00     polar-motion matrix, IAU 2000
      PR00      adjustments to IAU 1976 precession, IAU 2000
-     PNM80     precession/nutation matrix, IAU 1976/1980
      PREC76    precession, IAU 1976
      S00       the quantity s, IAU 2000, given CIP
      S00A      the quantity s, IAU 2000A
      S00B      the quantity s, IAU 2000B
-     SP00      the quantity s', IERS 2000
+     SP00      the quantity s', IERS 2003
      XYS00A    CIP and s, IAU 2000A
      XYS00B    CIP and s, IAU 2000B
 

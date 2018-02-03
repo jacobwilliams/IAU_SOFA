@@ -1,4 +1,4 @@
-sofa_vml.lis                                            2002 December 23
+sofa_vml.lis                                               2005 August 11
 
                    --------------------------
                    SOFA Vector/Matrix Library
@@ -6,10 +6,10 @@ sofa_vml.lis                                            2002 December 23
 
 PREFACE
 
-The routines described here are the first release of the SOFA vector/
-matrix library.  Their general appearance and coding style conforms to
-conventions agreed by the SOFA Review Board, and their functions, names
-and algorithms have been ratified by the Board.  Procedures for
+The routines described here comprise the SOFA vector/matrix library.
+Their general appearance and coding style conforms to conventions
+agreed by the SOFA Review Board, and their functions, names and
+algorithms have been ratified by the Board.  Procedures for
 soliciting and agreeing additions to the library are still evolving.
 
 At present the routines are all written in Fortran 77, complying with
