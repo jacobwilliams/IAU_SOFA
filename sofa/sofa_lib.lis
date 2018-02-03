@@ -1,0 +1,148 @@
+sofa_lib.lis                                                  2001 March 2
+
+                     ----------------------
+                     SOFA Astronomy Library
+                     ----------------------
+
+
+PREFACE
+
+The routines described here are the first release of the SOFA astronomy
+library.  Their general appearance and coding style conforms to
+conventions agreed by the SOFA Review Board, and their functions, names
+and algorithms have been ratified by the Board.  Procedures for
+soliciting and agreeing additions to the library are still evolving.
+
+At present the routines are all written in Fortran 77, complying
+with the ANSI standard (X3.9-1978) except in two respects:
+
+  (1) All routine names are prefixed with the string "iau_".  If
+      necessary, the string can be removed globally;  the result
+      is correctly functioning code.
+
+  (2) All routines include an IMPLICIT NONE statement.  This can
+      be removed without affecting the behaviour of the code.
+
+If the "iau_" string and/or the IMPLICIT NONE statements are removed
+globally, the resulting code is fully ANSI-compliant and is functionally
+unaffected.
+
+
+GENERAL PRINCIPLES
+
+The principal function of the SOFA Astronomy Library is to define
+algorithms.  A secondary function is to provide software suitable for
+direct use by writers of astronomical applications.
+
+The astronomy routines call on the SOFA vector/matrix library routines,
+which are separately listed.
+
+The routines are designed to exploit the full floating-point accuracy
+of the machines on which they run, and not to rely on compiler
+optimizions.  Within these constraints, the intention is that the code
+corresponds to the published formulation (if any).
+
+Epochs are always Julian Dates (except in calendar conversion routines)
+and are expressed as two double precision numbers which sum to the
+required value.
+
+A distinction is made between routines that implement IAU-approved
+models and those that use those models to create other results.  The
+former are referred to as "canonical models" in the preamble comments;
+the latter are described as "support routines".
+
+Using the library requires knowledge of positional astronomy and
+timescales.  These topics are covered in "Explanatory Supplement to the
+Astronomical Almanac", P. Kenneth Seidelmann (ed.), University Science
+Books, 1992.  Recent developments are documented in the journals, and
+references to the relevant papers are given in the SOFA code as
+required.
+
+
+ROUTINES
+
+  Calendars
+
+     CAL2JD    Gregorian Calendar to Julian Date
+     JD2CAL    Julian Date to Gregorian year, month, day, fraction
+     JDCALF    Julian Date to Gregorian date for formatted output
+     EPB       Julian Date to Besselian Epoch
+     EPJ       Julian Date to Julian Epoch
+     EPB2JD    Besselian Epoch to Julian Date
+     EPJ2JD    Julian Epoch to Julian Date
+
+  Timescales
+
+     DAT       Delta(AT) (=TAI-UTC) for a given UTC date
+     DTDB      TDB-TT
+     GMST82    Greenwich Mean Sidereal Time for a given UT1
+     EQEQ94    equation of the equinoxes, IAU 1994
+
+  Ephemerides (limited precision)
+
+     EPV00     Earth position and velocity
+     PLAN94    major-planet position and velocity
+
+  Precession/Nutation
+
+     NUT80     nutation, IAU 1980
+     OBL80     mean obliquity, IAU 1980
+     NUTM80    nutation matrix, IAU 1980
+     PMAT76    precession matrix, IAU 1976
+     PREC76    precession, IAU 1976
+     PNM80     precession/nutation matrix, IAU 1976/1980
+
+  Star space motion
+
+     STARPV    star catalog coordinates to position+velocity vector
+     PVSTAR    star position+velocity vector to catalog coordinates
+
+  Star catalog conversions
+
+     STARPM    proper motion between two epochs
+     FK5HIP    FK5 orientation and spin with respect to Hipparcos
+     FK52H     transform FK5 star data into the Hipparcos frame
+     H2FK5     transform Hipparcos star data into the FK5 frame
+     FK5HZ     FK5 to Hipparcos assuming zero Hipparcos proper motion
+     HFK5Z     Hipparcos to FK5 assuming zero Hipparcos proper motion
+
+
+CALLS
+
+   SUBROUTINE        iau_CAL2JD ( IY, IM, ID, DJM0, DJM, J )
+   SUBROUTINE        iau_DAT    ( IY, IM, ID, FD, DELTAT, J )
+   DOUBLE PRECISION FUNCTION
+                     iau_DTDB   ( EPOCH1, EPOCH2, UT, ELONG, U, V )
+   DOUBLE PRECISION FUNCTION
+                     iau_EPB    ( DJ1, DJ2 )
+   SUBROUTINE        iau_EPB2JD ( EPB, DJM0, DJM )
+   DOUBLE PRECISION FUNCTION
+                     iau_EPJ    ( DJ1, DJ2 )
+   SUBROUTINE        iau_EPJ2JD ( EPJ, DJM0, DJM )
+   SUBROUTINE        iau_EPV00  ( DJ1, DJ2, PVH, PVB, J )
+   DOUBLE PRECISION FUNCTION
+                     iau_EQEQ94 ( EPOCH1, EPOCH2 )
+   SUBROUTINE        iau_FK52H  ( R5, D5, DR5, DD5, PX5, RV5,
+                                  RH, DH, DRH, DDH, PXH, RVH )
+   SUBROUTINE        iau_FK5HIP ( R5H, S5H )
+   SUBROUTINE        iau_FK5HZ  ( R5, D5, EPOCH1, EPOCH2, RH, DH)
+   DOUBLE PRECISION FUNCTION
+                     iau_GMST82 ( DJ1, DJ2 )
+   SUBROUTINE        iau_H2FK5  ( RH, DH, DRH, DDH, PXH, RVH,
+                                  R5, D5, DR5, DD5, PX5, RV5 )
+   SUBROUTINE        iau_HFK5Z  ( RH, DH, EPOCH1, EPOCH2, R5, D5, DR5, DD5 )
+   SUBROUTINE        iau_JD2CAL ( DJ1, DJ2, IY, IM, ID, FD, J )
+   SUBROUTINE        iau_JDCALF ( NDP, DJ1, DJ2, IYMDF, J )
+   SUBROUTINE        iau_PMAT76 ( DJ1, DJ2, RMATP )
+   SUBROUTINE        iau_NUT80  ( EPOCH1, EPOCH2, DPSI, DEPS )
+   SUBROUTINE        iau_NUTM80 ( EPOCH1, EPOCH2, RMATN )
+   DOUBLE PRECISION FUNCTION
+                     iau_OBL80  ( EPOCH1, EPOCH2 )
+   SUBROUTINE        iau_PLAN94 ( EPOCH1, EPOCH2, NP, PV, J )
+   SUBROUTINE        iau_PNM80  ( EPOCH1, EPOCH2, RMATPN )
+   SUBROUTINE        iau_PREC76 ( EP01, EP02, EP11, EP12, ZETA, Z, THETA )
+   SUBROUTINE        iau_PVSTAR ( PV, RA, DEC, PMR, PMD, PX, RV, J )
+   SUBROUTINE        iau_STARPM ( RA1, DEC1, PMR1, PMD1, PX1, RV1,
+                                  EP1A, EP1B, EP2A, EP2B,
+                                  RA2, DEC2, PMR2, PMD2, PX2, RV2, J )
+   SUBROUTINE        iau_STARPV ( RA, DEC, PMR, PMD, PX, RV, PV, J )
